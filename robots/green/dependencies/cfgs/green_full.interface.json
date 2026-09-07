@@ -1,0 +1,518 @@
+{
+  "__dataclass__": {
+    "module": "isaaclab.assets.articulation.articulation_cfg",
+    "qualname": "ArticulationCfg",
+    "fields": {
+      "class_type": {
+        "__py_type__": {
+          "module": "isaaclab.assets.articulation.articulation",
+          "qualname": "Articulation"
+        }
+      },
+      "prim_path": "{ENV_REGEX_NS}/Robot",
+      "spawn": {
+        "__dataclass__": {
+          "module": "green_challenge.robots.green.interface.utils.mjcf_cfg",
+          "qualname": "MJCFFileCfg",
+          "fields": {
+            "asset_path": "robots/green/green.xml",
+            "usd_dir": null,
+            "usd_file_name": null,
+            "force_usd_conversion": false,
+            "make_instanceable": true,
+            "import_inertia_tensor": true,
+            "fix_base": false,
+            "import_sites": true,
+            "self_collision": false,
+            "link_density": 0.0,
+            "func": {
+              "__py_func__": {
+                "module": "green_challenge.robots.green.interface.utils.mjcf",
+                "qualname": "spawn_from_mjcf"
+              }
+            },
+            "visible": true,
+            "semantic_tags": null,
+            "copy_from_source": true,
+            "mass_props": null,
+            "deformable_props": null,
+            "rigid_props": {
+              "__dataclass__": {
+                "module": "isaaclab.sim.schemas.schemas_cfg",
+                "qualname": "RigidBodyPropertiesCfg",
+                "fields": {
+                  "rigid_body_enabled": null,
+                  "kinematic_enabled": null,
+                  "disable_gravity": false,
+                  "linear_damping": 0.0,
+                  "angular_damping": 0.0,
+                  "max_linear_velocity": 1000.0,
+                  "max_angular_velocity": 1000.0,
+                  "max_depenetration_velocity": 1.0,
+                  "max_contact_impulse": null,
+                  "enable_gyroscopic_forces": null,
+                  "retain_accelerations": false,
+                  "solver_position_iteration_count": null,
+                  "solver_velocity_iteration_count": null,
+                  "sleep_threshold": null,
+                  "stabilization_threshold": null
+                }
+              }
+            },
+            "collision_props": null,
+            "activate_contact_sensors": true,
+            "scale": null,
+            "articulation_props": {
+              "__dataclass__": {
+                "module": "isaaclab.sim.schemas.schemas_cfg",
+                "qualname": "ArticulationRootPropertiesCfg",
+                "fields": {
+                  "articulation_enabled": null,
+                  "enabled_self_collisions": true,
+                  "solver_position_iteration_count": 4,
+                  "solver_velocity_iteration_count": 4,
+                  "sleep_threshold": null,
+                  "stabilization_threshold": null,
+                  "fix_root_link": null
+                }
+              }
+            },
+            "fixed_tendons_props": null,
+            "spatial_tendons_props": null,
+            "joint_drive_props": null,
+            "visual_material_path": "material",
+            "visual_material": null
+          }
+        }
+      },
+      "init_state": {
+        "__dataclass__": {
+          "module": "isaaclab.assets.articulation.articulation_cfg",
+          "qualname": "ArticulationCfg.InitialStateCfg",
+          "fields": {
+            "pos": {
+              "__tuple__": [
+                0.0,
+                0.0,
+                0.88
+              ]
+            },
+            "rot": {
+              "__tuple__": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "lin_vel": {
+              "__tuple__": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "ang_vel": {
+              "__tuple__": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "joint_pos": {
+              "left_hip_pitch_joint": -0.086,
+              "left_hip_roll_joint": 0.017,
+              "left_hip_yaw_joint": -0.044,
+              "left_knee_crank_joint": 0.299,
+              "left_knee_rod_joint": -0.299,
+              "left_knee_pitch_joint": 0.299,
+              "left_ankle_pitch_joint": -0.225,
+              "left_ankle_roll_joint": -0.018,
+              "left_ankle_u_crank_joint": -0.208,
+              "left_ankle_b_crank_joint": -0.23,
+              "right_hip_pitch_joint": -0.086,
+              "right_hip_roll_joint": -0.017,
+              "right_hip_yaw_joint": 0.044,
+              "right_knee_crank_joint": 0.299,
+              "right_knee_rod_joint": -0.299,
+              "right_knee_pitch_joint": 0.299,
+              "right_ankle_pitch_joint": -0.225,
+              "right_ankle_roll_joint": 0.018,
+              "right_ankle_u_crank_joint": -0.208,
+              "right_ankle_b_crank_joint": -0.23,
+              "torso_yaw_joint": 0.0,
+              ".*_shoulder_pitch_joint": 0.0,
+              ".*_shoulder_roll_joint": 0.0,
+              ".*_shoulder_yaw_joint": 0.0,
+              ".*_elbow_pitch_joint": 0.0,
+              ".*_elbow_yaw_joint": 0.0,
+              "neck_yaw_joint": 0.0,
+              "neck_pitch_joint": 0.0,
+              ".*_wrist_crank_joint": 0.0,
+              ".*_wrist_roll_joint": 0.0,
+              ".*_thumb_proximal_yaw_joint": -0.1,
+              ".*_thumb_proximal_pitch_joint": 0.0,
+              ".*_index_proximal_joint": 0.0,
+              ".*_middle_proximal_joint": 0.0,
+              ".*_ring_proximal_joint": 0.0,
+              ".*_pinky_proximal_joint": 0.0
+            },
+            "joint_vel": {
+              ".*": 0.0
+            }
+          }
+        }
+      },
+      "collision_group": 0,
+      "debug_vis": false,
+      "articulation_root_prim_path": null,
+      "soft_joint_pos_limit_factor": 0.9,
+      "actuators": {
+        "motors": {
+          "__dataclass__": {
+            "module": "green_challenge.robots.green.interface.actuators.actuator_cfg",
+            "qualname": "FrictionalActuatorCfg",
+            "fields": {
+              "class_type": {
+                "__py_type__": {
+                  "module": "green_challenge.robots.green.interface.actuators.frictional_actuator",
+                  "qualname": "FrictionalActuator"
+                }
+              },
+              "joint_names_expr": [
+                ".*_ankle_b_crank_joint",
+                ".*_ankle_u_crank_joint",
+                ".*_elbow_pitch_joint",
+                ".*_elbow_yaw_joint",
+                ".*_hip_pitch_joint",
+                ".*_hip_roll_joint",
+                ".*_hip_yaw_joint",
+                ".*_index_intermediate_joint",
+                ".*_index_proximal_joint",
+                ".*_knee_crank_joint",
+                ".*_middle_intermediate_joint",
+                ".*_middle_proximal_joint",
+                ".*_pinky_intermediate_joint",
+                ".*_pinky_proximal_joint",
+                ".*_ring_intermediate_joint",
+                ".*_ring_proximal_joint",
+                ".*_shoulder_pitch_joint",
+                ".*_shoulder_roll_joint",
+                ".*_shoulder_yaw_joint",
+                ".*_thumb_distal_joint",
+                ".*_thumb_intermediate_joint",
+                ".*_thumb_proximal_pitch_joint",
+                ".*_thumb_proximal_yaw_joint",
+                ".*_wrist_crank_joint",
+                ".*_wrist_roll_joint",
+                "neck_pitch_joint",
+                "neck_yaw_joint",
+                "torso_yaw_joint"
+              ],
+              "effort_limit": {
+                ".*_ankle_b_crank_joint": 90.0,
+                ".*_ankle_u_crank_joint": 90.0,
+                ".*_elbow_pitch_joint": 36.0,
+                ".*_elbow_yaw_joint": 36.0,
+                ".*_hip_pitch_joint": 380.0,
+                ".*_hip_roll_joint": 330.0,
+                ".*_hip_yaw_joint": 150.0,
+                ".*_index_intermediate_joint": 8.5,
+                ".*_index_proximal_joint": 8.5,
+                ".*_knee_crank_joint": 380.0,
+                ".*_middle_intermediate_joint": 8.5,
+                ".*_middle_proximal_joint": 8.5,
+                ".*_pinky_intermediate_joint": 8.5,
+                ".*_pinky_proximal_joint": 8.5,
+                ".*_ring_intermediate_joint": 8.5,
+                ".*_ring_proximal_joint": 8.5,
+                ".*_shoulder_pitch_joint": 90.0,
+                ".*_shoulder_roll_joint": 90.0,
+                ".*_shoulder_yaw_joint": 36.0,
+                ".*_thumb_distal_joint": 8.5,
+                ".*_thumb_intermediate_joint": 8.5,
+                ".*_thumb_proximal_pitch_joint": 8.5,
+                ".*_thumb_proximal_yaw_joint": 8.5,
+                ".*_wrist_crank_joint": 16.0,
+                ".*_wrist_roll_joint": 16.0,
+                "neck_pitch_joint": 36.0,
+                "neck_yaw_joint": 36.0,
+                "torso_yaw_joint": 150.0
+              },
+              "velocity_limit": {
+                ".*_ankle_b_crank_joint": 145.0,
+                ".*_ankle_u_crank_joint": 145.0,
+                ".*_elbow_pitch_joint": 89.0,
+                ".*_elbow_yaw_joint": 89.0,
+                ".*_hip_pitch_joint": 130.0,
+                ".*_hip_roll_joint": 123.0,
+                ".*_hip_yaw_joint": 140.0,
+                ".*_index_intermediate_joint": 25,
+                ".*_index_proximal_joint": 25,
+                ".*_knee_crank_joint": 130.0,
+                ".*_middle_intermediate_joint": 25,
+                ".*_middle_proximal_joint": 25,
+                ".*_pinky_intermediate_joint": 25,
+                ".*_pinky_proximal_joint": 25,
+                ".*_ring_intermediate_joint": 25,
+                ".*_ring_proximal_joint": 25,
+                ".*_shoulder_pitch_joint": 145.0,
+                ".*_shoulder_roll_joint": 145.0,
+                ".*_shoulder_yaw_joint": 89.0,
+                ".*_thumb_distal_joint": 25,
+                ".*_thumb_intermediate_joint": 25,
+                ".*_thumb_proximal_pitch_joint": 25,
+                ".*_thumb_proximal_yaw_joint": 25,
+                ".*_wrist_crank_joint": 60.0,
+                ".*_wrist_roll_joint": 60.0,
+                "neck_pitch_joint": 89.0,
+                "neck_yaw_joint": 89.0,
+                "torso_yaw_joint": 140.0
+              },
+              "effort_limit_sim": null,
+              "velocity_limit_sim": null,
+              "stiffness": {
+                ".*_hip_roll_joint": 200.0,
+                ".*_hip_yaw_joint": 100.0,
+                ".*_hip_pitch_joint": 200.0,
+                ".*_knee_crank_joint": 350.0,
+                ".*_ankle_u_crank_joint": 70.0,
+                ".*_ankle_b_crank_joint": 70.0,
+                "torso_yaw_joint": 70.0,
+                ".*_shoulder_pitch_joint": 30.0,
+                ".*_shoulder_roll_joint": 30.0,
+                ".*_shoulder_yaw_joint": 20.0,
+                ".*_elbow_pitch_joint": 20.0,
+                ".*_elbow_yaw_joint": 20.0,
+                "neck_yaw_joint": 20.0,
+                "neck_pitch_joint": 20.0,
+                ".*_wrist_crank_joint": 40,
+                ".*_wrist_roll_joint": 40,
+                ".*_thumb_proximal_yaw_joint": 40,
+                ".*_thumb_proximal_pitch_joint": 40,
+                ".*_index_proximal_joint": 10,
+                ".*_middle_proximal_joint": 10,
+                ".*_ring_proximal_joint": 10,
+                ".*_pinky_proximal_joint": 10
+              },
+              "damping": {
+                ".*_hip_roll_joint": 5.0,
+                ".*_hip_yaw_joint": 5.0,
+                ".*_hip_pitch_joint": 5.0,
+                ".*_knee_crank_joint": 5.0,
+                ".*_ankle_u_crank_joint": 4.0,
+                ".*_ankle_b_crank_joint": 4.0,
+                "torso_yaw_joint": 4.0,
+                ".*_shoulder_pitch_joint": 1.5,
+                ".*_shoulder_roll_joint": 1.5,
+                ".*_shoulder_yaw_joint": 1.0,
+                ".*_elbow_pitch_joint": 1.0,
+                ".*_elbow_yaw_joint": 1.0,
+                "neck_yaw_joint": 1.0,
+                "neck_pitch_joint": 1.0,
+                ".*_wrist_crank_joint": 1.0,
+                ".*_wrist_roll_joint": 1.0,
+                ".*_thumb_proximal_yaw_joint": 2.0,
+                ".*_thumb_proximal_pitch_joint": 2.0,
+                ".*_index_proximal_joint": 1.0,
+                ".*_middle_proximal_joint": 1.0,
+                ".*_ring_proximal_joint": 1.0,
+                ".*_pinky_proximal_joint": 1.0
+              },
+              "armature": {
+                ".*_ankle_b_crank_joint": 0.043416,
+                ".*_ankle_u_crank_joint": 0.043416,
+                ".*_elbow_pitch_joint": 0.024624,
+                ".*_elbow_yaw_joint": 0.024624,
+                ".*_hip_pitch_joint": 0.155952,
+                ".*_hip_roll_joint": 0.32255999999999996,
+                ".*_hip_yaw_joint": 0.061488,
+                ".*_index_intermediate_joint": 0.005,
+                ".*_index_proximal_joint": 0.005,
+                ".*_knee_crank_joint": 0.155952,
+                ".*_middle_intermediate_joint": 0.005,
+                ".*_middle_proximal_joint": 0.005,
+                ".*_pinky_intermediate_joint": 0.005,
+                ".*_pinky_proximal_joint": 0.005,
+                ".*_ring_intermediate_joint": 0.005,
+                ".*_ring_proximal_joint": 0.005,
+                ".*_shoulder_pitch_joint": 0.043416,
+                ".*_shoulder_roll_joint": 0.043416,
+                ".*_shoulder_yaw_joint": 0.024624,
+                ".*_thumb_distal_joint": 0.005,
+                ".*_thumb_intermediate_joint": 0.005,
+                ".*_thumb_proximal_pitch_joint": 0.005,
+                ".*_thumb_proximal_yaw_joint": 0.005,
+                ".*_wrist_crank_joint": 0.005,
+                ".*_wrist_roll_joint": 0.005,
+                "neck_pitch_joint": 0.024624,
+                "neck_yaw_joint": 0.024624,
+                "torso_yaw_joint": 0.061488
+              },
+              "friction": null,
+              "dynamic_friction": null,
+              "viscous_friction": null,
+              "breakaway_friction": {
+                ".*_ankle_b_crank_joint": 0.876,
+                ".*_ankle_u_crank_joint": 0.876,
+                ".*_elbow_pitch_joint": 0.23,
+                ".*_elbow_yaw_joint": 0.23,
+                ".*_hip_pitch_joint": 1.481,
+                ".*_hip_roll_joint": 2.492,
+                ".*_hip_yaw_joint": 0.576,
+                ".*_index_intermediate_joint": 0.005,
+                ".*_index_proximal_joint": 0.005,
+                ".*_knee_crank_joint": 1.481,
+                ".*_middle_intermediate_joint": 0.005,
+                ".*_middle_proximal_joint": 0.005,
+                ".*_pinky_intermediate_joint": 0.005,
+                ".*_pinky_proximal_joint": 0.005,
+                ".*_ring_intermediate_joint": 0.005,
+                ".*_ring_proximal_joint": 0.005,
+                ".*_shoulder_pitch_joint": 0.876,
+                ".*_shoulder_roll_joint": 0.876,
+                ".*_shoulder_yaw_joint": 0.23,
+                ".*_thumb_distal_joint": 0.005,
+                ".*_thumb_intermediate_joint": 0.005,
+                ".*_thumb_proximal_pitch_joint": 0.005,
+                ".*_thumb_proximal_yaw_joint": 0.005,
+                ".*_wrist_crank_joint": 0.1227,
+                ".*_wrist_roll_joint": 0.1227,
+                "neck_pitch_joint": 0.23,
+                "neck_yaw_joint": 0.23,
+                "torso_yaw_joint": 0.576
+              },
+              "coulomb_friction": {
+                ".*_ankle_b_crank_joint": 0.876,
+                ".*_ankle_u_crank_joint": 0.876,
+                ".*_elbow_pitch_joint": 0.23,
+                ".*_elbow_yaw_joint": 0.23,
+                ".*_hip_pitch_joint": 1.481,
+                ".*_hip_roll_joint": 2.492,
+                ".*_hip_yaw_joint": 0.576,
+                ".*_index_intermediate_joint": 0.005,
+                ".*_index_proximal_joint": 0.005,
+                ".*_knee_crank_joint": 1.481,
+                ".*_middle_intermediate_joint": 0.005,
+                ".*_middle_proximal_joint": 0.005,
+                ".*_pinky_intermediate_joint": 0.005,
+                ".*_pinky_proximal_joint": 0.005,
+                ".*_ring_intermediate_joint": 0.005,
+                ".*_ring_proximal_joint": 0.005,
+                ".*_shoulder_pitch_joint": 0.876,
+                ".*_shoulder_roll_joint": 0.876,
+                ".*_shoulder_yaw_joint": 0.23,
+                ".*_thumb_distal_joint": 0.005,
+                ".*_thumb_intermediate_joint": 0.005,
+                ".*_thumb_proximal_pitch_joint": 0.005,
+                ".*_thumb_proximal_yaw_joint": 0.005,
+                ".*_wrist_crank_joint": 0.1227,
+                ".*_wrist_roll_joint": 0.1227,
+                "neck_pitch_joint": 0.23,
+                "neck_yaw_joint": 0.23,
+                "torso_yaw_joint": 0.576
+              },
+              "viscous_coeff": {
+                ".*_ankle_b_crank_joint": 0.028,
+                ".*_ankle_u_crank_joint": 0.028,
+                ".*_elbow_pitch_joint": 0.014,
+                ".*_elbow_yaw_joint": 0.014,
+                ".*_hip_pitch_joint": 0.338,
+                ".*_hip_roll_joint": 0.766,
+                ".*_hip_yaw_joint": 0.0069,
+                ".*_index_intermediate_joint": 0.08,
+                ".*_index_proximal_joint": 0.08,
+                ".*_knee_crank_joint": 0.338,
+                ".*_middle_intermediate_joint": 0.08,
+                ".*_middle_proximal_joint": 0.08,
+                ".*_pinky_intermediate_joint": 0.08,
+                ".*_pinky_proximal_joint": 0.08,
+                ".*_ring_intermediate_joint": 0.08,
+                ".*_ring_proximal_joint": 0.08,
+                ".*_shoulder_pitch_joint": 0.028,
+                ".*_shoulder_roll_joint": 0.028,
+                ".*_shoulder_yaw_joint": 0.014,
+                ".*_thumb_distal_joint": 0.08,
+                ".*_thumb_intermediate_joint": 0.08,
+                ".*_thumb_proximal_pitch_joint": 0.08,
+                ".*_thumb_proximal_yaw_joint": 0.08,
+                ".*_wrist_crank_joint": 0.2726,
+                ".*_wrist_roll_joint": 0.2726,
+                "neck_pitch_joint": 0.014,
+                "neck_yaw_joint": 0.014,
+                "torso_yaw_joint": 0.0069
+              },
+              "breakaway_velocity": 0.2,
+              "force_control": {
+                ".*_ankle_b_crank_joint": true,
+                ".*_ankle_u_crank_joint": true,
+                ".*_elbow_pitch_joint": true,
+                ".*_elbow_yaw_joint": true,
+                ".*_hip_pitch_joint": true,
+                ".*_hip_roll_joint": true,
+                ".*_hip_yaw_joint": true,
+                ".*_index_intermediate_joint": false,
+                ".*_index_proximal_joint": false,
+                ".*_knee_crank_joint": true,
+                ".*_middle_intermediate_joint": false,
+                ".*_middle_proximal_joint": false,
+                ".*_pinky_intermediate_joint": false,
+                ".*_pinky_proximal_joint": false,
+                ".*_ring_intermediate_joint": false,
+                ".*_ring_proximal_joint": false,
+                ".*_shoulder_pitch_joint": true,
+                ".*_shoulder_roll_joint": true,
+                ".*_shoulder_yaw_joint": true,
+                ".*_thumb_distal_joint": false,
+                ".*_thumb_intermediate_joint": false,
+                ".*_thumb_proximal_pitch_joint": false,
+                ".*_thumb_proximal_yaw_joint": false,
+                ".*_wrist_crank_joint": false,
+                ".*_wrist_roll_joint": false,
+                "neck_pitch_joint": true,
+                "neck_yaw_joint": true,
+                "torso_yaw_joint": true
+              }
+            }
+          }
+        },
+        "passive": {
+          "__dataclass__": {
+            "module": "green_challenge.robots.green.interface.actuators.actuator_cfg",
+            "qualname": "FrictionalActuatorCfg",
+            "fields": {
+              "class_type": {
+                "__py_type__": {
+                  "module": "green_challenge.robots.green.interface.actuators.frictional_actuator",
+                  "qualname": "FrictionalActuator"
+                }
+              },
+              "joint_names_expr": [
+                ".*_ankle_pitch_joint",
+                ".*_ankle_roll_joint",
+                ".*_knee_pitch_joint",
+                ".*_wrist_pitch_joint"
+              ],
+              "effort_limit": null,
+              "velocity_limit": {},
+              "effort_limit_sim": null,
+              "velocity_limit_sim": null,
+              "stiffness": {},
+              "damping": {},
+              "armature": {},
+              "friction": null,
+              "dynamic_friction": null,
+              "viscous_friction": null,
+              "breakaway_friction": {},
+              "coulomb_friction": {},
+              "viscous_coeff": {},
+              "breakaway_velocity": 0.2,
+              "force_control": {}
+            }
+          }
+        }
+      },
+      "actuator_value_resolution_debug_print": false
+    }
+  }
+}

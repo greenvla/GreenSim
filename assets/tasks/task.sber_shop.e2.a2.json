@@ -1,0 +1,58 @@
+{
+  "task"       : {
+    "name": "sber_shop.e2.a2",
+    "description": "Approach the rack, pick up the left notebook with your right hand, approach the basket, place the notebook into the basket with your right hand"
+  },
+  "objects"    : {
+    "notepad"             : {"bloknot_left": []},
+    "all_notebooks"       : {"bloknot": [], "bloknot_right": [], "bloknot_left": []},
+    "distractor_notebooks": {"bloknot": [], "bloknot_right": []},
+    "task_success_box"    : {"task_success_box": []},
+    "robot_parts"         : {"right_thumb_proximal_base": []}
+  },
+  "relations"  : {
+    "episode_timeout"              : {"type": "timeout", "duration_sec": 120.0, "pattern": "episode timeout"},
+    "notebook_in_hand"             : {
+      "type"    : "distance",
+      "pattern" : "pick {all_notebooks} by {robot_parts}",
+      "distance": 0.2
+    },
+    "notebook_in_basket"           : {"type": "inside", "pattern": "{all_notebooks} is inside {task_success_box}"},
+    "distractor_notebook_in_hand"  : {
+      "type"    : "distance",
+      "pattern" : "pick {distractor_notebooks} by {robot_parts}",
+      "distance": 0.2
+    },
+    "distractor_notebook_in_basket": {
+      "type"   : "inside",
+      "pattern": "{distractor_notebooks} is inside {task_success_box}"
+    },
+    "exists_notepad"               : {"type": "spawn", "pattern": "spawn {notepad}"},
+    "exists_distractor_notebooks"  : {"type": "spawn", "pattern": "spawn {distractor_notebooks}"},
+    "exists_task_success_box"      : {"type": "spawn", "pattern": "spawn {task_success_box}"}
+  },
+  "goals"      : {
+    "notepad_placed_in_basket": {
+      "description": "The left notebook must be placed into the basket",
+      "for_each"   : "notepad",
+      "must_have"  : "notebook_in_basket",
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    },
+    "distractor_notebooks_must_stay_out_of_basket": {
+      "description" : "Distractor notebooks must not be placed into the basket",
+      "forbid_value": ["distractor_notebook_in_basket", 1],
+      "per_object"  : true
+    }
+  },
+  "success"    : {
+    "required_goals": ["notepad_placed_in_basket"],
+    "max_violations": {"no_episode_timeout": 0, "distractor_notebooks_must_stay_out_of_basket": 0}
+  }
+}

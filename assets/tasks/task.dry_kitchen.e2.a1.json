@@ -1,0 +1,172 @@
+{
+  "task"       : {
+    "name": "dry_kitchen.e2.a1",
+    "description": "Pick up the cup with your right hand, place the cup on the tray, pick up the tea can with your left hand, then place the tea can on the tray"
+  },
+  "objects"    : {
+    "cup_items"        : {"model_cup": []},
+    "tea_can_items"    : {"model_tea_can_v2": []},
+    "tray_area_guides" : {"tray_area_guide": []},
+    "right_hand_parts" : {"right_thumb_proximal_base": []},
+    "left_hand_parts"  : {"left_thumb_proximal_base": []},
+    "robot_parts"      : {"right_thumb_proximal_base": [], "left_thumb_proximal_base": []},
+    "hand_raise_guides": {"hand_raise_guide": []},
+    "item_hold_guides" : {"item_hold_guide": []}
+  },
+  "relations"  : {
+    "episode_timeout": {"type": "timeout", "duration_sec": 86.0, "pattern": "episode timeout"},
+    "exists_cup": {"type": "spawn", "pattern": "spawn {cup_items}"},
+    "exists_tea_can": {"type": "spawn", "pattern": "spawn {tea_can_items}"},
+    "exists_tray_area": {"type": "spawn", "pattern": "spawn {tray_area_guides}"},
+    "exists_hand_raise_guide": {"type": "spawn", "pattern": "spawn {hand_raise_guides}"},
+    "exists_item_hold_guide": {"type": "spawn", "pattern": "spawn {item_hold_guides}"},
+    "right_hand_in_raise_area": {"type": "inside", "pattern": "{right_hand_parts} is inside {hand_raise_guides}"},
+    "right_hand_was_raised": {
+      "type"        : "duration",
+      "relation"    : "right_hand_in_raise_area",
+      "duration_sec": 0.20,
+      "latch"       : true,
+      "pattern"     : "{right_hand_parts} remains inside {hand_raise_guides}"
+    },
+    "left_hand_in_raise_area": {"type": "inside", "pattern": "{left_hand_parts} is inside {hand_raise_guides}"},
+    "left_hand_was_raised": {
+      "type"        : "duration",
+      "relation"    : "left_hand_in_raise_area",
+      "duration_sec": 0.20,
+      "latch"       : true,
+      "pattern"     : "{left_hand_parts} remains inside {hand_raise_guides}"
+    },
+    "cup_in_right_hand": {
+      "type"      : "distance",
+      "pattern"   : "pick {cup_items} by {right_hand_parts}",
+      "distance"  : 0.15,
+      "comparison": "less"
+    },
+    "tea_can_in_left_hand": {
+      "type"      : "distance",
+      "pattern"   : "pick {tea_can_items} by {left_hand_parts}",
+      "distance"  : 0.15,
+      "comparison": "less"
+    },
+    "cup_was_picked_by_right_hand": {
+      "type"        : "duration",
+      "relation"    : "cup_in_right_hand",
+      "duration_sec": 0.20,
+      "latch"       : true,
+      "pattern"     : "{cup_items} was held by {right_hand_parts}"
+    },
+    "tea_can_was_picked_by_left_hand": {
+      "type"        : "duration",
+      "relation"    : "tea_can_in_left_hand",
+      "duration_sec": 0.20,
+      "latch"       : true,
+      "pattern"     : "{tea_can_items} was held by {left_hand_parts}"
+    },
+    "cup_in_item_hold_area": {"type": "inside", "pattern": "{cup_items} is inside {item_hold_guides}"},
+    "cup_was_lifted_from_shelf": {
+      "type"        : "duration",
+      "relation"    : "cup_in_item_hold_area",
+      "duration_sec": 0.30,
+      "latch"       : true,
+      "pattern"     : "{cup_items} remains inside {item_hold_guides}"
+    },
+    "tea_can_in_item_hold_area": {"type": "inside", "pattern": "{tea_can_items} is inside {item_hold_guides}"},
+    "tea_can_was_lifted_from_shelf": {
+      "type"        : "duration",
+      "relation"    : "tea_can_in_item_hold_area",
+      "duration_sec": 0.30,
+      "latch"       : true,
+      "pattern"     : "{tea_can_items} remains inside {item_hold_guides}"
+    },
+    "cup_in_tray_area": {"type": "inside", "pattern": "place {cup_items} into {tray_area_guides}"},
+    "tea_can_in_tray_area": {"type": "inside", "pattern": "place {tea_can_items} into {tray_area_guides}"},
+    "cup_upright": {
+      "type"          : "upright",
+      "pattern"       : "cup is upright {cup_items}",
+      "reference_mode": "spawn",
+      "max_tilt_deg"  : 15.0
+    },
+    "tea_can_upright": {
+      "type"          : "upright",
+      "pattern"       : "tea can is upright {tea_can_items}",
+      "reference_mode": "spawn",
+      "max_tilt_deg"  : 15.0
+    },
+    "cup_static": {
+      "type"       : "static",
+      "pattern"    : "cup is stationary {cup_items}",
+      "lin_vel_eps": 0.02,
+      "ang_vel_eps": 0.05
+    },
+    "tea_can_static": {
+      "type"       : "static",
+      "pattern"    : "tea can is stationary {tea_can_items}",
+      "lin_vel_eps": 0.02,
+      "ang_vel_eps": 0.05
+    },
+    "cup_not_held_by_right_hand": {
+      "type"      : "distance",
+      "pattern"   : "{cup_items} is released by {right_hand_parts}",
+      "distance"  : 0.15,
+      "comparison": "greater"
+    },
+    "tea_can_not_held_by_left_hand": {
+      "type"      : "distance",
+      "pattern"   : "{tea_can_items} is released by {left_hand_parts}",
+      "distance"  : 0.15,
+      "comparison": "greater"
+    }
+  },
+  "goals"      : {
+    "right_hand_raised"        : {
+      "description": "The right hand must be raised above the table and remain in the hand raise area for at least 0.2 seconds",
+      "for_each": "right_hand_parts",
+      "must_have": ["right_hand_was_raised"],
+      "required": true
+    },
+    "cup_picked_and_lifted"    : {
+      "description": "The cup must be picked by the right hand and lifted from the shelf into the item hold area for at least 0.3 seconds",
+      "for_each": "cup_items",
+      "must_have": ["cup_was_picked_by_right_hand", "cup_was_lifted_from_shelf"],
+      "required": true
+    },
+    "cup_placed_correctly"     : {
+      "description": "The cup must be inside the tray area, upright, stationary, and released by the right hand",
+      "for_each"   : "cup_items",
+      "must_have"  : ["cup_in_tray_area", "cup_upright", "cup_static", "cup_not_held_by_right_hand"],
+      "required"   : true
+    },
+    "left_hand_raised"         : {
+      "description": "The left hand must be raised above the table and remain in the hand raise area for at least 0.2 seconds",
+      "for_each": "left_hand_parts",
+      "must_have": ["left_hand_was_raised"],
+      "required": true
+    },
+    "tea_can_picked_and_lifted": {
+      "description": "The tea can must be picked by the left hand and lifted from the shelf into the item hold area for at least 0.3 seconds",
+      "for_each": "tea_can_items",
+      "must_have": ["tea_can_was_picked_by_left_hand", "tea_can_was_lifted_from_shelf"],
+      "required": true
+    },
+    "tea_can_placed_correctly" : {
+      "description": "The tea can must be inside the tray area, upright, stationary, and released by the left hand",
+      "for_each"   : "tea_can_items",
+      "must_have"  : ["tea_can_in_tray_area", "tea_can_upright", "tea_can_static", "tea_can_not_held_by_left_hand"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": [
+      "right_hand_raised",         "cup_picked_and_lifted",     "cup_placed_correctly",
+      "left_hand_raised",          "tea_can_picked_and_lifted", "tea_can_placed_correctly"
+    ],
+    "max_violations": {"no_episode_timeout": 0}
+  }
+}

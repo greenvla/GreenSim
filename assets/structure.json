@@ -1,0 +1,1662 @@
+{
+  "test_pick.e1.a1": {
+    "scene": "scene.test_pick.e1.a1",
+    "benchmark": "task.test_pick.e1.a1",
+    "policy": "policy.test_pick.e1.a1",
+    "task": {
+      "name": "test_pick.e1.a1",
+      "description": "Pick the big green apple from the table with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick the big green apple from the table with your right hand",
+        "subtask": "Raise your right hand above the table",
+        "relations": [
+          {
+            "name": "right_hand_in_raise_guide",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          },
+          {
+            "name": "right_hand_raised_stable",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Pick the big green apple from the table with your right hand",
+        "subtask": "Pick the big green apple from the table with your right hand",
+        "relations": [
+          {
+            "name": "in_right_hand",
+            "object_a": "green_apple",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "apple_in_lift_zone_stable",
+            "object_a": "green_apple",
+            "object_b": "apple_lift_zone"
+          }
+        ]
+      }
+    }
+  },
+  "test_pick.e1.a2": {
+    "scene": "scene.test_pick.e1.a2",
+    "benchmark": "task.test_pick.e1.a2",
+    "policy": "policy.test_pick.e1.a2",
+    "task": {
+      "name": "test_pick.e1.a2",
+      "description": "Pick the big green apple from the table with your left hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick the big green apple from the table with your left hand",
+        "subtask": "Raise your left hand above the table",
+        "relations": []
+      },
+      "1": {
+        "task": "Pick the big green apple from the table with your left hand",
+        "subtask": "Pick the big green apple from the table with your left hand",
+        "relations": [
+          {
+            "name": "in_left_hand",
+            "object_a": "green_apple",
+            "object_b": "left_thumb_proximal_base"
+          },
+          {
+            "name": "apple_in_lift_zone_stable",
+            "object_a": "green_apple",
+            "object_b": "apple_lift_zone"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e1": {
+    "scene": "scene.dry_kitchen.e1",
+    "benchmark": "task.dry_kitchen.e1",
+    "policy": "policy.dry_kitchen.e1",
+    "task": {
+      "name": "dry_kitchen.e1",
+      "description": "Place the cup and the tea can on the tray"
+    },
+    "annotations": {}
+  },
+  "dry_kitchen.e1.a1": {
+    "scene": "scene.dry_kitchen.e1",
+    "benchmark": "task.dry_kitchen.e1.a1",
+    "policy": "policy.dry_kitchen.e1.a1",
+    "task": {
+      "name": "dry_kitchen.e1.a1",
+      "description": "Raise your right hand above the table"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your right hand above the table",
+        "subtask": "Raise your right hand above the table",
+        "relations": [
+          {
+            "name": "over_table",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "tray_guide"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e1.a2": {
+    "scene": "scene.dry_kitchen.e1",
+    "benchmark": "task.dry_kitchen.e1.a2",
+    "policy": "policy.dry_kitchen.e1.a2",
+    "task": {
+      "name": "dry_kitchen.e1.a2",
+      "description": "Raise your left hand above the table"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your left hand above the table",
+        "subtask": "Raise your left hand above the table",
+        "relations": [
+          {
+            "name": "over_table",
+            "object_a": "left_thumb_proximal_base",
+            "object_b": "tray_guide"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e1.a3": {
+    "scene": "scene.dry_kitchen.e1",
+    "benchmark": "task.dry_kitchen.e1.a3",
+    "policy": "policy.dry_kitchen.e1.a3",
+    "task": {
+      "name": "dry_kitchen.e1.a3",
+      "description": "Take the cup with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Take the cup with your right hand",
+        "subtask": "Raise your right hand above the table",
+        "relations": [
+          {
+            "name": "over_table",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "tray_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Take the cup with your right hand",
+        "subtask": "Take a cup from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "cup_in_hand",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "cup_over_table",
+            "object_a": "model_cup",
+            "object_b": "cup_over_table_guide"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e2.a1": {
+    "scene": "scene.dry_kitchen.e2.a1",
+    "benchmark": "task.dry_kitchen.e2.a1",
+    "policy": "policy.dry_kitchen.e2.a1",
+    "task": {
+      "name": "dry_kitchen.e2.a1",
+      "description": "Pick up the cup with your right hand, place the cup on the tray, pick up the tea can with your left hand, then place the tea can on the tray"
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick up the cup with your right hand, place the cup on the tray, pick up the tea can with your left hand, then place the tea can on the tray",
+        "subtask": "Raise your right hand",
+        "relations": [
+          {
+            "name": "right_hand_was_raised",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Pick up the cup with your right hand, place the cup on the tray, pick up the tea can with your left hand, then place the tea can on the tray",
+        "subtask": "Pick the cup from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "cup_was_picked_by_right_hand",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "cup_was_lifted_from_shelf",
+            "object_a": "model_cup",
+            "object_b": "item_hold_guide"
+          }
+        ]
+      },
+      "2": {
+        "task": "Pick up the cup with your right hand, place the cup on the tray, pick up the tea can with your left hand, then place the tea can on the tray",
+        "subtask": "Place the cup onto the tray with your right hand",
+        "relations": [
+          {
+            "name": "cup_in_tray_area",
+            "object_a": "model_cup",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "cup_upright",
+            "object_a": "model_cup"
+          },
+          {
+            "name": "cup_static",
+            "object_a": "model_cup"
+          },
+          {
+            "name": "cup_not_held_by_right_hand",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "3": {
+        "task": "Pick up the cup with your right hand, place the cup on the tray, pick up the tea can with your left hand, then place the tea can on the tray",
+        "subtask": "Raise your left hand",
+        "relations": [
+          {
+            "name": "cup_upright",
+            "object_a": "model_cup"
+          },
+          {
+            "name": "left_hand_was_raised",
+            "object_a": "left_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "4": {
+        "task": "Pick up the cup with your right hand, place the cup on the tray, pick up the tea can with your left hand, then place the tea can on the tray",
+        "subtask": "Pick the tea can from the shelf with your left hand",
+        "relations": [
+          {
+            "name": "tea_can_was_picked_by_left_hand",
+            "object_a": "model_tea_can_v2",
+            "object_b": "left_thumb_proximal_base"
+          },
+          {
+            "name": "tea_can_was_lifted_from_shelf",
+            "object_a": "model_tea_can_v2",
+            "object_b": "item_hold_guide"
+          }
+        ]
+      },
+      "5": {
+        "task": "Pick up the cup with your right hand, place the cup on the tray, pick up the tea can with your left hand, then place the tea can on the tray",
+        "subtask": "Place the tea can onto the tray with your left hand",
+        "relations": [
+          {
+            "name": "tea_can_in_tray_area",
+            "object_a": "model_tea_can_v2",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "tea_can_upright",
+            "object_a": "model_tea_can_v2"
+          },
+          {
+            "name": "tea_can_static",
+            "object_a": "model_tea_can_v2"
+          },
+          {
+            "name": "tea_can_not_held_by_left_hand",
+            "object_a": "model_tea_can_v2",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e2.a2": {
+    "scene": "scene.dry_kitchen.e2.a2",
+    "benchmark": "task.dry_kitchen.e2.a2",
+    "policy": "policy.dry_kitchen.e2.a2",
+    "task": {
+      "name": "dry_kitchen.e2.a2",
+      "description": "Pick up the cup with your right hand and place the cup on the tray"
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick up the cup with your right hand and place the cup on the tray",
+        "subtask": "Raise your right hand",
+        "relations": []
+      },
+      "1": {
+        "task": "Pick up the cup with your right hand and place the cup on the tray",
+        "subtask": "Pick the cup from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "cup_in_right_hand",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Pick up the cup with your right hand and place the cup on the tray",
+        "subtask": "Place the cup onto the tray with your right hand",
+        "relations": [
+          {
+            "name": "cup_in_tray_area",
+            "object_a": "model_cup",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "cup_upright",
+            "object_a": "model_cup"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e2.a3": {
+    "scene": "scene.dry_kitchen.e2.a1",
+    "benchmark": "task.dry_kitchen.e2.a3",
+    "policy": "policy.dry_kitchen.e2.a3",
+    "task": {
+      "name": "dry_kitchen.e2.a3",
+      "description": "Pick up the tea can with your left hand and place the tea can on the tray"
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick up the tea can with your left hand and place the tea can on the tray",
+        "subtask": "Raise your left hand",
+        "relations": []
+      },
+      "1": {
+        "task": "Pick up the tea can with your left hand and place the tea can on the tray",
+        "subtask": "Pick the tea can from the shelf with your left hand",
+        "relations": [
+          {
+            "name": "tea_can_in_left_hand",
+            "object_a": "model_tea_can_v2",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Pick up the tea can with your left hand and place the tea can on the tray",
+        "subtask": "Place the tea can onto the tray with your left hand",
+        "relations": [
+          {
+            "name": "tea_can_in_tray_area",
+            "object_a": "model_tea_can_v2",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "tea_can_upright",
+            "object_a": "model_tea_can_v2"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e3": {
+    "scene": "scene.dry_kitchen.e3",
+    "benchmark": "task.dry_kitchen.e3",
+    "policy": "policy.dry_kitchen.e3",
+    "task": {
+      "name": "dry_kitchen.e3",
+      "description": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray",
+        "subtask": "Raise your left hand",
+        "relations": []
+      },
+      "1": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray",
+        "subtask": "Pick the plate from the dish drying rack with your left hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "model_plate_thin",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray",
+        "subtask": "Place the plate onto the tray with your left hand",
+        "relations": [
+          {
+            "name": "plate_in_tray_area",
+            "object_a": "model_plate_thin",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "plate_flat",
+            "object_a": "model_plate_thin"
+          },
+          {
+            "name": "plate_static",
+            "object_a": "model_plate_thin"
+          }
+        ]
+      },
+      "3": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray",
+        "subtask": "Raise your right hand",
+        "relations": []
+      },
+      "4": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray",
+        "subtask": "Pick the sugar bowl from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "5": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray",
+        "subtask": "Place the cup next to the plate with your right hand",
+        "relations": [
+          {
+            "name": "bowl_in_tray_area",
+            "object_a": "model_cup",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "bowl_upright",
+            "object_a": "model_cup"
+          },
+          {
+            "name": "bowl_static",
+            "object_a": "model_cup"
+          },
+          {
+            "name": "plate_in_tray_area",
+            "object_a": "model_plate_thin",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "plate_flat",
+            "object_a": "model_plate_thin"
+          },
+          {
+            "name": "plate_static",
+            "object_a": "model_plate_thin"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e3.a1": {
+    "scene": "scene.dry_kitchen.e3",
+    "benchmark": "task.dry_kitchen.e3.a1",
+    "policy": "policy.dry_kitchen.e3.a1",
+    "task": {
+      "name": "dry_kitchen.e3.a1",
+      "description": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray with your left hand, move your left hand out of the plate"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your left hand, pick up the plate, place the plate onto the tray",
+        "subtask": "Raise your left hand",
+        "relations": [
+          {
+            "name": "left_hand_was_raised",
+            "object_a": "left_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Raise your left hand, pick up the plate, place the plate onto the tray",
+        "subtask": "Pick the plate from the dish drying rack with your left hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "model_plate_thin",
+            "object_b": "left_thumb_proximal_base"
+          },
+          {
+            "name": "plate_was_raised_over_table",
+            "object_a": "model_plate_thin",
+            "object_b": "item_hold_guide"
+          }
+        ]
+      },
+      "2": {
+        "task": "Raise your left hand, pick up the plate, place the plate onto the tray",
+        "subtask": "Place the plate onto the tray with your left hand",
+        "relations": [
+          {
+            "name": "plate_in_tray_area",
+            "object_a": "model_plate_thin",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "plate_flat",
+            "object_a": "model_plate_thin"
+          },
+          {
+            "name": "plate_static",
+            "object_a": "model_plate_thin"
+          }
+        ]
+      },
+      "3": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray with your left hand, move your left hand out of the plate",
+        "subtask": "Move your left hand out of the plate",
+        "relations": [
+          {
+            "name": "left_hand_away",
+            "object_a": "model_plate_thin",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e3.a2": {
+    "scene": "scene.dry_kitchen.e3",
+    "benchmark": "task.dry_kitchen.e3.a2",
+    "policy": "policy.dry_kitchen.e3.a2",
+    "task": {
+      "name": "dry_kitchen.e3.a2",
+      "description": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand, move your right hand away from the sugar bowl"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand, move your right hand away from the sugar bowl",
+        "subtask": "Raise your right hand",
+        "relations": [
+          {
+            "name": "right_hand_raised_once",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand, move your right hand away from the sugar bowl",
+        "subtask": "Pick the sugar bowl from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "bowl_was_raised_over_table",
+            "object_a": "model_cup",
+            "object_b": "item_hold_guide"
+          }
+        ]
+      },
+      "2": {
+        "task": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand, move your right hand away from the sugar bowl",
+        "subtask": "Place the sugar bowl onto the tray with your right hand",
+        "relations": [
+          {
+            "name": "bowl_in_tray_area",
+            "object_a": "model_cup",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "bowl_upright",
+            "object_a": "model_cup"
+          },
+          {
+            "name": "bowl_static",
+            "object_a": "model_cup"
+          }
+        ]
+      },
+      "3": {
+        "task": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand, move your right hand away from the sugar bowl",
+        "subtask": "Move your right hand away from the sugar bowl",
+        "relations": [
+          {
+            "name": "right_hand_away",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e3.a3": {
+    "scene": "scene.dry_kitchen.e3",
+    "benchmark": "task.dry_kitchen.e3.a3",
+    "policy": "policy.dry_kitchen.e3.a3",
+    "task": {
+      "name": "dry_kitchen.e3.a3",
+      "description": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray with your left hand, move your left hand out of the plate"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray with your left hand, move your left hand out of the plate",
+        "subtask": "Raise your left hand",
+        "relations": [
+          {
+            "name": "left_hand_was_raised",
+            "object_a": "left_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray with your left hand, move your left hand out of the plate",
+        "subtask": "Pick the plate from the dish drying rack with your left hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "model_plate_thin",
+            "object_b": "left_thumb_proximal_base"
+          },
+          {
+            "name": "plate_was_raised_over_table",
+            "object_a": "model_plate_thin",
+            "object_b": "item_hold_guide"
+          }
+        ]
+      },
+      "2": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray with your left hand, move your left hand out of the plate",
+        "subtask": "Place the plate onto the tray with your left hand",
+        "relations": [
+          {
+            "name": "plate_in_tray_area",
+            "object_a": "model_plate_thin",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "plate_flat",
+            "object_a": "model_plate_thin"
+          },
+          {
+            "name": "plate_static",
+            "object_a": "model_plate_thin"
+          }
+        ]
+      },
+      "3": {
+        "task": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray with your left hand, move your left hand out of the plate",
+        "subtask": "Move your left hand out of the plate",
+        "relations": [
+          {
+            "name": "left_hand_away",
+            "object_a": "model_plate_thin",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e3.a4": {
+    "scene": "scene.dry_kitchen.e3",
+    "benchmark": "task.dry_kitchen.e3.a4",
+    "policy": "policy.dry_kitchen.e3.a4",
+    "task": {
+      "name": "dry_kitchen.e3.a4",
+      "description": "Raise your left hand, pick up the plate with your left hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your left hand, pick up the plate with your left hand",
+        "subtask": "Raise your left hand",
+        "relations": [
+          {
+            "name": "left_hand_was_raised",
+            "object_a": "left_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Raise your left hand, pick up the plate with your left hand",
+        "subtask": "Pick the plate from the dish drying rack with your left hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "model_plate_thin",
+            "object_b": "left_thumb_proximal_base"
+          },
+          {
+            "name": "plate_was_raised_over_table",
+            "object_a": "model_plate_thin",
+            "object_b": "item_hold_guide"
+          }
+        ]
+      }
+    }
+  },
+  "dry_kitchen.e3.a5": {
+    "scene": "scene.dry_kitchen.e3",
+    "benchmark": "task.dry_kitchen.e3.a5",
+    "policy": "policy.dry_kitchen.e3.a5",
+    "task": {
+      "name": "dry_kitchen.e3.a5",
+      "description": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand",
+        "subtask": "Raise your right hand",
+        "relations": [
+          {
+            "name": "right_hand_raised_once",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand",
+        "subtask": "Pick the sugar bowl from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "bowl_was_raised_over_table",
+            "object_a": "model_cup",
+            "object_b": "item_hold_guide"
+          }
+        ]
+      },
+      "2": {
+        "task": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand",
+        "subtask": "Place the sugar bowl onto the tray with your right hand",
+        "relations": [
+          {
+            "name": "bowl_released_by_right_hand",
+            "object_a": "model_cup",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "bowl_in_tray_area",
+            "object_a": "model_cup",
+            "object_b": "tray_area_guide"
+          },
+          {
+            "name": "bowl_upright",
+            "object_a": "model_cup"
+          },
+          {
+            "name": "bowl_static",
+            "object_a": "model_cup"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e1.a1": {
+    "scene": "scene.sber_shop.e1",
+    "benchmark": "task.sber_shop.e1.a1",
+    "policy": "policy.sber_shop.e1.a1",
+    "task": {
+      "name": "sber_shop.e1.a1",
+      "description": "Open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Open the lower drawer of the left cabinet with your right hand",
+        "relations": [
+          {
+            "name": "drawer_opened",
+            "object_a": "drawer_handle_guide",
+            "object_b": "drawer_is_opened_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Take the cat toy with your left hand",
+        "relations": [
+          {
+            "name": "toy_in_left_hand",
+            "object_a": "cat_toy",
+            "object_b": "left_thumb_proximal_base"
+          },
+          {
+            "name": "toy_was_lifted",
+            "object_a": "cat_toy",
+            "object_b": "toy_lifted_area"
+          }
+        ]
+      },
+      "2": {
+        "task": "Open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Close the lower drawer of the left cabinet with your right hand",
+        "relations": [
+          {
+            "name": "drawer_closed",
+            "object_a": "drawer_handle_guide",
+            "object_b": "drawer_is_closed_guide"
+          },
+          {
+            "name": "toy_in_left_hand",
+            "object_a": "cat_toy",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      },
+      "3": {
+        "task": "Open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Place the cat toy into the basket with your left hand",
+        "relations": [
+          {
+            "name": "toy_placed_in_basket",
+            "object_a": "cat_toy",
+            "object_b": "basket_guide"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e1.a2": {
+    "scene": "scene.sber_shop.e1.a2",
+    "benchmark": "task.sber_shop.e1.a2",
+    "policy": "policy.sber_shop.e1.a2",
+    "task": {
+      "name": "sber_shop.e1.a2",
+      "description": "Lift the lid of the Sber Ring box with your right hand, place the lid aside with your right hand, push the Sber Ring box towards the visitor with your right hand, move the Sber Ring box back with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Lift the lid of the Sber Ring box with your right hand, place the lid aside with your right hand, push the Sber Ring box towards the visitor with your right hand, move the Sber Ring box back with your right hand",
+        "subtask": "Raise your right hand above the table",
+        "relations": [
+          {
+            "name": "right_hand_was_raised",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "hand_raised_area"
+          }
+        ]
+      },
+      "1": {
+        "task": "Lift the lid of the Sber Ring box with your right hand, place the lid aside with your right hand, push the Sber Ring box towards the visitor with your right hand, move the Sber Ring box back with your right hand",
+        "subtask": "Lift the lid of the Sber Ring box with your right hand",
+        "relations": [
+          {
+            "name": "lid_was_grasped",
+            "object_a": "ring_box_lid",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "lid_was_raised",
+            "object_a": "ring_box_lid",
+            "object_b": "hand_raised_area"
+          }
+        ]
+      },
+      "2": {
+        "task": "Lift the lid of the Sber Ring box with your right hand, place the lid aside with your right hand, push the Sber Ring box towards the visitor with your right hand, move the Sber Ring box back with your right hand",
+        "subtask": "Place the lid aside with your right hand",
+        "relations": [
+          {
+            "name": "lid_set_aside_from_box",
+            "object_a": "ring_box_lid",
+            "object_b": "ring_box_base"
+          },
+          {
+            "name": "lid_not_held_by_right_hand",
+            "object_a": "ring_box_lid",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "3": {
+        "task": "Lift the lid of the Sber Ring box with your right hand, place the lid aside with your right hand, push the Sber Ring box towards the visitor with your right hand, move the Sber Ring box back with your right hand",
+        "subtask": "Push the Sber Ring box towards the visitor with your right hand",
+        "relations": [
+          {
+            "name": "ring_base_at_customer",
+            "object_a": "ring_box_base",
+            "object_b": "customer_area_guide"
+          },
+          {
+            "name": "ring_base_customer_dwell_completed",
+            "object_a": "ring_box_base",
+            "object_b": "customer_area_guide"
+          },
+          {
+            "name": "ring_base_not_held_by_right_hand",
+            "object_a": "ring_box_base",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "4": {
+        "task": "Lift the lid of the Sber Ring box with your right hand, place the lid aside with your right hand, push the Sber Ring box towards the visitor with your right hand, move the Sber Ring box back with your right hand",
+        "subtask": "Move the Sber Ring box back to yourself with your right hand",
+        "relations": [
+          {
+            "name": "ring_base_was_grasped",
+            "object_a": "ring_box_base",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "ring_base_at_home",
+            "object_a": "ring_box_base",
+            "object_b": "ring_base_home_area_guide"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e1.a3": {
+    "scene": "scene.sber_shop.e1.a3",
+    "benchmark": "task.sber_shop.e1.a3",
+    "policy": "policy.sber_shop.e1.a3",
+    "task": {
+      "name": "sber_shop.e1.a3",
+      "description": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Approach the left cabinet",
+        "relations": [
+          {
+            "name": "cabinet_reached_by_root",
+            "object_a": "shkaf_0",
+            "object_b": "robot_root"
+          }
+        ]
+      },
+      "1": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Open the lower drawer of the left cabinet with your right hand",
+        "relations": [
+          {
+            "name": "drawer_opened",
+            "object_a": "drawer_handle_guide",
+            "object_b": "drawer_is_opened_guide"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Take the cat toy with your left hand",
+        "relations": [
+          {
+            "name": "toy_in_left_hand",
+            "object_a": "cat_toy",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      },
+      "3": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Close the lower drawer of the left cabinet with your right hand",
+        "relations": [
+          {
+            "name": "drawer_closed",
+            "object_a": "drawer_handle_guide",
+            "object_b": "drawer_is_closed_guide"
+          },
+          {
+            "name": "toy_in_left_hand",
+            "object_a": "cat_toy",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      },
+      "4": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand",
+        "subtask": "Place the cat toy into the basket with your left hand",
+        "relations": [
+          {
+            "name": "toy_placed_in_basket",
+            "object_a": "cat_toy",
+            "object_b": "basket_guide"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e1.a4": {
+    "scene": "scene.sber_shop.e1.a3",
+    "benchmark": "task.sber_shop.e1.a4",
+    "policy": "policy.sber_shop.e1.a4",
+    "task": {
+      "name": "sber_shop.e1.a4",
+      "description": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand",
+        "subtask": "Approach the left cabinet",
+        "relations": [
+          {
+            "name": "cabinet_reached_by_root",
+            "object_a": "shkaf_0",
+            "object_b": "robot_root"
+          }
+        ]
+      },
+      "1": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand",
+        "subtask": "Open the lower drawer of the left cabinet with your right hand",
+        "relations": [
+          {
+            "name": "drawer_opened",
+            "object_a": "drawer_handle_guide",
+            "object_b": "drawer_is_opened_guide"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e1.a5": {
+    "scene": "scene.sber_shop.e1.a5",
+    "benchmark": "task.sber_shop.e1.a4",
+    "policy": "policy.sber_shop.e1.a5",
+    "task": {
+      "name": "sber_shop.e1.a4",
+      "description": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand",
+        "subtask": "Approach the left cabinet",
+        "relations": [
+          {
+            "name": "cabinet_reached_by_root",
+            "object_a": "shkaf_0",
+            "object_b": "robot_root"
+          }
+        ]
+      },
+      "1": {
+        "task": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand",
+        "subtask": "Open the lower drawer of the left cabinet with your right hand",
+        "relations": [
+          {
+            "name": "drawer_opened",
+            "object_a": "drawer_handle_guide",
+            "object_b": "drawer_is_opened_guide"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e2.a1": {
+    "scene": "scene.sber_shop.e2.a1",
+    "benchmark": "task.sber_shop.e2.a1",
+    "policy": "policy.sber_shop.e2.a1",
+    "task": {
+      "name": "sber_shop.e2.a1",
+      "description": "Approach the rack, pick up the center notebook with your right hand, approach the basket, place the notebook into the basket with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the rack, pick up the center notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Approach the rack",
+        "relations": []
+      },
+      "1": {
+        "task": "Approach the rack, pick up the center notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Pick the center notebook from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "notebook_in_hand",
+            "object_a": "bloknot",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the rack, pick up the center notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Approach the basket",
+        "relations": []
+      },
+      "3": {
+        "task": "Approach the rack, pick up the center notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Place the notebook into the basket with your right hand",
+        "relations": [
+          {
+            "name": "notebook_in_basket",
+            "object_a": "bloknot",
+            "object_b": "task_success_box"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e2.a2": {
+    "scene": "scene.sber_shop.e2.a1",
+    "benchmark": "task.sber_shop.e2.a2",
+    "policy": "policy.sber_shop.e2.a2",
+    "task": {
+      "name": "sber_shop.e2.a2",
+      "description": "Approach the rack, pick up the left notebook with your right hand, approach the basket, place the notebook into the basket with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the rack, pick up the left notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Approach the rack",
+        "relations": []
+      },
+      "1": {
+        "task": "Approach the rack, pick up the left notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Pick the left notebook from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "notebook_in_hand",
+            "object_a": "bloknot_left",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the rack, pick up the left notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Approach the basket",
+        "relations": []
+      },
+      "3": {
+        "task": "Approach the rack, pick up the left notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Place the notebook into the basket with your right hand",
+        "relations": [
+          {
+            "name": "notebook_in_basket",
+            "object_a": "bloknot_left",
+            "object_b": "task_success_box"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e2.a3": {
+    "scene": "scene.sber_shop.e2.a1",
+    "benchmark": "task.sber_shop.e2.a3",
+    "policy": "policy.sber_shop.e2.a3",
+    "task": {
+      "name": "sber_shop.e2.a3",
+      "description": "Approach the rack, pick up the right notebook with your right hand, approach the basket, place the notebook into the basket with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the rack, pick up the right notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Approach the rack",
+        "relations": []
+      },
+      "1": {
+        "task": "Approach the rack, pick up the right notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Pick the right notebook from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "notebook_in_hand",
+            "object_a": "bloknot_right",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the rack, pick up the right notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Approach the basket",
+        "relations": []
+      },
+      "3": {
+        "task": "Approach the rack, pick up the right notebook with your right hand, approach the basket, place the notebook into the basket with your right hand",
+        "subtask": "Place the notebook into the basket with your right hand",
+        "relations": [
+          {
+            "name": "notebook_in_basket",
+            "object_a": "bloknot_right",
+            "object_b": "task_success_box"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e2.a4": {
+    "scene": "scene.sber_shop.e2.a1",
+    "benchmark": "task.sber_shop.e2.a4",
+    "policy": "policy.sber_shop.e2.a4",
+    "task": {
+      "name": "sber_shop.e2.a4",
+      "description": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand",
+        "subtask": "Approach the rack",
+        "relations": []
+      },
+      "1": {
+        "task": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand",
+        "subtask": "Pick the center notebook from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "notepad_in_hand",
+            "object_a": "bloknot",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand",
+        "subtask": "Approach the basket",
+        "relations": []
+      },
+      "3": {
+        "task": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand",
+        "subtask": "Place the notebook into the basket with your right hand",
+        "relations": [
+          {
+            "name": "notepad_in_task_success_box",
+            "object_a": "bloknot",
+            "object_b": "task_success_box"
+          }
+        ]
+      },
+      "4": {
+        "task": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand",
+        "subtask": "Approach the blue bottle rack",
+        "relations": [
+          {
+            "name": "basket_in_basket_place",
+            "object_a": "basket",
+            "object_b": "basket_place"
+          }
+        ]
+      },
+      "5": {
+        "task": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand",
+        "subtask": "Pick the blue bottle from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "bottle_in_hand",
+            "object_a": "front_blue_bottle",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "6": {
+        "task": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand",
+        "subtask": "Approach the basket",
+        "relations": []
+      },
+      "7": {
+        "task": "Assemble a branded set which contains a notebook and a bottle: approach to the rack, pick the center notebook with your right hand, put the notebook in the basket with your right hand, take the blue bottle from the shelf with your right hand, put the blue bottle in the basket with your right hand",
+        "subtask": "Place the blue bottle into the basket with your right hand",
+        "relations": [
+          {
+            "name": "bottle_in_task_success_box",
+            "object_a": "front_blue_bottle",
+            "object_b": "task_success_box"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e2.a5": {
+    "scene": "scene.sber_shop.e2.a1",
+    "benchmark": "task.sber_shop.e2.a5",
+    "policy": "policy.sber_shop.e2.a5",
+    "task": {
+      "name": "sber_shop.e2.a5",
+      "description": "Approach the rack, pick up the blue bottle with your right hand, approach the basket, place the bottle into the basket with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the rack, pick up the blue bottle with your right hand, approach the basket, place the bottle into the basket with your right hand",
+        "subtask": "Approach the bottle rack",
+        "relations": []
+      },
+      "1": {
+        "task": "Approach the rack, pick up the blue bottle with your right hand, approach the basket, place the bottle into the basket with your right hand",
+        "subtask": "Pick the blue bottle from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "bottle_in_hand",
+            "object_a": "front_blue_bottle",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the rack, pick up the blue bottle with your right hand, approach the basket, place the bottle into the basket with your right hand",
+        "subtask": "Approach the basket",
+        "relations": []
+      },
+      "3": {
+        "task": "Approach the rack, pick up the blue bottle with your right hand, approach the basket, place the bottle into the basket with your right hand",
+        "subtask": "Place the blue bottle into the basket with your right hand",
+        "relations": [
+          {
+            "name": "bottle_in_task_success_box",
+            "object_a": "front_blue_bottle",
+            "object_b": "task_success_box"
+          },
+          {
+            "name": "basket_in_basket_place",
+            "object_a": "basket",
+            "object_b": "basket_place"
+          }
+        ]
+      }
+    }
+  },
+  "sber_shop.e3.a1": {
+    "scene": "scene.sber_shop.e3.a1",
+    "benchmark": "task.sber_shop.e3.a1",
+    "policy": "policy.sber_shop.e3.a1",
+    "task": {
+      "name": "sber_shop.e3.a1",
+      "description": "Raise your right hand, pick up the cat toy with your right hand, place the cat toy inside the basket with your right hand, move your right hand away from the basket"
+    },
+    "annotations": {
+      "0": {
+        "task": "Raise your right hand, pick up the cat toy with your right hand, place the cat toy inside the basket with your right hand, move your right hand away from the basket",
+        "subtask": "Raise your right hand",
+        "relations": [
+          {
+            "name": "right_hand_was_raised",
+            "object_a": "right_thumb_proximal_base",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Raise your right hand, pick up the cat toy with your right hand, place the cat toy inside the basket with your right hand, move your right hand away from the basket",
+        "subtask": "Pick up the cat toy with your right hand",
+        "relations": [
+          {
+            "name": "cat_toy_in_right_hand",
+            "object_a": "cat_toy",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "cat_toy_was_raised_over_table",
+            "object_a": "cat_toy",
+            "object_b": "hand_raise_guide"
+          }
+        ]
+      },
+      "2": {
+        "task": "Raise your right hand, pick up the cat toy with your right hand, place the cat toy inside the basket with your right hand, move your right hand away from the basket",
+        "subtask": "Place the cat toy inside the basket with your right hand",
+        "relations": [
+          {
+            "name": "cat_toy_in_basket",
+            "object_a": "cat_toy",
+            "object_b": "basket_guide"
+          },
+          {
+            "name": "basket_in_place_area",
+            "object_a": "basket",
+            "object_b": "basket_place_guide"
+          }
+        ]
+      },
+      "3": {
+        "task": "Raise your right hand, pick up the cat toy with your right hand, place the cat toy inside the basket with your right hand, move your right hand away from the basket",
+        "subtask": "Move your right hand away from the basket",
+        "relations": [
+          {
+            "name": "right_hand_away_from_basket",
+            "object_a": "basket",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      }
+    }
+  },
+  "darkstore.e1.a1": {
+    "scene": "scene.darkstore.e1",
+    "benchmark": "task.darkstore.e1.a1",
+    "policy": "policy.darkstore.e1.a1",
+    "task": {
+      "name": "darkstore.e1.a1",
+      "description": "Approach the red soda can on the snacks shelf, pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the red soda can on the snacks shelf, pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans",
+        "subtask": "Approach the rack",
+        "relations": []
+      },
+      "1": {
+        "task": "Approach the red soda can on the snacks shelf, pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans",
+        "subtask": "Pick the red soda can up with your right hand",
+        "relations": [
+          {
+            "name": "target_in_hand",
+            "object_a": "red_soda_can__task2_target_drink",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the red soda can on the snacks shelf, pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans",
+        "subtask": "Place the red soda can in the empty space next to the matching red soda cans",
+        "relations": [
+          {
+            "name": "target_upright",
+            "object_a": "red_soda_can__task2_target_drink"
+          },
+          {
+            "name": "target_on_drinks_shelf",
+            "object_a": "red_soda_can__task2_target_drink",
+            "object_b": "task_success_box"
+          },
+          {
+            "name": "target_static",
+            "object_a": "red_soda_can__task2_target_drink"
+          }
+        ]
+      }
+    }
+  },
+  "darkstore.e1.a2": {
+    "scene": "scene.darkstore.e1.a2",
+    "benchmark": "task.darkstore.e1.a2",
+    "policy": "policy.darkstore.e1.a2",
+    "task": {
+      "name": "darkstore.e1.a2",
+      "description": "Pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans"
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans",
+        "subtask": "Pick the red soda can up with your right hand",
+        "relations": [
+          {
+            "name": "target_was_picked_by_right_hand",
+            "object_a": "red_soda_can__task2_target_drink",
+            "object_b": "right_thumb_proximal_base"
+          },
+          {
+            "name": "target_was_lifted_from_shelf",
+            "object_a": "red_soda_can__task2_target_drink",
+            "object_b": "target_can_lifted_area"
+          }
+        ]
+      },
+      "1": {
+        "task": "Pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans",
+        "subtask": "Place the red soda can in the empty space next to the matching red soda cans",
+        "relations": [
+          {
+            "name": "target_upright",
+            "object_a": "red_soda_can__task2_target_drink"
+          },
+          {
+            "name": "target_on_drinks_shelf",
+            "object_a": "red_soda_can__task2_target_drink",
+            "object_b": "task_success_box"
+          },
+          {
+            "name": "target_static",
+            "object_a": "red_soda_can__task2_target_drink"
+          },
+          {
+            "name": "target_not_held_by_right_hand",
+            "object_a": "red_soda_can__task2_target_drink",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      }
+    }
+  },
+  "darkstore.e2.a1": {
+    "scene": "scene.darkstore.e2",
+    "benchmark": "task.darkstore.e2.a1",
+    "policy": "policy.darkstore.e2.a1",
+    "task": {
+      "name": "darkstore.e2.a1",
+      "description": "Approach the orange can, pick the orange can from the shelf with your right hand, place the can into the basket with your right hand"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the orange can, pick the orange can from the shelf with your right hand, place the can into the basket with your right hand",
+        "subtask": "Approach the orange can",
+        "relations": []
+      },
+      "1": {
+        "task": "Approach the orange can, pick the orange can from the shelf with your right hand, place the can into the basket with your right hand",
+        "subtask": "Pick theorange can from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "orange_soda_can__task1_target_goods_01",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the orange can, pick the orange can from the shelf with your right hand, place the can into the basket with your right hand",
+        "subtask": "Place the can into the basket with your right hand",
+        "relations": []
+      },
+      "3": {
+        "task": "Approach the orange can, pick the orange can from the shelf with your right hand, place the can into the basket with your right hand",
+        "subtask": "Move your right hand out of the basket",
+        "relations": [
+          {
+            "name": "in_basket",
+            "object_a": "orange_soda_can__task1_target_goods_01",
+            "object_b": "basket_guide"
+          }
+        ]
+      }
+    }
+  },
+  "darkstore.e2.a2": {
+    "scene": "scene.darkstore.e2.a2",
+    "benchmark": "task.darkstore.e2.a2",
+    "policy": "policy.darkstore.e2.a2",
+    "task": {
+      "name": "darkstore.e2.a2",
+      "description": "Approach the tea box on the shelf, pick the tea box up from the shelf with your right hand, place the tea box in the basket"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the tea box on the shelf, pick the tea box up from the shelf with your right hand, place the tea box in the basket",
+        "subtask": "Approach the tea box on the shelf",
+        "relations": []
+      },
+      "1": {
+        "task": "Approach the tea box on the shelf, pick the tea box up from the shelf with your right hand, place the tea box in the basket",
+        "subtask": "Pick the tea box from the shelf with your right hand",
+        "relations": [
+          {
+            "name": "in_hand",
+            "object_a": "tea_box__task1_target_goods_02",
+            "object_b": "right_thumb_proximal_base"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the tea box on the shelf, pick the tea box up from the shelf with your right hand, place the tea box in the basket",
+        "subtask": "Place the tea box into the basket with your right hand",
+        "relations": []
+      },
+      "3": {
+        "task": "Approach the tea box on the shelf, pick the tea box up from the shelf with your right hand, place the tea box in the basket",
+        "subtask": "Move your right hand out of the basket",
+        "relations": [
+          {
+            "name": "in_basket",
+            "object_a": "tea_box__task1_target_goods_02",
+            "object_b": "basket_guide"
+          },
+          {
+            "name": "in_basket",
+            "object_a": "orange_soda_can__task1_target_goods_01",
+            "object_b": "basket_guide"
+          }
+        ]
+      }
+    }
+  },
+  "darkstore.e2.a3": {
+    "scene": "scene.darkstore.e2.a3",
+    "benchmark": "task.darkstore.e2.a3",
+    "policy": "policy.darkstore.e2.a3",
+    "task": {
+      "name": "darkstore.e2.a3",
+      "description": "Approach the basket, pick the basket from the table with your left hand, place the basket onto another table with your left hand, move your left hand out of the basket"
+    },
+    "annotations": {
+      "0": {
+        "task": "Approach the basket, pick the basket from the table with your left hand, place the basket onto another table with your left hand, move your left hand out of the basket",
+        "subtask": "Approach the basket",
+        "relations": [
+          {
+            "name": "left_hand_was_in_approach_zone",
+            "object_a": "left_thumb_proximal_base",
+            "object_b": "approach_guide"
+          }
+        ]
+      },
+      "1": {
+        "task": "Approach the basket, pick the basket from the table with your left hand, place the basket onto another table with your left hand, move your left hand out of the basket",
+        "subtask": "Pick the basket from the table with your left hand",
+        "relations": [
+          {
+            "name": "left_hand_was_at_basket_handle",
+            "object_a": "basket_handle_guide",
+            "object_b": "left_thumb_proximal_base"
+          },
+          {
+            "name": "basket_was_raised_over_table",
+            "object_a": "basket",
+            "object_b": "basket_over_table"
+          }
+        ]
+      },
+      "2": {
+        "task": "Approach the basket, pick the basket from the table with your left hand, place the basket onto another table with your left hand, move your left hand out of the basket",
+        "subtask": "Place the basket onto another table with your left hand",
+        "relations": [
+          {
+            "name": "in_basket",
+            "object_a": "orange_soda_can__task1_target_goods_01",
+            "object_b": "basket"
+          },
+          {
+            "name": "in_basket",
+            "object_a": "tea_box__task1_target_goods_02",
+            "object_b": "basket"
+          },
+          {
+            "name": "basket_was_on_counter",
+            "object_a": "basket",
+            "object_b": "counter_guide"
+          },
+          {
+            "name": "basket_released_by_left_hand",
+            "object_a": "basket_handle_guide",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      },
+      "3": {
+        "task": "Approach the basket, pick the basket from the table with your left hand, place the basket onto another table with your left hand, move your left hand out of the basket",
+        "subtask": "Move your left hand out of the basket",
+        "relations": [
+          {
+            "name": "basket_on_counter",
+            "object_a": "basket",
+            "object_b": "counter_guide"
+          },
+          {
+            "name": "in_basket",
+            "object_a": "orange_soda_can__task1_target_goods_01",
+            "object_b": "basket"
+          },
+          {
+            "name": "in_basket",
+            "object_a": "tea_box__task1_target_goods_02",
+            "object_b": "basket"
+          },
+          {
+            "name": "left_hand_away_from_basket",
+            "object_a": "basket_handle_guide",
+            "object_b": "left_thumb_proximal_base"
+          }
+        ]
+      }
+    }
+  }
+}

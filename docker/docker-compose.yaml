@@ -1,0 +1,32 @@
+services:
+  green-challenge:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: green-challenge:latest
+    container_name: green-challenge
+    network_mode: host
+    privileged: true
+    ipc: host
+    volumes:
+      - ..:/workspace/green_challenge
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /dev/shm:/dev/shm
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - NVIDIA_VISIBLE_DEVICES=all
+      - ISAACLAB_PATH=/workspace/isaaclab
+      - RESULTS_PATH=${RESULTS_PATH:-}
+      - RUN_PATH=${RUN_PATH:-}
+      - POLICY_PORT=${POLICY_PORT:-8999}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    entrypoint: bash
+    stdin_open: true
+    tty: true

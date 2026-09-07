@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "green_challenge"
+version = "0.1.0"
+description = "Green Challenge — Isaac Lab / Isaac Sim manipulation simulator"
+requires-python = ">=3.11"
+dependencies = [
+    "defusedxml>=0.7",
+    "onnxruntime>=1.17",
+    # All other deps (torch, numpy, opencv-python, websockets, …)
+    # are provided by the Isaac Lab / Isaac Sim environment.
+]
+
+[dependency-groups]
+dev = [
+    "boto3==1.43.52",
+]
+
+[tool.setuptools.package-dir]
+"green_challenge" = "."
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["green_challenge*"]
+exclude = ["*.backup*", "*.benchmark_logs*", "*.logs*", "*.tmp*"]
+
+[tool.setuptools.package-data]
+green_challenge = [
+    "configs/*.json",
+    "configs/**/*.json",
+    "configs/**/*.toml",
+    "policy/weights/**/*.yaml",
+    "policy/weights/**/*.jit",
+    "scene_spawner/json/*.json",
+    "assets/**/*.json",
+    "assets/**/*.npy",
+    "assets/**/*.usd",
+]

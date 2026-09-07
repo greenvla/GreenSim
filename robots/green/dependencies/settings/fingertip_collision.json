@@ -1,0 +1,48 @@
+{
+  "material_path": "/World/PhysicsMaterials/fingertip_grip",
+  "physics_material": {
+    "static_friction": 5.0,
+    "dynamic_friction": 5.0,
+    "restitution": 0.0,
+    "friction_combine_mode": "max",
+    "restitution_combine_mode": "min",
+    "improve_patch_friction": true
+  },
+  "collision_links": [
+    "root/left_thumb_proximal_base/collisions/left_thumb_proximal_base/left_thumb_proximal_base",
+    "root/left_thumb_proximal/collisions/left_thumb_proximal/left_thumb_proximal",
+    "root/left_thumb_intermediate/collisions/left_thumb_intermediate/left_thumb_intermediate",
+    "root/left_thumb_distal/collisions/left_thumb_distal/left_thumb_distal",
+    
+    "root/left_index_proximal/collisions/left_index_proximal/left_index_proximal",
+    "root/left_index_intermediate/collisions/left_index_intermediate/left_index_intermediate",
+    
+    "root/left_middle_proximal/collisions/left_middle_proximal/left_middle_proximal",
+    "root/left_middle_intermediate/collisions/left_middle_intermediate/left_middle_intermediate",
+
+    "root/left_ring_proximal/collisions/left_ring_proximal/left_ring_proximal",
+    "root/left_ring_intermediate/collisions/left_ring_intermediate/left_ring_intermediate",
+    
+    "root/left_pinky_proximal/collisions/left_pinky_proximal/left_pinky_proximal",
+    "root/left_pinky_intermediate/collisions/left_pinky_intermediate/left_pinky_intermediate",
+
+
+    "root/right_thumb_proximal_base/collisions/right_thumb_proximal_base/right_thumb_proximal_base",
+    "root/right_thumb_proximal/collisions/right_thumb_proximal/right_thumb_proximal",
+    "root/right_thumb_intermediate/collisions/right_thumb_intermediate/right_thumb_intermediate",
+    "root/right_thumb_distal/collisions/right_thumb_distal/right_thumb_distal",
+    
+    "root/right_index_proximal/collisions/right_index_proximal/right_index_proximal",
+    "root/right_index_intermediate/collisions/right_index_intermediate/right_index_intermediate",
+    
+    "root/right_middle_proximal/collisions/right_middle_proximal/right_middle_proximal",
+    "root/right_middle_intermediate/collisions/right_middle_intermediate/right_middle_intermediate",
+
+    "root/right_ring_proximal/collisions/right_ring_proximal/right_ring_proximal",
+    "root/right_ring_intermediate/collisions/right_ring_intermediate/right_ring_intermediate",
+    
+    "root/right_pinky_proximal/collisions/right_pinky_proximal/right_pinky_proximal",
+    "root/right_pinky_intermediate/collisions/right_pinky_intermediate/right_pinky_intermediate"
+    
+  ]
+}

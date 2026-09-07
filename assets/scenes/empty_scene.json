@@ -1,0 +1,125 @@
+{
+    "robot": {
+        "name"       : "robot",
+        "spawn_areas": [
+            { "name": "zero_pose", "center": [0, 0, 0.88], "size_xy": [0.001, 0.001], "weight": 1.0, "visible": false }
+        ]
+    },
+    "viewer": { "origin_type": "world", "eye": [2.44, 1.27, 2.34], "lookat": [0.44, -0.21, 1.06] },
+    "objects": [
+        {
+            "name"            : "floor",
+            "usd_path"        : "assets/usd_models/test_room/floor/floor.usd",
+            "position"        : [0.0, 0.0, 0.0],
+            "rotation"        : [1, 0.0, 0.0, 0.0],
+            "mass"            : 10000.0,
+            "fixed"           : true,
+            "physics_material": {"static_friction": 1.2, "dynamic_friction": 1.0, "restitution": 0.0}
+        },
+        {
+            "name"    : "wall01",
+            "usd_path": "assets/usd_models/test_room/wall/wall.usd",
+            "position": [1.8691684009820384, -1.77138, 1.015634036064148],
+            "rotation": [1.0, 0.0, 0.0, 0.0],
+            "fixed"   : true
+        },
+        {
+            "name"    : "wall02",
+            "usd_path": "assets/usd_models/test_room/wall/wall.usd",
+            "position": [-1.9028882135684104, -1.59706, 1.0156340360641507],
+            "rotation": [0.0, 0.0, 1.0, 0.0],
+            "fixed"   : true
+        },
+        {
+            "name"    : "wall03",
+            "usd_path": "assets/usd_models/test_room/wall/wall.usd",
+            "position": [1.8691684007644653, 2.352341677365728, 1.015634036064148],
+            "rotation": [0.0, 1.0, 0.0, 0.0],
+            "fixed"   : true
+        },
+        {
+            "name"    : "wall04",
+            "usd_path": "assets/usd_models/test_room/wall/wall.usd",
+            "position": [-1.902888178825369, 2.2557547427592914, 1.015634036064148],
+            "rotation": [0.0, 0.0, 0.0, 1.0],
+            "fixed"   : true
+        },
+        {
+            "name"    : "wall05",
+            "usd_path": "assets/usd_models/test_room/wall/wall.usd",
+            "position": [3.3922713701472063, 1.0469888853836569, 1.0156340360640379],
+            "rotation": [0.70711, 0.0, 0.0, 0.70711],
+            "fixed"   : true
+        },
+        {
+            "name"    : "wall_door",
+            "usd_path": "assets/usd_models/test_room/wall_3m_door/SM_Wall_3m_door_156.usd",
+            "position": [-3.67805, -1.1388, 0.0],
+            "rotation": [1.0, 0, 0, 0],
+            "fixed"   : true
+        },
+        {
+            "name"       : "door",
+            "usd_path"   : "assets/usd_models/test_room/simple_door/simple_door.usd",
+            "position"   : [-3.75, 0.3789, 0.0],
+            "rotation"   : [1.0, 0, 0, 0],
+            "fixed"      : true,
+            "articulated": true
+        }
+    ],
+    "light_definitions": {
+        "disk_cold_main": {
+            "type": "disk",
+            "intensity": 4000.0,
+            "color": [1.0, 1.0, 1.0],
+            "exposure": 2.0,
+            "radius": 0.4,
+            "enable_color_temperature": true,
+            "color_temperature": 6500.0,
+            "normalize": true
+        },
+        "disk_cold_fill": {
+            "type": "disk",
+            "intensity": 6000.0,
+            "color": [1.0, 1.0, 1.0],
+            "exposure": 2.0,
+            "radius": 1.2,
+            "enable_color_temperature": true,
+            "color_temperature": 6500.0,
+            "normalize": true
+        }
+    },
+    "light_visual_definitions": {
+        "ceiling_panel": {
+            "type"           : "cylinder",
+            "radius"         : 0.5,
+            "height"         : 0.04,
+            "axis"           : "Z",
+            "visual_material": {
+                "type"          : "preview_surface",
+                "emissive_color": [3.0, 3.0, 3.0],
+                "diffuse_color" : [0.9, 0.9, 0.9],
+                "roughness"     : 0.4
+            },
+            "collision"      : false,
+            "rigid"          : false
+        }
+    },
+    "lighting": [
+        {
+            "name"         : "ceiling_0",
+            "position"     : [1.3, -0.08, 2.3],
+            "light"        : "disk_cold_main",
+            "visual"       : "ceiling_panel",
+            "visual_offset": [0.0, 0.0, 0.08]
+        },
+        {
+            "name"         : "ceiling_1",
+            "position"     : [2.2, -0.52, 2.3],
+            "light"        : "disk_cold_main",
+            "visual"       : "ceiling_panel",
+            "visual_offset": [0.0, 0.0, 0.08]
+        },
+        { "name": "fill_0", "position": [0.2, 0.0, 2.3], "light": "disk_cold_fill" }
+    ]
+}

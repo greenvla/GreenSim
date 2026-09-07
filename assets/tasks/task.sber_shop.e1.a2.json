@@ -1,0 +1,143 @@
+{
+  "task"       : {
+    "name": "sber_shop.e1.a2",
+    "description": "Lift the lid of the Sber Ring box with your right hand, place the lid aside with your right hand, push the Sber Ring box towards the visitor with your right hand, move the Sber Ring box back with your right hand"
+  },
+  "objects"    : {
+    "ring_box_lid"           : {"ring_box_lid": []},
+    "ring_box_base"          : {"ring_box_base": []},
+    "ring_base_home_area"    : {"ring_base_home_area_guide": []},
+    "ring_base_customer_area": {"customer_area_guide": []},
+    "robot_parts"            : {"right_thumb_proximal_base": []},
+    "hand_raised_area"       : {"hand_raised_area": []}
+  },
+  "relations"  : {
+    "episode_timeout": {"type": "timeout", "duration_sec": 70.0, "pattern": "episode timeout"},
+    "exists_ring_box_lid": {"type": "spawn", "pattern": "spawn {ring_box_lid}"},
+    "exists_ring_box_base": {"type": "spawn", "pattern": "spawn {ring_box_base}"},
+    "exists_ring_base_home_area": {"type": "spawn", "pattern": "spawn {ring_base_home_area}"},
+    "exists_ring_base_customer_area": {"type": "spawn", "pattern": "spawn {ring_base_customer_area}"},
+    "exists_hand_raised_area": {"type": "spawn", "pattern": "spawn {hand_raised_area}"},
+    "right_hand_in_raised_area": {"type": "inside", "pattern": "{robot_parts} is inside {hand_raised_area}"},
+    "right_hand_was_raised": {
+      "type"        : "duration",
+      "relation"    : "right_hand_in_raised_area",
+      "duration_sec": 0.20,
+      "latch"       : true,
+      "pattern"     : "{robot_parts} remains inside {hand_raised_area}"
+    },
+    "lid_is_grasped": {
+      "type"      : "distance",
+      "pattern"   : "pick {ring_box_lid} by {robot_parts}",
+      "distance"  : 0.15,
+      "comparison": "less"
+    },
+    "lid_in_hand_raised_area": {"type": "inside", "pattern": "{ring_box_lid} is inside {hand_raised_area}"},
+    "lid_was_raised": {
+      "type"        : "duration",
+      "relation"    : "lid_in_hand_raised_area",
+      "duration_sec": 0.30,
+      "latch"       : true,
+      "pattern"     : "{ring_box_lid} remains inside {hand_raised_area}"
+    },
+    "lid_was_grasped": {
+      "type"        : "duration",
+      "relation"    : "lid_is_grasped",
+      "duration_sec": 0.20,
+      "latch"       : true,
+      "pattern"     : "{ring_box_lid} was held by {robot_parts}"
+    },
+    "lid_not_held_by_right_hand": {
+      "type"      : "distance",
+      "pattern"   : "{ring_box_lid} is released by {robot_parts}",
+      "distance"  : 0.15,
+      "comparison": "greater"
+    },
+    "ring_base_is_grasped": {
+      "type"      : "distance",
+      "pattern"   : "pick {ring_box_base} by {robot_parts}",
+      "distance"  : 0.15,
+      "comparison": "less"
+    },
+    "ring_base_was_grasped": {
+      "type"        : "duration",
+      "relation"    : "ring_base_is_grasped",
+      "duration_sec": 0.10,
+      "latch"       : true,
+      "pattern"     : "{ring_box_base} was held by {robot_parts}"
+    },
+    "lid_set_aside_from_box": {
+      "type"      : "distance",
+      "pattern"   : "{ring_box_lid} is removed from {ring_box_base}",
+      "distance"  : 0.15,
+      "comparison": "greater"
+    },
+    "ring_base_at_home": {"type": "inside", "pattern": "{ring_box_base} is inside {ring_base_home_area}"},
+    "ring_base_at_customer": {"type": "inside", "pattern": "{ring_box_base} is inside {ring_base_customer_area}"},
+    "ring_base_not_held_by_right_hand": {
+      "type"      : "distance",
+      "pattern"   : "{ring_box_base} is released by {robot_parts}",
+      "distance"  : 0.15,
+      "comparison": "greater"
+    },
+    "ring_base_customer_dwell_completed": {
+      "type"        : "duration",
+      "relation"    : "ring_base_at_customer",
+      "duration_sec": 0.1,
+      "latch"       : true,
+      "pattern"     : "{ring_box_base} stayed in {ring_base_customer_area} for 0.1 seconds"
+    }
+  },
+  "goals"      : {
+    "right_hand_raised": {
+      "description": "The right hand must be raised over the table and remain in the hand raised area for at least 0.2 seconds",
+      "for_each": "robot_parts",
+      "must_have": ["right_hand_was_raised"],
+      "required": true
+    },
+    "lid_lifted_by_right_hand": {
+      "description": "The lid must be picked by the right hand and lifted into the raised area for at least 0.3 seconds",
+      "for_each": "ring_box_lid",
+      "must_have": ["lid_was_grasped", "lid_was_raised"],
+      "required": true
+    },
+    "lid_set_aside": {
+      "description": "The lid must be moved at least 15 cm away from the box",
+      "for_each"   : "ring_box_lid",
+      "must_have"  : ["lid_set_aside_from_box", "lid_not_held_by_right_hand"],
+      "required"   : true
+    },
+    "ring_box_was_picked_by_right_hand": {
+      "description": "The Sber Ring box must be held by the right hand for at least 0.1 seconds",
+      "for_each"   : "ring_box_base",
+      "must_have"  : ["ring_base_was_grasped"],
+      "required"   : true
+    },
+    "ring_box_pushed_and_released": {
+      "description": "The box must reach the customer area, remain there for at least 0.1 seconds, and be released by the right hand",
+      "for_each": "ring_box_base",
+      "must_have": ["ring_base_customer_dwell_completed", "ring_base_not_held_by_right_hand"],
+      "required": true
+    },
+    "ring_box_shown_and_returned": {
+      "description": "The box must stay in the customer area for 0.1 seconds and then return home",
+      "for_each"   : "ring_box_base",
+      "must_have"  : ["ring_base_customer_dwell_completed", "ring_base_at_home"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to a timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": [
+      "right_hand_raised",            "lid_lifted_by_right_hand",     "lid_set_aside",
+      "ring_box_pushed_and_released", "ring_box_shown_and_returned"
+    ],
+    "max_violations": {"no_episode_timeout": 0}
+  }
+}

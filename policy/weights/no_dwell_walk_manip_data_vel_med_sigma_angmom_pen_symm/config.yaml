@@ -1,0 +1,362 @@
+commands:
+    names:
+    - left_hip_pitch_joint
+    - left_hip_roll_joint
+    - left_hip_yaw_joint
+    - left_knee_crank_joint
+    - left_ankle_u_crank_joint
+    - left_ankle_b_crank_joint
+    - right_hip_pitch_joint
+    - right_hip_roll_joint
+    - right_hip_yaw_joint
+    - right_knee_crank_joint
+    - right_ankle_u_crank_joint
+    - right_ankle_b_crank_joint
+    - torso_yaw_joint
+    - left_shoulder_pitch_joint
+    - left_shoulder_roll_joint
+    - left_shoulder_yaw_joint
+    - left_elbow_pitch_joint
+    - left_elbow_yaw_joint
+    - right_shoulder_pitch_joint
+    - right_shoulder_roll_joint
+    - right_shoulder_yaw_joint
+    - right_elbow_pitch_joint
+    - right_elbow_yaw_joint
+    - neck_yaw_joint
+    - neck_pitch_joint
+    - root_height
+    - lin_vel_x
+    - lin_vel_y
+    - lin_vel_z
+    - ang_vel_x
+    - ang_vel_y
+    - ang_vel_z
+    - roll
+    - pitch
+    - yaw
+    defaults:
+        left_hip_pitch_joint: -0.086
+        left_hip_roll_joint: 0.017
+        left_hip_yaw_joint: -0.044
+        left_knee_crank_joint: 0.299
+        left_ankle_u_crank_joint: -0.225
+        left_ankle_b_crank_joint: -0.018
+        right_hip_pitch_joint: -0.086
+        right_hip_roll_joint: -0.017
+        right_hip_yaw_joint: 0.044
+        right_knee_crank_joint: 0.299
+        right_ankle_u_crank_joint: -0.225
+        right_ankle_b_crank_joint: 0.018
+        torso_yaw_joint: 0.0
+        left_shoulder_pitch_joint: 0.0
+        left_shoulder_roll_joint: 0.0
+        left_shoulder_yaw_joint: 0.0
+        left_elbow_pitch_joint: 0.0
+        left_elbow_yaw_joint: 0.0
+        right_shoulder_pitch_joint: 0.0
+        right_shoulder_roll_joint: 0.0
+        right_shoulder_yaw_joint: 0.0
+        right_elbow_pitch_joint: 0.0
+        right_elbow_yaw_joint: 0.0
+        neck_yaw_joint: 0.0
+        neck_pitch_joint: 0.0
+        root_height: 0.9
+        lin_vel_x: 0.0
+        lin_vel_y: 0.0
+        lin_vel_z: 0.0
+        ang_vel_x: 0.0
+        ang_vel_y: 0.0
+        ang_vel_z: 0.0
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+    ranges:
+        left_hip_pitch_joint: [-3.14, 3.14]
+        left_hip_roll_joint: [-3.14, 3.14]
+        left_hip_yaw_joint: [-3.14, 3.14]
+        left_knee_crank_joint: [-3.14, 3.14]
+        left_ankle_u_crank_joint: [-3.14, 3.14]
+        left_ankle_b_crank_joint: [-3.14, 3.14]
+        right_hip_pitch_joint: [-3.14, 3.14]
+        right_hip_roll_joint: [-3.14, 3.14]
+        right_hip_yaw_joint: [-3.14, 3.14]
+        right_knee_crank_joint: [-3.14, 3.14]
+        right_ankle_u_crank_joint: [-3.14, 3.14]
+        right_ankle_b_crank_joint: [-3.14, 3.14]
+        torso_yaw_joint: [-3.14, 3.14]
+        left_shoulder_pitch_joint: [-3.14, 3.14]
+        left_shoulder_roll_joint: [-3.14, 3.14]
+        left_shoulder_yaw_joint: [-3.14, 3.14]
+        left_elbow_pitch_joint: [-3.14, 3.14]
+        left_elbow_yaw_joint: [-3.14, 3.14]
+        right_shoulder_pitch_joint: [-3.14, 3.14]
+        right_shoulder_roll_joint: [-3.14, 3.14]
+        right_shoulder_yaw_joint: [-3.14, 3.14]
+        right_elbow_pitch_joint: [-3.14, 3.14]
+        right_elbow_yaw_joint: [-3.14, 3.14]
+        neck_yaw_joint: [-3.14, 3.14]
+        neck_pitch_joint: [-3.14, 3.14]
+        root_height: [0.0, 2.0]
+        lin_vel_x: [-10.0, 10.0]
+        lin_vel_y: [-10.0, 10.0]
+        lin_vel_z: [-10.0, 10.0]
+        ang_vel_x: [-10.0, 10.0]
+        ang_vel_y: [-10.0, 10.0]
+        ang_vel_z: [-10.0, 10.0]
+        roll: [-3.14, 3.14]
+        pitch: [-3.14, 3.14]
+        yaw: [-3.14, 3.14]
+    scales:
+        left_hip_pitch_joint: 1.0
+        left_hip_roll_joint: 1.0
+        left_hip_yaw_joint: 1.0
+        left_knee_crank_joint: 1.0
+        left_ankle_u_crank_joint: 1.0
+        left_ankle_b_crank_joint: 1.0
+        right_hip_pitch_joint: 1.0
+        right_hip_roll_joint: 1.0
+        right_hip_yaw_joint: 1.0
+        right_knee_crank_joint: 1.0
+        right_ankle_u_crank_joint: 1.0
+        right_ankle_b_crank_joint: 1.0
+        torso_yaw_joint: 1.0
+        left_shoulder_pitch_joint: 1.0
+        left_shoulder_roll_joint: 1.0
+        left_shoulder_yaw_joint: 1.0
+        left_elbow_pitch_joint: 1.0
+        left_elbow_yaw_joint: 1.0
+        right_shoulder_pitch_joint: 1.0
+        right_shoulder_roll_joint: 1.0
+        right_shoulder_yaw_joint: 1.0
+        right_elbow_pitch_joint: 1.0
+        right_elbow_yaw_joint: 1.0
+        neck_yaw_joint: 1.0
+        neck_pitch_joint: 1.0
+        root_height: 1.0
+        lin_vel_x: 1.0
+        lin_vel_y: 1.0
+        lin_vel_z: 1.0
+        ang_vel_x: 1.0
+        ang_vel_y: 1.0
+        ang_vel_z: 1.0
+        roll: 1.0
+        pitch: 1.0
+        yaw: 1.0
+control:
+    decimation: 4
+    control_type: P
+    action_scale: {
+        left_hip_pitch_joint: 0.428,
+        left_hip_roll_joint: 0.282,
+        left_hip_yaw_joint: 0.433,
+        left_knee_crank_joint: 0.428,
+        left_ankle_u_crank_joint: 0.198,
+        left_ankle_b_crank_joint: 0.268,
+        right_hip_pitch_joint: 0.428,
+        right_hip_roll_joint: 0.282,
+        right_hip_yaw_joint: 0.433,
+        right_knee_crank_joint: 0.428,
+        right_ankle_u_crank_joint: 0.198,
+        right_ankle_b_crank_joint: 0.268,
+        torso_yaw_joint: 0.433,
+        left_shoulder_pitch_joint: 0.368,
+        left_shoulder_roll_joint: 0.368,
+        left_shoulder_yaw_joint: 0.352,
+        left_elbow_pitch_joint: 0.352,
+        left_elbow_yaw_joint: 0.352,
+        right_shoulder_pitch_joint: 0.368,
+        right_shoulder_roll_joint: 0.368,
+        right_shoulder_yaw_joint: 0.352,
+        right_elbow_pitch_joint: 0.352,
+        right_elbow_yaw_joint: 0.352,
+        neck_yaw_joint: 0.352,
+        neck_pitch_joint: 0.352,
+    }
+    clip_actions: 5.0
+    limit_actions_by_torque: false
+    use_lpf: false
+    # Motor-space damping (Kd). Hip/knee/torso/arms/neck: joint==motor (no closed chain).
+    # Ankle: motor-space via ANKLE_A Jacobian, Kd_motor_u = Kd_motor_b = 3.0
+    damping: {
+        left_hip_pitch_joint: 5.0,
+        left_hip_roll_joint: 5.0,
+        left_hip_yaw_joint: 4.6,
+        left_knee_crank_joint: 5.0,
+        left_ankle_u_crank_joint: 3.0,
+        left_ankle_b_crank_joint: 3.0,
+        right_hip_pitch_joint: 5.0,
+        right_hip_roll_joint: 5.0,
+        right_hip_yaw_joint: 4.6,
+        right_knee_crank_joint: 5.0,
+        right_ankle_u_crank_joint: 3.0,
+        right_ankle_b_crank_joint: 3.0,
+        torso_yaw_joint: 4.6,
+        left_shoulder_pitch_joint: 3.2,
+        left_shoulder_roll_joint: 3.2,
+        left_shoulder_yaw_joint: 1.4,
+        left_elbow_pitch_joint: 1.4,
+        left_elbow_yaw_joint: 1.4,
+        right_shoulder_pitch_joint: 3.2,
+        right_shoulder_roll_joint: 3.2,
+        right_shoulder_yaw_joint: 1.4,
+        right_elbow_pitch_joint: 1.4,
+        right_elbow_yaw_joint: 1.4,
+        neck_yaw_joint: 1.4,
+        neck_pitch_joint: 1.4,
+    }
+    # Motor-space stiffness (Kp). Hip/knee/torso/arms/neck: joint==motor (no closed chain).
+    # Ankle: motor-space via ANKLE_A Jacobian, Kp_motor_u = Kp_motor_b = 61.8
+    stiffness: {
+        left_hip_pitch_joint: 221.7,
+        left_hip_roll_joint: 318.8,
+        left_hip_yaw_joint: 86.7,
+        left_knee_crank_joint: 221.7,
+        left_ankle_u_crank_joint: 61.8,
+        left_ankle_b_crank_joint: 61.8,
+        right_hip_pitch_joint: 221.7,
+        right_hip_roll_joint: 318.8,
+        right_hip_yaw_joint: 86.7,
+        right_knee_crank_joint: 221.7,
+        right_ankle_u_crank_joint: 61.8,
+        right_ankle_b_crank_joint: 61.8,
+        torso_yaw_joint: 86.7,
+        left_shoulder_pitch_joint: 61.1,
+        left_shoulder_roll_joint: 61.1,
+        left_shoulder_yaw_joint: 25.6,
+        left_elbow_pitch_joint: 25.6,
+        left_elbow_yaw_joint: 25.6,
+        right_shoulder_pitch_joint: 61.1,
+        right_shoulder_roll_joint: 61.1,
+        right_shoulder_yaw_joint: 25.6,
+        right_elbow_pitch_joint: 25.6,
+        right_elbow_yaw_joint: 25.6,
+        neck_yaw_joint: 25.6,
+        neck_pitch_joint: 25.6,
+    }
+joint_order: [
+    left_hip_pitch_joint,
+    left_hip_roll_joint,
+    left_hip_yaw_joint,
+    left_knee_crank_joint,
+    left_ankle_u_crank_joint,
+    left_ankle_b_crank_joint,
+    right_hip_pitch_joint,
+    right_hip_roll_joint,
+    right_hip_yaw_joint,
+    right_knee_crank_joint,
+    right_ankle_u_crank_joint,
+    right_ankle_b_crank_joint,
+    torso_yaw_joint,
+    left_shoulder_pitch_joint,
+    left_shoulder_roll_joint,
+    left_shoulder_yaw_joint,
+    left_elbow_pitch_joint,
+    left_elbow_yaw_joint,
+    right_shoulder_pitch_joint,
+    right_shoulder_roll_joint,
+    right_shoulder_yaw_joint,
+    right_elbow_pitch_joint,
+    right_elbow_yaw_joint,
+    neck_yaw_joint,
+    neck_pitch_joint,
+]
+init_state:
+    obs_default_joint_angles: {
+        "left_hip_pitch_joint": -0.086,
+        "left_hip_roll_joint": 0.017,
+        "left_hip_yaw_joint": -0.044,
+        "left_knee_crank_joint": 0.299,
+        "left_ankle_u_crank_joint": -0.225,
+        "left_ankle_b_crank_joint": -0.018,
+        "right_hip_pitch_joint": -0.086,
+        "right_hip_roll_joint": -0.017,
+        "right_hip_yaw_joint": 0.044,
+        "right_knee_crank_joint": 0.299,
+        "right_ankle_u_crank_joint": -0.225,
+        "right_ankle_b_crank_joint": 0.018,
+        "torso_yaw_joint": 0.0,
+        "left_shoulder_pitch_joint": 0.0,
+        "left_shoulder_roll_joint": 0.0,
+        "left_shoulder_yaw_joint": 0.0,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": 0.0,
+        "right_shoulder_pitch_joint": 0.0,
+        "right_shoulder_roll_joint": 0.0,
+        "right_shoulder_yaw_joint": 0.0,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.0,
+        "neck_yaw_joint": 0.0,
+        "neck_pitch_joint": 0.0,
+    }
+    act_default_joint_angles: {
+        "left_hip_pitch_joint": 0.0,
+        "left_hip_roll_joint": 0.0,
+        "left_hip_yaw_joint": 0.0,
+        "left_knee_crank_joint": 0.0,
+        "left_ankle_u_crank_joint": 0.0,
+        "left_ankle_b_crank_joint": 0.0,
+        "right_hip_pitch_joint": 0.0,
+        "right_hip_roll_joint": 0.0,
+        "right_hip_yaw_joint": 0.0,
+        "right_knee_crank_joint": 0.0,
+        "right_ankle_u_crank_joint": 0.0,
+        "right_ankle_b_crank_joint": 0.0,
+        "torso_yaw_joint": 0.0,
+        "left_shoulder_pitch_joint": 0.0,
+        "left_shoulder_roll_joint": 0.0,
+        "left_shoulder_yaw_joint": 0.0,
+        "left_elbow_pitch_joint": 0.0,
+        "left_elbow_yaw_joint": 0.0,
+        "right_shoulder_pitch_joint": 0.0,
+        "right_shoulder_roll_joint": 0.0,
+        "right_shoulder_yaw_joint": 0.0,
+        "right_elbow_pitch_joint": 0.0,
+        "right_elbow_yaw_joint": 0.0,
+        "neck_yaw_joint": 0.0,
+        "neck_pitch_joint": 0.0,
+    }
+    default_pos:
+    - 0.0
+    - 0.0
+    - 0.9
+observation:
+    num_obs_hist: 1
+    clip: .inf
+    noise: null
+    order: [
+        ref_dof_pos,
+        ref_base_position_z,
+        ref_base_lin_vel,
+        ref_base_ang_vel,
+        ref_projected_gravity,
+        projected_gravity,
+        base_ang_vel,
+        dof_pos,
+        dof_vel,
+        actions,
+    ]
+    scale:
+        ref_dof_pos: 1
+        ref_base_position_z: 1
+        ref_base_lin_vel: 1
+        ref_base_ang_vel: 1
+        ref_projected_gravity: 1
+        projected_gravity: 1
+        base_ang_vel: 1
+        dof_pos: 1
+        dof_vel: 1
+        actions: 1
+    dims:
+        ref_dof_pos: 25
+        ref_base_position_z: 1
+        ref_base_lin_vel: 3
+        ref_base_ang_vel: 3
+        ref_projected_gravity: 3
+        projected_gravity: 3
+        base_ang_vel: 3
+        dof_pos: 25
+        dof_vel: 25
+        actions: 25
+sim:
+    dt: 0.005

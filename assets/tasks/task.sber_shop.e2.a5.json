@@ -1,0 +1,47 @@
+{
+  "task"       : {
+    "name": "sber_shop.e2.a5",
+    "description": "Approach the rack, pick up the blue bottle with your right hand, approach the basket, place the bottle into the basket with your right hand"
+  },
+  "objects"    : {
+    "bottle"          : {"front_blue_bottle": []},
+    "baskets"         : {"basket": []},
+    "task_success_box": {"task_success_box": []},
+    "basket_place"    : {"basket_place": []},
+    "robot_parts"     : {"right_thumb_proximal_base": []}
+  },
+  "relations"  : {
+    "episode_timeout"           : {"type": "timeout", "duration_sec": 120.0, "pattern": "episode timeout"},
+    "bottle_in_hand"            : {"type": "distance", "pattern": "pick {bottle} by {robot_parts}", "distance": 0.25},
+    "bottle_in_task_success_box": {"type": "inside", "pattern": "{bottle} is inside {task_success_box}"},
+    "basket_in_basket_place"    : {"type": "inside", "pattern": "{baskets} is inside {basket_place}"},
+    "exists_bottle"             : {"type": "spawn", "pattern": "spawn {bottle}"},
+    "exists_basket"             : {"type": "spawn", "pattern": "spawn {baskets}"},
+    "exists_task_success_box"   : {"type": "spawn", "pattern": "spawn {task_success_box}"}
+  },
+  "goals"      : {
+    "bottle_placed_in_task_success_box": {
+      "description": "The blue bottle must be inside the basket task success area",
+      "for_each"   : "bottle",
+      "must_have"  : "bottle_in_task_success_box",
+      "required"   : true
+    },
+    "basket_stays_in_task_success_box" : {
+      "description": "The basket must remain inside its task success area",
+      "for_each"   : "baskets",
+      "must_have"  : "basket_in_basket_place",
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": ["bottle_placed_in_task_success_box", "basket_stays_in_task_success_box"],
+    "max_violations": {"no_episode_timeout": 0}
+  }
+}

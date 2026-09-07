@@ -1,0 +1,96 @@
+{
+  "task"       : {
+    "name": "dry_kitchen.e3.a3",
+    "description": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray with your left hand, move your left hand out of the plate"
+  },
+  "objects"    : {
+    "plate_items"      : {"model_plate_thin": []},
+    "trays"            : {"model_food_tray": []},
+    "tray_area_guides" : {"tray_area_guide": []},
+    "hand_raise_guides": {"hand_raise_guide": []},
+    "item_hold_guides" : {"item_hold_guide": []},
+    "robot_parts"      : {"left_thumb_proximal_base": []}
+  },
+  "relations"  : {
+    "episode_timeout": {"type": "timeout", "duration_sec": 80.0, "pattern": "episode timeout"},
+    "in_hand": {
+      "type"      : "distance",
+      "pattern"   : "pick {plate_items} by {robot_parts}",
+      "distance"  : 0.15,
+      "comparison": "less"
+    },
+    "left_hand_in_raise_area": {"type": "inside", "pattern": "{robot_parts} is inside {hand_raise_guides}"},
+    "left_hand_was_raised": {
+      "type"        : "duration",
+      "relation"    : "left_hand_in_raise_area",
+      "duration_sec": 0.20,
+      "latch"       : true,
+      "pattern"     : "{robot_parts} remains inside {hand_raise_guides}"
+    },
+    "plate_in_item_hold_area": {"type": "inside", "pattern": "{plate_items} is inside {item_hold_guides}"},
+    "plate_was_raised_over_table": {
+      "type"        : "duration",
+      "relation"    : "plate_in_item_hold_area",
+      "duration_sec": 0.30,
+      "latch"       : true,
+      "pattern"     : "{plate_items} remains inside {item_hold_guides}"
+    },
+    "plate_in_tray_area": {"type": "inside", "pattern": "{plate_items} is inside {tray_area_guides}"},
+    "plate_flat": {
+      "type"         : "upright",
+      "pattern"      : "{plate_items} is upright",
+      "max_tilt_deg" : 35.0,
+      "unsigned"     : true,
+      "local_up_axis": [0.0, 0.0, 1.0]
+    },
+    "plate_static": {"type": "static", "pattern": "{plate_items} is static", "lin_vel_eps": 0.04, "ang_vel_eps": 0.15},
+    "left_hand_away": {
+      "type"      : "distance",
+      "pattern"   : "{plate_items} is far from {robot_parts}",
+      "distance"  : 0.40,
+      "comparison": "greater"
+    },
+    "exists_plates": {"type": "spawn", "pattern": "spawn {plate_items}"},
+    "exists_trays": {"type": "spawn", "pattern": "spawn {trays}"},
+    "exists_tray_area": {"type": "spawn", "pattern": "spawn {tray_area_guides}"},
+    "exists_hand_raise_area": {"type": "spawn", "pattern": "spawn {hand_raise_guides}"},
+    "exists_item_hold_area": {"type": "spawn", "pattern": "spawn {item_hold_guides}"}
+  },
+  "goals"      : {
+    "left_hand_raised"        : {
+      "description": "The left hand must enter the hand raise area",
+      "for_each"   : "robot_parts",
+      "must_have"  : ["left_hand_was_raised"],
+      "required"   : true
+    },
+    "plate_held_in_raise_area": {
+      "description": "The plate must be held by the left hand while it is inside the hand raise area",
+      "for_each"   : "plate_items",
+      "must_have"  : ["plate_was_raised_over_table"],
+      "required"   : true
+    },
+    "plate_is_on_tray"        : {
+      "description": "The plate lies flat on the tray",
+      "for_each"   : "plate_items",
+      "must_have"  : ["plate_in_tray_area", "plate_flat", "plate_static", "left_hand_away"],
+      "required"   : true
+    },
+    "left_hand_moved_away"    : {
+      "description": "The left hand must be moved away from the plate",
+      "for_each"   : "plate_items",
+      "must_have"  : ["left_hand_away"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": ["left_hand_raised", "plate_held_in_raise_area", "plate_is_on_tray"],
+    "max_violations": {"no_episode_timeout": 0}
+  }
+}

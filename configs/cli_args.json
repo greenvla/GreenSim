@@ -1,0 +1,96 @@
+{
+  "arguments"            : [
+    { "flags": ["--num_envs"], "type": "int", "default": 1, "help": "Number of environments." },
+    { "flags": ["--scenario"], "type": "str", "default": null, "help": "Scenario name from scenarios.json" },
+    { "flags": ["--task"], "type": "str", "default": "ManipEnv-v0", "help": "Environment task id." },
+    {
+      "flags"  : ["--benchmark_task"],
+      "type"   : "str",
+      "default": null,
+      "help"   : "Task name for benchmark from folder 'assets/task' (w/o .json)"
+    },
+    { "flags": ["--scene"], "type": "str", "default": null, "help": "Scene name from folder 'assets' (w/o .json)" },
+    {
+      "flags"  : ["--robot"],
+      "type"   : "str",
+      "default": "green",
+      "choices": ["green"],
+      "help"   : "Robot model: green (closed kinematics)"
+    },
+    { "flags": ["--num_episodes"], "type": "int", "default": 10000, "help": "Number of episodes." },
+    { "flags": ["--policy"], "type": "str", "default": null, "help": "Policy name." },
+    { "flags": ["--video"], "action": "store_true", "default": false, "help": "Record videos during evaluation." },
+    {
+      "flags"  : ["--video_length"],
+      "type"   : "int",
+      "default": 1500,
+      "help"   : "Length of the recorded video (in environment steps)."
+    },
+    {
+      "flags"  : ["--app.fast_shutdown"],
+      "action" : "store_true",
+      "default": true,
+      "help"   : "This flag enables a faster shutdown process for the application."
+    },
+    { "flags": ["--disable-ext-startup"], "action": "store_true", "default": true, "help": "." },
+    {
+      "flags": ["--file.cache_enabled"],
+      "action": "store_true",
+      "default": true,
+      "help": "With caching enabled, the application stores frequently accessed assets and files in memory or on disk."
+    },
+    { "flags": ["--controller"], "type": "str", "default": "zest", "help": "zest" },
+    { "flags": ["--deactivate_cameras"], "action": "store_true", "default": false, "help": "" },
+    { "flags": ["--deactivate_room"], "action": "store_true", "default": false, "help": "" },
+    {
+      "flags"  : ["--deactivate_gui"],
+      "action" : "store_true",
+      "default": false,
+      "help"   : "Disable the robotics control panel (GUI is enabled by default)."
+    },
+    {
+      "flags"  : ["--deactivate_robot"],
+      "action" : "store_true",
+      "default": false,
+      "help"   : "Disable the main robot (spawn dummy cube)"
+    },
+    {
+      "flags"  : ["--deactivate_torque"],
+      "action" : "store_true",
+      "default": false,
+      "help"   : "Disable torque control of legs and torso-arms"
+    },
+    {
+      "flags": ["--env_simdt_denominator"],
+      "type": "int",
+      "default": 250,
+      "help": "env.sim.dt = 1/env_simdt_denominator. Where sim.dt = time (in seconds) of one physics step in simulation time. 150 - robot moves legs 12 times per 500 env steps for 13 sec. 550 - 4 times per 11 sec."
+    },
+    {
+      "flags"  : ["--env_decimation"],
+      "type"   : "int",
+      "default": 1,
+      "help"   : "How many physics steps are done per 1 env step"
+    },
+    {
+      "flags"  : ["--env_render_interval"],
+      "type"   : "int",
+      "default": 1,
+      "help"   : "Controls render frequency: 1 - same frame rate as env step; 2 - renders once for 2 env steps."
+    },
+    {
+      "flags"  : ["--frame_mode"],
+      "type"   : "str",
+      "default": "shm",
+      "choices": ["shm", "latest", "both", "none"],
+      "help"   : "Camera frame handling: shm (shared memory), latest (in-memory), both, none"
+    },
+    {
+      "flags": ["--success-grace-seconds"],
+      "type": "float",
+      "default": 3.0,
+      "help": "Duration in seconds to wait for a successful execution to gracefully terminate before forced shutdown."
+    }
+  ],
+  "app_launcher_defaults": {"enable_cameras": true, "device": "cpu", "rendering_mode": "balanced"}
+}

@@ -1,0 +1,100 @@
+{
+    "task"       : {
+        "name"       : "test_pick.e1.a1",
+        "description": "Pick the big green apple from the table with your right hand"
+    },
+    "objects"    : {
+        "apples"           : {"green_apple": []},
+        "robot_parts"      : {"right_thumb_proximal_base": []},
+        "lift_zones"       : {"apple_lift_zone": []},
+        "hand_raise_guides": {"hand_raise_guide": []}
+    },
+    "relations"  : {
+        "episode_timeout": {"type": "timeout", "duration_sec": 30.0, "pattern": "episode timeout"},
+        "exists_apples": {"type": "spawn", "pattern": "spawn {apples}"},
+        "right_hand_in_raise_guide": {"type": "inside", "pattern": "raise {robot_parts} into {hand_raise_guides}"},
+        "right_hand_reached_raise_guide_once": {
+            "type"        : "duration",
+            "relation"    : "right_hand_in_raise_guide",
+            "pattern"     : "reached {robot_parts} into {hand_raise_guides}",
+            "duration_sec": 0.01,
+            "latch"       : true
+        },
+        "right_hand_raised_stable": {
+            "type"        : "duration",
+            "relation"    : "right_hand_in_raise_guide",
+            "pattern"     : "hold {robot_parts} in {hand_raise_guides}",
+            "duration_sec": 0.2,
+            "latch"       : true
+        },
+        "in_right_hand": {"type": "distance", "pattern": "pick {apples} by {robot_parts}", "distance": 0.15},
+        "apple_was_in_right_hand": {
+            "type"        : "duration",
+            "relation"    : "in_right_hand",
+            "pattern"     : "held {apples} by {robot_parts}",
+            "duration_sec": 0.01,
+            "latch"       : true
+        },
+        "apple_in_lift_zone": {"type": "inside", "pattern": "lift {apples} into {lift_zones}"},
+        "apple_reached_lift_zone_once": {
+            "type"        : "duration",
+            "relation"    : "apple_in_lift_zone",
+            "pattern"     : "reached {apples} into {lift_zones}",
+            "duration_sec": 0.01,
+            "latch"       : true
+        },
+        "apple_in_lift_zone_stable": {
+            "type"        : "duration",
+            "relation"    : "apple_in_lift_zone",
+            "pattern"     : "hold {apples} in {lift_zones}",
+            "duration_sec": 0.25,
+            "latch"       : true
+        }
+    },
+    "goals"      : {
+        "right_hand_reached_raise_guide": {
+            "description": "The right hand must have entered the hand raise guide",
+            "for_each"   : "robot_parts",
+            "must_have"  : "right_hand_reached_raise_guide_once",
+            "required"   : true
+        },
+        "right_hand_raised_stable"      : {
+            "description": "The right hand must have remained in the hand raise guide for at least 0.2 seconds",
+            "for_each"   : "robot_parts",
+            "must_have"  : "right_hand_raised_stable",
+            "required"   : true
+        },
+        "apple_in_right_hand"           : {
+            "description": "The apple must have been within the right-hand grasp distance",
+            "for_each"   : "apples",
+            "must_have"  : "apple_was_in_right_hand",
+            "required"   : true
+        },
+        "apple_reached_lift_zone"       : {
+            "description": "The apple must have entered the target lift zone",
+            "for_each"   : "apples",
+            "must_have"  : "apple_reached_lift_zone_once",
+            "required"   : true
+        },
+        "apple_lift_stable"             : {
+            "description": "The apple must have remained in the target lift zone for at least 0.25 seconds",
+            "for_each"   : "apples",
+            "must_have"  : "apple_in_lift_zone_stable",
+            "required"   : true
+        },
+        "apple_picked_and_lifted"       : {
+            "description": "The apple must be held by the right hand and lifted into the target zone",
+            "for_each"   : "apples",
+            "must_have"  : ["in_right_hand", "apple_in_lift_zone_stable"],
+            "required"   : true
+        }
+    },
+    "constraints": {
+        "no_episode_timeout": {
+            "description" : "Episode must not end by timeout",
+            "forbid_value": ["episode_timeout", 1],
+            "per_object"  : false
+        }
+    },
+    "success"    : { "required_goals": ["apple_picked_and_lifted"], "max_violations": {"no_episode_timeout": 0} }
+}

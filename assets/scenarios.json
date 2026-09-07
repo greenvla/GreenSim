@@ -1,0 +1,188 @@
+{
+  "test_pick.e1.a1"  : {
+    "scene"       : "scene.test_pick.e1.a1",
+    "benchmark"   : ["task.test_pick.e1.a1", true],
+    "policy"      : ["policy.test_pick.e1.a1", true],
+    "num_episodes": 900
+  },
+  "test_pick.e1.a2"  : {
+    "scene"       : "scene.test_pick.e1.a2",
+    "benchmark"   : ["task.test_pick.e1.a2", true],
+    "policy"      : ["policy.test_pick.e1.a2", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e1"   : {
+    "scene"       : "scene.dry_kitchen.e1",
+    "benchmark"   : ["task.dry_kitchen.e1", true],
+    "policy"      : ["policy.dry_kitchen.e1", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e1.a1": {
+    "scene"       : "scene.dry_kitchen.e1",
+    "benchmark"   : ["task.dry_kitchen.e1.a1", true],
+    "policy"      : ["policy.dry_kitchen.e1.a1", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e1.a2": {
+    "scene"       : "scene.dry_kitchen.e1",
+    "benchmark"   : ["task.dry_kitchen.e1.a2", true],
+    "policy"      : ["policy.dry_kitchen.e1.a2", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e1.a3": {
+    "scene"       : "scene.dry_kitchen.e1",
+    "benchmark"   : ["task.dry_kitchen.e1.a3", true],
+    "policy"      : ["policy.dry_kitchen.e1.a3", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e2.a1": {
+    "scene"       : "scene.dry_kitchen.e2.a1",
+    "benchmark"   : ["task.dry_kitchen.e2.a1", true],
+    "policy"      : ["policy.dry_kitchen.e2.a1", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e2.a2": {
+    "scene"       : "scene.dry_kitchen.e2.a2",
+    "benchmark"   : ["task.dry_kitchen.e2.a2", true],
+    "policy"      : ["policy.dry_kitchen.e2.a2", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e2.a3": {
+    "scene"       : "scene.dry_kitchen.e2.a1",
+    "benchmark"   : ["task.dry_kitchen.e2.a3", true],
+    "policy"      : ["policy.dry_kitchen.e2.a3", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e3"   : {
+    "scene"       : "scene.dry_kitchen.e3",
+    "benchmark"   : ["task.dry_kitchen.e3", true],
+    "policy"      : ["policy.dry_kitchen.e3", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e3.a1": {
+    "scene"       : "scene.dry_kitchen.e3",
+    "benchmark"   : ["task.dry_kitchen.e3.a1", true],
+    "policy"      : ["policy.dry_kitchen.e3.a1", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e3.a2": {
+    "scene"       : "scene.dry_kitchen.e3",
+    "benchmark"   : ["task.dry_kitchen.e3.a2", true],
+    "policy"      : ["policy.dry_kitchen.e3.a2", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e3.a3": {
+    "scene"       : "scene.dry_kitchen.e3",
+    "benchmark"   : ["task.dry_kitchen.e3.a3", true],
+    "policy"      : ["policy.dry_kitchen.e3.a3", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e3.a4": {
+    "scene"       : "scene.dry_kitchen.e3",
+    "benchmark"   : ["task.dry_kitchen.e3.a4", true],
+    "policy"      : ["policy.dry_kitchen.e3.a4", true],
+    "num_episodes": 900
+  },
+  "dry_kitchen.e3.a5": {
+    "scene"       : "scene.dry_kitchen.e3",
+    "benchmark"   : ["task.dry_kitchen.e3.a5", true],
+    "policy"      : ["policy.dry_kitchen.e3.a5", true],
+    "num_episodes": 900
+  },
+  "sber_shop.e1.a1"  : {
+    "scene"       : "scene.sber_shop.e1",
+    "benchmark"   : ["task.sber_shop.e1.a1", true],
+    "policy"      : ["policy.sber_shop.e1.a1", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e1.a2"  : {
+    "scene"       : "scene.sber_shop.e1.a2",
+    "benchmark"   : ["task.sber_shop.e1.a2", true],
+    "policy"      : ["policy.sber_shop.e1.a2", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e1.a3"  : {
+    "scene"       : "scene.sber_shop.e1.a3",
+    "benchmark"   : ["task.sber_shop.e1.a3", true],
+    "policy"      : ["policy.sber_shop.e1.a3", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e1.a4"  : {
+    "scene"       : "scene.sber_shop.e1.a3",
+    "benchmark"   : ["task.sber_shop.e1.a4", true],
+    "policy"      : ["policy.sber_shop.e1.a4", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e1.a5"  : {
+    "scene"       : "scene.sber_shop.e1.a5",
+    "benchmark"   : ["task.sber_shop.e1.a4", true],
+    "policy"      : ["policy.sber_shop.e1.a5", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e2.a1"  : {
+    "scene"       : "scene.sber_shop.e2.a1",
+    "benchmark"   : ["task.sber_shop.e2.a1", true],
+    "policy"      : ["policy.sber_shop.e2.a1", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e2.a2"  : {
+    "scene"       : "scene.sber_shop.e2.a1",
+    "benchmark"   : ["task.sber_shop.e2.a2", true],
+    "policy"      : ["policy.sber_shop.e2.a2", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e2.a3"  : {
+    "scene"       : "scene.sber_shop.e2.a1",
+    "benchmark"   : ["task.sber_shop.e2.a3", true],
+    "policy"      : ["policy.sber_shop.e2.a3", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e2.a4"  : {
+    "scene"       : "scene.sber_shop.e2.a1",
+    "benchmark"   : ["task.sber_shop.e2.a4", true],
+    "policy"      : ["policy.sber_shop.e2.a4", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e2.a5"  : {
+    "scene"       : "scene.sber_shop.e2.a1",
+    "benchmark"   : ["task.sber_shop.e2.a5", true],
+    "policy"      : ["policy.sber_shop.e2.a5", true],
+    "num_episodes": 990
+  },
+  "sber_shop.e3.a1"  : {
+    "scene"       : "scene.sber_shop.e3.a1",
+    "benchmark"   : ["task.sber_shop.e3.a1", true],
+    "policy"      : ["policy.sber_shop.e3.a1", true],
+    "num_episodes": 990
+  },
+  "darkstore.e1.a1"  : {
+    "scene"       : "scene.darkstore.e1",
+    "benchmark"   : ["task.darkstore.e1.a1", true],
+    "policy"      : ["policy.darkstore.e1.a1", true],
+    "num_episodes": 990
+  },
+  "darkstore.e1.a2"  : {
+    "scene"       : "scene.darkstore.e1.a2",
+    "benchmark"   : ["task.darkstore.e1.a2", true],
+    "policy"      : ["policy.darkstore.e1.a2", true],
+    "num_episodes": 990
+  },
+  "darkstore.e2.a1"  : {
+    "scene"       : "scene.darkstore.e2",
+    "benchmark"   : ["task.darkstore.e2.a1", true],
+    "policy"      : ["policy.darkstore.e2.a1", true],
+    "num_episodes": 990
+  },
+  "darkstore.e2.a2"  : {
+    "scene"       : "scene.darkstore.e2.a2",
+    "benchmark"   : ["task.darkstore.e2.a2", true],
+    "policy"      : ["policy.darkstore.e2.a2", true],
+    "num_episodes": 990
+  },
+  "darkstore.e2.a3"  : {
+    "scene"       : "scene.darkstore.e2.a3",
+    "benchmark"   : ["task.darkstore.e2.a3", true],
+    "policy"      : ["policy.darkstore.e2.a3", true],
+    "num_episodes": 990
+  }
+}

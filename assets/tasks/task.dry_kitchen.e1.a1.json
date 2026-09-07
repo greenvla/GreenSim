@@ -1,0 +1,26 @@
+{
+  "task"       : {"name": "dry_kitchen.e1.a1", "description": "Raise your right hand above the table"},
+  "objects"    : { "tray_guide": {"tray_guide": []}, "robot_parts": {"right_thumb_proximal_base": []} },
+  "relations"  : {
+    "episode_timeout": {"type": "timeout", "duration_sec": 300.0, "pattern": "episode timeout"},
+    "over_table"     : {"type": "distance", "pattern": "reached {robot_parts} at {tray_guide}", "distance": 0.15},
+    "exists_trays"   : {"pattern": "spawn {tray_guide}", "type": "spawn"},
+    "hand_is_static" : {"type": "static", "pattern": "static {robot_parts}"}
+  },
+  "goals"      : {
+    "hand_above_table": {
+      "description": "The right hand is above the table and does not move",
+      "for_each"   : "robot_parts",
+      "must_have"  : ["over_table", "hand_is_static"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to a timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : { "required_goals": ["hand_above_table"], "max_violations": {"no_episode_timeout": 0} }
+}

@@ -1,0 +1,38 @@
+{
+  "task"       : {
+    "name": "darkstore.e2.a2",
+    "description": "Approach the tea box on the shelf, pick the tea box up from the shelf with your right hand, place the tea box in the basket"
+  },
+  "objects"    : {
+    "target_items"    : {"orange_soda_can__task1_target_goods_01": [], "tea_box__task1_target_goods_02": []},
+    "basket_container": {"basket_guide": []},
+    "robot_parts"     : {"right_thumb_proximal_base": []}
+  },
+  "relations"  : {
+    "episode_timeout"        : {"type": "timeout", "duration_sec": 65.0, "pattern": "episode timeout"},
+    "in_hand"                : {
+      "pattern" : "pick {target_items} by {robot_parts}",
+      "type"    : "distance",
+      "distance": 0.25
+    },
+    "in_basket"              : {"pattern": "{target_items} is inside {basket_container}", "type": "inside"},
+    "exists_items"           : {"pattern": "spawn {target_items}", "type": "spawn"},
+    "exists_basket_container": {"pattern": "spawn {basket_container}", "type": "spawn"}
+  },
+  "goals"      : {
+    "all_items_in_basket": {
+      "description": "The orange can and the tea box must both be in the basket",
+      "for_each"   : "target_items",
+      "must_have"  : "in_basket",
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end by timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : { "required_goals": ["all_items_in_basket"], "max_violations": {"no_episode_timeout": 0} }
+}

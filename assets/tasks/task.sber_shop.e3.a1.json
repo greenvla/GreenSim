@@ -1,0 +1,112 @@
+{
+    "task"       : {
+        "name": "sber_shop.e3.a1",
+        "description": "Raise your right hand, pick up the cat toy with your right hand, place the cat toy inside the basket with your right hand, move your right hand away from the basket"
+    },
+    "objects"    : {
+        "cat_toy_items"      : {"cat_toy": []},
+        "baskets"            : {"basket": []},
+        "basket_inner_guides": {"basket_guide": []},
+        "basket_place_guides": {"basket_place_guide": []},
+        "hand_raise_guides"  : {"hand_raise_guide": []},
+        "robot_parts"        : {"right_thumb_proximal_base": []}
+    },
+    "relations"  : {
+        "episode_timeout"              : {"type": "timeout", "duration_sec": 50.0, "pattern": "episode timeout"},
+        "cat_toy_in_right_hand"        : {
+            "type"      : "distance",
+            "pattern"   : "pick {cat_toy_items} by {robot_parts}",
+            "distance"  : 0.15,
+            "comparison": "less"
+        },
+        "right_hand_in_raise_area"     : {"type": "inside", "pattern": "{robot_parts} is inside {hand_raise_guides}"},
+        "right_hand_was_raised"        : {
+            "type"        : "duration",
+            "relation"    : "right_hand_in_raise_area",
+            "duration_sec": 0.20,
+            "latch"       : true,
+            "pattern"     : "{robot_parts} remains inside {hand_raise_guides}"
+        },
+        "cat_toy_in_raise_area"        : {
+            "type"   : "inside",
+            "pattern": "{cat_toy_items} is inside {hand_raise_guides}"
+        },
+        "cat_toy_was_raised_over_table": {
+            "type"        : "duration",
+            "relation"    : "cat_toy_in_raise_area",
+            "duration_sec": 0.30,
+            "latch"       : true,
+            "pattern"     : "{cat_toy_items} remains inside {hand_raise_guides}"
+        },
+        "cat_toy_in_basket"            : {
+            "type"   : "inside",
+            "pattern": "{cat_toy_items} is inside {basket_inner_guides}"
+        },
+        "basket_in_place_area"         : {"type": "inside", "pattern": "{baskets} is inside {basket_place_guides}"},
+        "right_hand_away_from_basket"  : {
+            "type"      : "distance",
+            "pattern"   : "{baskets} is far from {robot_parts}",
+            "distance"  : 0.60,
+            "comparison": "greater"
+        },
+        "basket_static"                : {
+            "type"       : "static",
+            "pattern"    : "{baskets} is static",
+            "lin_vel_eps": 0.04,
+            "ang_vel_eps": 0.15
+        },
+        "exists_cat_toys"              : {"type": "spawn", "pattern": "spawn {cat_toy_items}"},
+        "exists_baskets"               : {"type": "spawn", "pattern": "spawn {baskets}"},
+        "exists_basket_inner_area"     : {"type": "spawn", "pattern": "spawn {basket_inner_guides}"},
+        "exists_basket_place_area"     : {"type": "spawn", "pattern": "spawn {basket_place_guides}"},
+        "exists_hand_raise_area"       : {"type": "spawn", "pattern": "spawn {hand_raise_guides}"}
+    },
+    "goals"      : {
+        "right_hand_raised"          : {
+            "description": "The right hand must enter the hand raise area",
+            "for_each"   : "robot_parts",
+            "must_have"  : ["right_hand_was_raised"],
+            "required"   : true
+        },
+        "cat_toy_raised_over_table"  : {
+            "description": "The cat toy must be raised into the hand raise area",
+            "for_each"   : "cat_toy_items",
+            "must_have"  : ["cat_toy_was_raised_over_table"],
+            "required"   : true
+        },
+        "cat_toy_is_in_basket"       : {
+            "description": "The cat toy must be inside the basket and remain stable",
+            "for_each"   : "cat_toy_items",
+            "must_have"  : ["cat_toy_in_basket"],
+            "required"   : true
+        },
+        "basket_is_in_place_area"    : {
+            "description": "The basket must remain inside the basket place area and remain stable",
+            "for_each"   : "baskets",
+            "must_have"  : ["basket_in_place_area", "basket_static"],
+            "required"   : true,
+            "include_in_scoring": false
+        },
+        "right_hand_away_from_basket": {
+            "description": "The right hand must be moved away from the basket",
+            "for_each"   : "baskets",
+            "must_have"  : ["right_hand_away_from_basket"],
+            "required"   : true,
+            "include_in_scoring": false
+        }
+    },
+    "constraints": {
+        "no_episode_timeout": {
+            "description" : "The episode must not timeout",
+            "forbid_value": ["episode_timeout", 1],
+            "per_object"  : false
+        }
+    },
+    "success"    : {
+        "required_goals": [
+            "right_hand_raised",           "cat_toy_raised_over_table",   "cat_toy_is_in_basket",
+            "basket_is_in_place_area",     "right_hand_away_from_basket"
+        ],
+        "max_violations": {"no_episode_timeout": 0}
+    }
+}

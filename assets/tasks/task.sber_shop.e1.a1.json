@@ -1,0 +1,78 @@
+{
+  "task"       : {
+    "name": "sber_shop.e1.a1",
+    "description": "Open the lower drawer of the left cabinet with your right hand, take the cat toy with your left hand, close the drawer with your right hand, place the cat toy into the basket with your left hand"
+  },
+  "objects"    : {
+    "drawer_handle"      : {"drawer_handle_guide": []},
+    "drawer_open_guide"  : {"drawer_is_opened_guide": []},
+    "drawer_closed_guide": {"drawer_is_closed_guide": []},
+    "cat_toy"            : {"cat_toy": []},
+    "basket_container"   : {"basket_guide": []},
+    "robot_parts"        : {"left_thumb_proximal_base": []},
+    "toy_lifted_area"    : {"toy_lifted_area": []}
+  },
+  "relations"  : {
+    "episode_timeout"        : {"type": "timeout", "duration_sec": 65.0, "pattern": "episode timeout"},
+    "exists_drawer_handle"   : {"type": "spawn", "pattern": "spawn {drawer_handle}"},
+    "exists_cat_toy"         : {"type": "spawn", "pattern": "spawn {cat_toy}"},
+    "exists_basket_container": {"type": "spawn", "pattern": "spawn {basket_container}"},
+    "exists_toy_lifted_area" : {"type": "spawn", "pattern": "spawn {toy_lifted_area}"},
+    "drawer_opened"          : {"type": "inside", "pattern": "{drawer_handle} is inside {drawer_open_guide}"},
+    "drawer_closed"          : {"type": "inside", "pattern": "{drawer_handle} is inside {drawer_closed_guide}"},
+    "toy_in_left_hand"       : {"type": "distance", "pattern": "pick {cat_toy} by {robot_parts}", "distance": 0.15},
+    "toy_in_lifted_area"     : {"type": "inside", "pattern": "{cat_toy} is inside {toy_lifted_area}"},
+    "toy_was_lifted"         : {
+      "type"        : "duration",
+      "relation"    : "toy_in_lifted_area",
+      "duration_sec": 0.3,
+      "latch"       : true,
+      "pattern"     : "{cat_toy} remains inside {toy_lifted_area}"
+    },
+    "toy_placed_in_basket"   : {"type": "inside", "pattern": "{cat_toy} is inside {basket_container}"}
+  },
+  "goals"      : {
+    "drawer_is_open"        : {
+      "description": "The lower drawer handle is in the open position",
+      "for_each"   : "drawer_handle",
+      "must_have"  : ["drawer_opened"],
+      "required"   : false
+    },
+    "drawer_is_closed"      : {
+      "description"       : "The lower drawer handle is in the closed position",
+      "for_each"          : "drawer_handle",
+      "must_have"         : ["drawer_closed"],
+      "required"          : false,
+      "include_in_scoring": false
+    },
+    "toy_is_grasped"        : {
+      "description": "The cat toy is held by the left hand",
+      "for_each"   : "cat_toy",
+      "must_have"  : ["toy_in_left_hand"],
+      "required"   : true
+    },
+    "toy_lifted_over_drawer": {
+      "description": "The cat toy must be lifted into the toy lifted area and remain there for at least 0.3 seconds",
+      "for_each"   : "cat_toy",
+      "must_have"  : ["toy_was_lifted"],
+      "required"   : true
+    },
+    "toy_in_basket"         : {
+      "description": "The cat toy is being in the basket",
+      "for_each"   : "cat_toy",
+      "must_have"  : ["toy_placed_in_basket"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to a timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": ["toy_lifted_over_drawer", "toy_in_basket"],
+    "max_violations": {"no_episode_timeout": 0}
+  }
+}

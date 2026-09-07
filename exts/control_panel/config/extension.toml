@@ -1,0 +1,13 @@
+[package]
+title = "Sber Robotics Control"
+description = "Control panel for Sber robot hands"
+version = "1.0.0"
+category = "Robotics"
+authors = [" "]
+
+[[python.module]]
+name = "control_panel"
+
+[settings]
+# Автозагрузка при старте Isaac Sim
+exts."control_panel".autoLoad = true

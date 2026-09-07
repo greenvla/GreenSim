@@ -1,0 +1,43 @@
+{
+  "task"       : {"name": "dry_kitchen.e1.a3", "description": "Take the cup with your right hand"},
+  "objects"    : {
+    "tray_guide" : {"tray_guide": []},
+    "trays"      : {"model_food_tray": []},
+    "robot_parts": {"right_thumb_proximal_base": []},
+    "cups"       : {"model_cup": []},
+    "cup_guide"  : {"cup_over_table_guide": []}
+  },
+  "relations"  : {
+    "episode_timeout": {"type": "timeout", "duration_sec": 30.0, "pattern": "episode timeout"},
+    "over_table"     : {"type": "distance", "pattern": "reached {robot_parts} at {tray_guide}", "distance": 0.15},
+    "cup_in_hand"    : {"pattern": "pick {cups} by {robot_parts}", "type": "distance", "distance": 0.15},
+    "exists_trays"   : {"pattern": "spawn {tray_guide}", "type": "spawn"},
+    "exists_cup"     : {"pattern": "spawn {cups}", "type": "spawn"},
+    "hand_is_static" : {"type": "static", "pattern": "static {robot_parts}"},
+    "cup_on_tray"    : {"type": "distance", "pattern": "reached {cups} at {trays}", "distance": 0.15},
+    "cup_is_static"  : {"type": "static", "pattern": "static {cups}"},
+    "cup_over_table" : {"type": "inside", "pattern": "{cups} is inside {cup_guide}"}
+  },
+  "goals"      : {
+    "cup_in_hand_over_table": {
+      "description": "The cup in hand over the table",
+      "for_each"   : "cups",
+      "must_have"  : ["cup_in_hand", "cup_over_table"],
+      "required"   : true
+    },
+    "robot_stationary"      : {
+      "description": "The robot does not move",
+      "for_each"   : "robot_parts",
+      "must_have"  : ["hand_is_static"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to a timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : { "required_goals": ["cup_in_hand_over_table"], "max_violations": {"no_episode_timeout": 0} }
+}

@@ -1,0 +1,47 @@
+{
+  "task"       : {
+    "name"       : "dry_kitchen.e2.a2",
+    "description": "Pick up the cup with your right hand and place the cup on the tray"
+  },
+  "objects"    : {
+    "cup_items"       : {"model_cup": []                                                        },
+    "tray_area_guides": {                 "tray_area_guide": []                                 },
+    "right_hand_parts": {                                        "right_thumb_proximal_base": []},
+    "robot_parts"     : {                                        "right_thumb_proximal_base": []}
+  },
+  "relations"  : {
+    "episode_timeout"  : {"type": "timeout", "duration_sec": 300.0, "pattern": "episode timeout"},
+    "exists_cup"       : {"type": "spawn", "pattern": "spawn {cup_items}"},
+    "exists_tray_area" : {"type": "spawn", "pattern": "spawn {tray_area_guides}"},
+    "cup_in_right_hand": {"type": "distance", "pattern": "pick {cup_items} by {right_hand_parts}", "distance": 0.15},
+    "cup_in_tray_area" : {"type": "inside", "pattern": "place {cup_items} into {tray_area_guides}"},
+    "cup_upright"      : {
+      "type"          : "upright",
+      "pattern"       : "cup is upright {cup_items}",
+      "reference_mode": "spawn",
+      "max_tilt_deg"  : 15.0
+    },
+    "cup_static"       : {
+      "type"       : "static",
+      "pattern"    : "cup is stationary {cup_items}",
+      "lin_vel_eps": 0.02,
+      "ang_vel_eps": 0.05
+    }
+  },
+  "goals"      : {
+    "cup_placed_correctly": {
+      "description": "The cup must be inside the tray area, upright, and stationary",
+      "for_each"   : "cup_items",
+      "must_have"  : ["cup_in_tray_area", "cup_upright", "cup_static"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : { "required_goals": ["cup_placed_correctly"], "max_violations": {"no_episode_timeout": 0} }
+}

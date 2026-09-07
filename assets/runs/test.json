@@ -1,0 +1,16 @@
+{
+  "run_name" : "green_challenge",
+  "args"     : {
+    "controller"           : "zest",
+    "robot"                : "green",
+    "control_mode"         : "vla",
+    "frame_mode"           : "latest",
+    "env_simdt_denominator": 250,
+    "env_decimation"       : 1,
+    "deactivate_torque"    : true
+  },
+  "scenarios": [
+    {"scenario": "test_pick.e1.a1", "num_episodes": 2},
+    {"scenario": "test_pick.e1.a2", "num_episodes": 2}
+  ]
+}

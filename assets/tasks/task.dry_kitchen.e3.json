@@ -1,0 +1,92 @@
+{
+  "task"       : {
+    "name": "dry_kitchen.e3",
+    "description": "Raise your left hand, pick up the plate with your left hand, place the plate onto the tray, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray"
+  },
+  "objects"    : {
+    "plate_items"     : {"model_plate_thin": []},
+    "cup_items"       : {"model_cup": []},
+    "held_items"      : {"model_plate_thin": [], "model_cup": []},
+    "trays"           : {"model_food_tray": []},
+    "tray_area_guides": {"tray_area_guide": []},
+    "robot_parts"     : {"left_thumb_proximal_base": [], "right_thumb_proximal_base": []},
+    "right_hand_parts": {"right_thumb_proximal_base": []}
+  },
+  "relations"  : {
+    "episode_timeout"   : {"type": "timeout", "duration_sec": 130.0, "pattern": "episode timeout"},
+    "in_hand"           : {"pattern": "pick {held_items} by {robot_parts}", "type": "distance", "distance": 0.15},
+    "bowl_in_right_hand": {
+      "type"      : "distance",
+      "pattern"   : "pick {cup_items} by {right_hand_parts}",
+      "distance"  : 0.15,
+      "comparison": "less"
+    },
+    "right_hand_away"   : {
+      "type"      : "distance",
+      "pattern"   : "{cup_items} is far from {right_hand_parts}",
+      "distance"  : 0.40,
+      "comparison": "greater"
+    },
+    "plate_in_tray_area": {"pattern": "{plate_items} is inside {tray_area_guides}", "type": "inside"},
+    "bowl_in_tray_area" : {"pattern": "{cup_items} is inside {tray_area_guides}", "type": "inside"},
+    "plate_flat"        : {
+      "pattern"      : "{plate_items} is upright",
+      "type"         : "upright",
+      "max_tilt_deg" : 35.0,
+      "unsigned"     : true,
+      "local_up_axis": [0.0, 0.0, 1.0]
+    },
+    "plate_static"      : {
+      "pattern"    : "{plate_items} is static",
+      "type"       : "static",
+      "lin_vel_eps": 0.04,
+      "ang_vel_eps": 0.15
+    },
+    "bowl_upright"      : {
+      "pattern"       : "{cup_items} is upright",
+      "type"          : "upright",
+      "max_tilt_deg"  : 35.0,
+      "reference_mode": "spawn"
+    },
+    "bowl_static"       : {
+      "pattern"    : "{cup_items} is static",
+      "type"       : "static",
+      "lin_vel_eps": 0.04,
+      "ang_vel_eps": 0.15
+    },
+    "exists_plates"     : {"pattern": "spawn {plate_items}", "type": "spawn"},
+    "exists_cups"       : {"pattern": "spawn {cup_items}", "type": "spawn"},
+    "exists_trays"      : {"pattern": "spawn {trays}", "type": "spawn"},
+    "exists_tray_area"  : {"pattern": "spawn {tray_area_guides}", "type": "spawn"}
+  },
+  "goals"      : {
+    "plate_is_on_tray": {
+      "description": "The plate lies flat on the tray with at least 70% of its area on the tray",
+      "for_each"   : "plate_items",
+      "must_have"  : ["plate_in_tray_area", "plate_flat", "plate_static"],
+      "required"   : true
+    },
+    "bowl_is_on_tray" : {
+      "description": "The sugar bowl stands upright on the tray with at least 70% of its base area on the tray, next to the plate",
+      "for_each"   : "cup_items",
+      "must_have"  : ["bowl_in_tray_area", "bowl_upright", "bowl_static", "right_hand_away"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    },
+    "bowl_released"     : {
+      "description" : "The right hand must not remain close to the sugar bowl at the end",
+      "forbid_value": ["bowl_in_right_hand", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": ["plate_is_on_tray", "bowl_is_on_tray"],
+    "max_violations": {"no_episode_timeout": 0, "bowl_released": 0}
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "camera_names": [
+    "left_head_camera",
+    "left_wrist_camera",
+    "right_wrist_camera"
+  ],
+
+  "presets": {
+    "head_left_rgb_fisheye_kb3": {
+      "height": 600,
+      "width": 960,
+      "clipping_range": [0.08, 1000000.0],
+      "data_types": ["rgb"],
+      "projection_type": "fisheyeKannalaBrandtK3",
+      "intrinsic": {
+        "fx": 307.93140724016337,
+        "fy": 307.8823868675424,
+        "cx": 480,
+        "cy": 300,
+        "distortion": [0, 0, 0, 0],
+        "resolution": [960, 600],
+        "fov": 180.0,
+        "horizontal_aperture": 5.784
+      },
+      "extrinsic": {
+        "position": [0.0, 0.0, 0.0155],
+        "rotation": [0.5, 0.5, -0.5, -0.5]
+      },
+      "update_period": 0.067
+    },
+
+    "head_right_rgb_fisheye_kb3": {
+      "height": 600,
+      "width": 960,
+      "clipping_range": [0.08, 1000000.0],
+      "data_types": ["rgb"],
+      "projection_type": "fisheyeKannalaBrandtK3",
+      "intrinsic": {
+        "fx": 307.6776698581577,
+        "fy": 307.7025650237449,
+        "cx": 480,
+        "cy": 300,
+        "distortion": [-0.008605678403163834, 0.006550329526540998, -0.010705254411063993, 0.003190446522626963],
+        "resolution": [960, 600],
+        "fov": 180.0,
+        "horizontal_aperture": 5.784
+      },
+      "extrinsic": {
+        "position": [0.0, 0.0, 0.0155],
+        "rotation": [0.5, 0.5, -0.5, -0.5]
+      },
+      "update_period": 0.067
+    },
+
+    "wrist_left_rgb_fisheye_kb3": {
+      "height": 600,
+      "width": 960,
+      "clipping_range": [0.025, 1000000.0],
+      "data_types": ["rgb"],
+      "projection_type": "fisheyeKannalaBrandtK3",
+      "intrinsic": {
+        "fx": 270,
+        "fy": 270,
+        "cx": 480,
+        "cy": 300,
+        "distortion": [-0.04425871227261273, 0.0026917446566496264, -0.0073251170477721846, 0.002388949020418464],
+        "resolution": [960, 600],
+        "fov": 180.0,
+        "horizontal_aperture": 5.784
+      },
+      "extrinsic": {
+        "position": [0.0, 0.0, 0.0155],
+        "rotation": [0.5, 0.5, -0.5, -0.5]
+      },
+      "update_period": 0.067
+    },
+
+    "wrist_right_rgb_fisheye_kb3": {
+      "height": 600,
+      "width": 960,
+      "clipping_range": [0.025, 1000000.0],
+      "data_types": ["rgb"],
+      "projection_type": "fisheyeKannalaBrandtK3",
+      "intrinsic": {
+        "fx": 269.8140615097075,
+        "fy": 269.83874984152067,
+        "cx": 480,
+        "cy": 300,
+        "distortion": [-0.044750758708225376, 0.005745052094967382, -0.010138228555837916, 0.0030683740144837063],
+        "resolution": [960, 600],
+        "fov": 180.0,
+        "horizontal_aperture": 5.784
+      },
+      "extrinsic": {
+        "position": [0.0, 0.0, 0.0155],
+        "rotation": [0.5, 0.5, -0.5, -0.5]
+      },
+      "update_period": 0.067
+    },
+
+    "head_left_rgb_fisheye_poly200": {
+        "height": 600,
+        "width": 960,
+        "clipping_range": [0.13, 1000000.0],
+        "data_types": ["rgb"],
+        "mask_file": "camera_mask/mask_head.npy",
+        "projection_type": "fisheyePolynomial",
+        "intrinsic": {
+        "fx": 60.0,
+        "fy": 60.0,
+        "ftheta_width": 860.0,
+        "cx": 430.0,
+        "cy": 300.0,
+        "distortion": [0.0, 0.0038, 0.0, 0.0],
+        "resolution": [960, 600],
+        "fov": 200.0,
+        "horizontal_aperture": 5.784,
+        "ftheta_height": 600.0
+        },
+        "extrinsic": {
+        "position": [0.0, 0.0, 0.0155],
+        "rotation": [0.5, 0.5, -0.5, -0.5]
+        },
+        "update_period": 0.0333
+    },
+    "wrist_left_rgb_fisheye_poly200": {
+            "height": 600,
+            "width": 960,
+            "clipping_range": [0.001,1000000.0],
+            "data_types": ["rgb"],
+            "mask_file": "camera_mask/mask_right_arm.npy",
+            "projection_type": "fisheyePolynomial",
+            "intrinsic": {
+                "fx": 270.0,
+                "fy": 270.0,
+                "cx": 474.0,
+                "cy": 203.0,
+                "resolution": [960,600],
+                "fov": 290.0,
+                "horizontal_aperture": 5.784,
+                "ftheta_width": 900.0,
+                "ftheta_height": 510.0,
+                "distortion": [0.0, 0.0045, 0.0, 0.0]
+            },
+            "extrinsic": {
+                "position": [0.1, 0.0, 0.0155],
+                "rotation": [0.5, 0.5, -0.5, -0.5]
+            },
+            "update_period": 0.067
+        },
+        "wrist_right_rgb_fisheye_poly200":{
+            "height": 600,
+            "width": 960,
+            "clipping_range": [0.001,1000000.0],
+            "data_types": ["rgb"],
+            "mask_file": "camera_mask/mask_left_arm.npy",
+            "projection_type": "fisheyePolynomial",
+            "intrinsic": {
+                "fx": 270.0,
+                "fy": 270.0,
+                "cx": 441.0,
+                "cy": 162.0,
+                "resolution": [960,600],
+                "fov": 290.0,
+                "horizontal_aperture": 5.784,
+                "ftheta_width": 900.0,
+                "ftheta_height": 509.0,
+                "distortion": [0.0, 0.0045, 0.0, 0.0]
+            },
+            "extrinsic": {
+                "position": [0.1, 0.0, 0.0155],
+                "rotation": [0.5, 0.5, -0.5, -0.5]
+            },
+            "update_period": 0.067
+        },
+    "head_left_rgb_pinhole": {
+        "height": 600,
+        "width": 960,
+        "clipping_range": [0.08, 1000.0],
+        "data_types": ["rgb"],
+        "projection_type": "pinhole",
+        "intrinsic": {
+            "fx": 128,
+            "fy": 128,
+            "cx": 480.0,
+            "cy": 300.0,
+            "distortion": [0.0, 0.0, 0.0, 0.0],
+            "resolution": [960, 600],
+            "fov": 150.0,
+            "horizontal_aperture": 5.784
+        },
+        "extrinsic": {
+            "position": [0.4, 0.0, 0.0155],
+            "rotation": [0.5, 0.5, -0.5, -0.5]
+        },
+        "update_period": 0.0333
+    },
+    "head_right_rgb_pinhole": {
+    "height": 600,
+    "width": 960,
+    "clipping_range": [0.15, 1000.0],
+    "data_types": ["rgb"],
+    "projection_type": "pinhole",
+    "intrinsic": {
+        "fx": 128,
+        "fy": 128,
+        "cx": 480.0,
+        "cy": 300.0,
+        "distortion": [0.0, 0.0, 0.0, 0.0],
+        "resolution": [960, 600],
+        "fov": 150.0,
+        "horizontal_aperture": 5.784
+    },
+    "extrinsic": {
+        "position": [0.0, 0.0, 0.0155],
+        "rotation": [0.5, 0.5, -0.5, -0.5]
+    },
+    "update_period": 0.067
+    },
+    "wrist_left_rgb_pinhole": {
+    "height": 600,
+    "width": 960,
+    "clipping_range": [0.05, 1000.0],
+    "data_types": ["rgb"],
+    "projection_type": "pinhole",
+    "intrinsic": {
+        "fx": 128,
+        "fy": 128,
+        "cx": 480.0,
+        "cy": 300.0,
+        "distortion": [0.0, 0.0, 0.0, 0.0],
+        "resolution": [960, 600],
+        "fov": 150.0,
+        "horizontal_aperture": 5.784
+    },
+    "extrinsic": {
+        "position": [0.0, 0.0, 0.0155],
+        "rotation": [0.5, 0.5, -0.5, -0.5]
+    },
+    "update_period": 0.067
+    },
+    "wrist_right_rgb_pinhole": {
+    "height": 600,
+    "width": 960,
+    "clipping_range": [0.05, 1000.0],
+    "data_types": ["rgb"],
+    "projection_type": "pinhole",
+    "intrinsic": {
+        "fx": 128,
+        "fy": 128,
+        "cx": 480.0,
+        "cy": 300.0,
+        "distortion": [0.0, 0.0, 0.0, 0.0],
+        "resolution": [960, 600],
+        "fov": 150.0,
+        "horizontal_aperture": 5.784
+    },
+    "extrinsic": {
+        "position": [0.0, 0.0, 0.0155],
+        "rotation": [0.5, 0.5, -0.5, -0.5]
+    },
+    "update_period": 0.067
+    }},
+  "camera_mapping": {
+    "left_head_camera": "head_left_rgb_fisheye_poly200",
+    "right_head_camera": null,
+    "left_wrist_camera": "wrist_left_rgb_fisheye_poly200",
+    "right_wrist_camera": "wrist_right_rgb_fisheye_poly200"
+  }
+}

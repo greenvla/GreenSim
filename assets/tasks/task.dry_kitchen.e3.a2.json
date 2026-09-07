@@ -1,0 +1,96 @@
+{
+  "task"       : {
+    "name": "dry_kitchen.e3.a2",
+    "description": "Raise your right hand, pick up the sugar bowl with your right hand, place the sugar bowl onto the tray with your right hand, move your right hand away from the sugar bowl"
+  },
+  "objects"    : {
+    "bowl_items"       : {"model_cup": []},
+    "trays"            : {"model_food_tray": []},
+    "tray_area_guides" : {"tray_area_guide": []},
+    "robot_parts"      : {"left_thumb_proximal_base": [], "right_thumb_proximal_base": []},
+    "right_hand_parts" : {"right_thumb_proximal_base": []},
+    "hand_raise_guides": {"hand_raise_guide": []},
+    "item_hold_guides" : {"item_hold_guide": []}
+  },
+  "relations"  : {
+    "episode_timeout": {"type": "timeout", "duration_sec": 52.0, "pattern": "episode timeout"},
+    "exists_bowls": {"type": "spawn", "pattern": "spawn {bowl_items}"},
+    "exists_trays": {"type": "spawn", "pattern": "spawn {trays}"},
+    "exists_tray_area": {"type": "spawn", "pattern": "spawn {tray_area_guides}"},
+    "exists_hand_raise_area": {"type": "spawn", "pattern": "spawn {hand_raise_guides}"},
+    "exists_item_hold_area": {"type": "spawn", "pattern": "spawn {item_hold_guides}"},
+    "right_hand_in_raise_area": {"type": "inside", "pattern": "{right_hand_parts} is inside {hand_raise_guides}"},
+    "right_hand_raised_once": {
+      "type"        : "duration",
+      "relation"    : "right_hand_in_raise_area",
+      "duration_sec": 0.20,
+      "latch"       : true,
+      "pattern"     : "{right_hand_parts} remains inside {hand_raise_guides}"
+    },
+    "in_hand": {
+      "type"      : "distance",
+      "pattern"   : "pick {bowl_items} by {right_hand_parts}",
+      "distance"  : 0.15,
+      "comparison": "less"
+    },
+    "bowl_in_item_hold_area": {"type": "inside", "pattern": "{bowl_items} is inside {item_hold_guides}"},
+    "bowl_was_raised_over_table": {
+      "type"        : "duration",
+      "relation"    : "bowl_in_item_hold_area",
+      "duration_sec": 0.30,
+      "latch"       : true,
+      "pattern"     : "{bowl_items} remains inside {item_hold_guides}"
+    },
+    "bowl_in_tray_area": {"type": "inside", "pattern": "{bowl_items} is inside {tray_area_guides}"},
+    "bowl_upright": {
+      "type"          : "upright",
+      "pattern"       : "{bowl_items} is upright",
+      "max_tilt_deg"  : 35.0,
+      "reference_mode": "spawn"
+    },
+    "bowl_static": {"type": "static", "pattern": "{bowl_items} is static", "lin_vel_eps": 0.04, "ang_vel_eps": 0.15},
+    "right_hand_away": {
+      "type"      : "distance",
+      "pattern"   : "{bowl_items} is far from {right_hand_parts}",
+      "distance"  : 0.40,
+      "comparison": "greater"
+    }
+  },
+  "goals"      : {
+    "right_hand_raised"      : {
+      "description": "The right hand must enter the hand raise area",
+      "for_each"   : "right_hand_parts",
+      "must_have"  : ["right_hand_raised_once"],
+      "required"   : true
+    },
+    "bowl_held_in_raise_area": {
+      "description": "The sugar bowl must be held by the right hand while it is inside the item hold area",
+      "for_each"   : "bowl_items",
+      "must_have"  : ["bowl_was_raised_over_table"],
+      "required"   : true
+    },
+    "bowl_is_on_tray"        : {
+      "description": "The sugar bowl lies flat on the tray",
+      "for_each"   : "bowl_items",
+      "must_have"  : ["bowl_in_tray_area", "bowl_upright", "bowl_static", "right_hand_away"],
+      "required"   : true
+    },
+    "right_hand_moved_away"  : {
+      "description": "The right hand must be moved away from the sugar bowl",
+      "for_each"   : "bowl_items",
+      "must_have"  : ["right_hand_away"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": ["right_hand_raised", "bowl_held_in_raise_area", "bowl_is_on_tray"],
+    "max_violations": {"no_episode_timeout": 0}
+  }
+}

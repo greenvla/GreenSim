@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Benchmark Dashboard</title>
+    <style>
+        :root {
+            --bg: #f0f2f5;
+            --card: #ffffff;
+            --text: #333;
+            --success: #10b981;
+            --fail: #ef4444;
+            --accent: #3b82f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .status-pill {
+            background: #e5e7eb;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .status-pill.live {
+            background: #dbeafe;
+            color: var(--accent);
+        }
+
+
+
+        /* Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Key Metrics Big Numbers */
+        .metric-big {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .text-success {
+            color: var(--success);
+        }
+
+        .text-fail {
+            color: var(--fail);
+        }
+
+        /* Lists */
+        ul.clean-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.clean-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        ul.clean-list li:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            color: #6b7280;
+        }
+
+        .value {
+            font-weight: 600;
+            font-family: monospace;
+        }
+
+        /* Timeline */
+        .timeline {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 10px;
+            background: #f9fafb;
+        }
+
+        .timeline-item {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .timeline-time {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-right: 8px;
+        }
+
+        /* Raw JSON Toggle */
+        .raw-toggle {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .raw-json {
+            display: none;
+            background: #1f2937;
+            color: #a5f3fc;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            overflow: auto;
+            max-height: 400px;
+            white-space: pre-wrap;
+        }
+
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🍎 Benchmark Monitor</h1>
+            <div id="header-info" class="status-pill">Загрузка...</div>
+        </header>
+        <div class="card" style="margin-bottom: 20px;">
+            <h3>Статистика эпизодов бенчмарка</h3>
+            <div id="statistics">Загрузка статистики...</div>
+        </div>
+        <div class="card" style="margin-bottom: 20px;">
+            <h3>Реальная длительность эпизодов</h3>
+            <div id="episode-statistics">
+                Загрузка статистики длительности эпизодов...
+            </div>
+        </div>
+        <div id="dashboard" class="dashboard-grid">
+            <!-- Сюда будет вставляться контент -->
+            <div class="card" style="grid-column: 1 / -1; text-align: center; color: #666;">
+                Ожидание данных от сервера...
+            </div>
+        </div>
+
+        <div class="raw-toggle">
+            <button onclick="toggleRaw()">Показать/Скрыть полный JSON</button>
+            <pre id="raw-json-block" class="raw-json"></pre>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:5000/api/latest_episode';
+
+        async function fetchBenchmarkData() {
+            try {
+                const res = await fetch(API_URL);
+                const data = await res.json();
+
+                if (data.error) {
+                    document.getElementById('dashboard').innerHTML = `<div class="card" style="color:red">${data.error}</div>`;
+                    return;
+                }
+                if (data.message) {
+                    document.getElementById('dashboard').innerHTML = `<div class="card">${data.message}</div>`;
+                    return;
+                }
+
+                renderDashboard(data);
+                document.getElementById('header-info').innerText = `📁 ${data._folder} | 🕒 ${new Date().toLocaleTimeString()}`;
+                document.getElementById('raw-json-block').textContent = JSON.stringify(data, null, 2);
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function renderDashboard(data) {
+            // --- ИЗВЛЕЧЕНИЕ ДАННЫХ ---
+            const success = data.success;
+            const duration = data.duration_seconds ? data.duration_seconds.toFixed(2) : 'N/A';
+            const episodeId = data.episode_id || 'Unknown';
+
+            // Цели
+            const goalKey = Object.keys(data.goals)[0]; // Берем первую цель (all_fruits_placed)
+            const goalData = data.goals[goalKey];
+            const goalStatus = goalData?.status || 'unknown';
+            const goalDetails = goalData?.details || {};
+            const satisfiedCount = goalDetails.satisfied_objects_count || 0;
+            const totalCount = goalDetails.total_objects || 0;
+
+            // Ограничения
+            const constraints = data.constraints || {};
+            let constraintsHtml = '';
+            for (const [key, val] of Object.entries(constraints)) {
+                const passed = val.passed ? '✅' : '❌';
+                const color = val.passed ? 'text-success' : 'text-fail';
+                constraintsHtml += `
+                <li>
+                    <span class="label">${val.description}</span>
+                    <span class="value ${color}">${passed} ${val.violations > 0 ? '(' + val.violations + ' наруш.)' : ''}</span>
+                </li>
+            `;
+            }
+
+            // Таймлайн (берем последние 10 событий)
+            const history = data.history?.timeline || [];
+            const recentEvents = history.slice(-10).reverse(); // Последние сначала
+            let timelineHtml = '';
+            recentEvents.forEach(evt => {
+                timelineHtml += `
+                <div class="timeline-item">
+                    <span class="timeline-time">${evt.time.toFixed(2)}s</span>
+                    <b>${evt.message_key}</b>
+                </div>
+            `;
+            });
+
+            // --- ОТРИСОВКА ---
+            const html = `
+            <!-- Карточка 1: Главный статус -->
+            <div class="card">
+                <h3>Результат эпизода</h3>
+                <div class="metric-big ${success ? 'text-success' : 'text-fail'}">
+                    ${success ? 'SUCCESS' : 'FAIL'}
+                </div>
+                <ul class="clean-list">
+                    <li><span class="label">ID Эпизода</span> <span class="value">${episodeId}</span></li>
+                    <li><span class="label">Длительность</span> <span class="value">${duration} сек</span></li>
+                    <li><span class="label">Файл</span> <span class="value" style="font-size:0.8em">${data._filename}</span></li>
+                </ul>
+            </div>
+
+            <!-- Карточка 2: Цели и Объекты -->
+            <div class="card">
+                <h3>Цели и Объекты</h3>
+                <div style="text-align:center; margin: 15px 0;">
+                    <span style="font-size:3rem; font-weight:bold; color:var(--accent)">${satisfiedCount}/${totalCount}</span>
+                    <div style="font-size:0.9rem; color:#666">фруктов размещено</div>
+                </div>
+                <ul class="clean-list">
+                    <li><span class="label">Статус цели</span> <span class="value">${goalStatus}</span></li>
+                    <li><span class="label">Всего объектов</span> <span class="value">${data.objects?.total_spawned || 0}</span></li>
+                    <li><span class="label">Корзины</span> <span class="value">${data.objects?.by_group?.baskets || 0}</span></li>
+                    <li><span class="label">Фрукты</span> <span class="value">${data.objects?.by_group?.fruits || 0}</span></li>
+                </ul>
+            </div>
+
+            <!-- Карточка 3: Ограничения -->
+            <div class="card">
+                <h3>Ограничения (Constraints)</h3>
+                <ul class="clean-list">
+                    ${constraintsHtml || '<li>Нет данных</li>'}
+                </ul>
+                <div style="margin-top:15px; font-size:0.9rem; color:#666">
+                    Pass Rate: <b>${data.metrics?.constraint_pass_rate || 0}</b>
+                </div>
+            </div>
+
+            <!-- Карточка 4: История (на всю ширину если нужно, или в грид) -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h3>Последние действия (Timeline)</h3>
+                <div class="timeline">
+                    ${timelineHtml}
+                </div>
+            </div>
+        `;
+            document.getElementById('dashboard').innerHTML = html;
+        }
+
+        function toggleRaw() {
+            const el = document.getElementById('raw-json-block');
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+
+        const STATISTICS_API_URL = "http://127.0.0.1:5000/api/statistics";
+        const EPISODE_STATISTICS_API_URL ="http://127.0.0.1:5000/api/episode_statistics";
+
+        function formatDuration(value) {
+            if (value === null || value === undefined) {
+                return "—";
+            }
+
+            if (value <= 60) {
+                return `${value.toFixed(2)} сек`;
+            }
+
+            const minutes = Math.floor(value / 60);
+            const seconds = value % 60;
+
+            return `${minutes} мин ${seconds.toFixed(2)} сек`;
+        }
+
+        async function fetchStatistics() {
+            try {
+                const res = await fetch(STATISTICS_API_URL);
+                const data = await res.json();
+
+                if (data.error) {
+                    document.getElementById("statistics").innerHTML =
+                        `<span style="color:red">${data.error}</span>`;
+                    return;
+                }
+
+                document.getElementById("statistics").innerHTML = `
+                <table style="width:100%; border-collapse:collapse; text-align:left">
+                    <thead>
+                        <tr>
+                            <th style="padding:8px">Тип</th>
+                            <th style="padding:8px">Количество</th>
+                            <th style="padding:8px">Мин. время</th>
+                            <th style="padding:8px">Среднее время</th>
+                            <th style="padding:8px">Макс. время</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:8px">Всего</td>
+                            <td style="padding:8px">${data.total_episodes}</td>
+                            <td style="padding:8px">
+                                ${formatDuration(data.total_duration_seconds.min_seconds)}
+                            </td>
+                            <td style="padding:8px">
+                                ${formatDuration(data.total_duration_seconds.avg_seconds)}
+                            </td>
+                            <td style="padding:8px">
+                                ${formatDuration(data.total_duration_seconds.max_seconds)}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px; color:#10b981">Успешные</td>
+                            <td style="padding:8px">${data.successful_episodes}</td>
+                            <td style="padding:8px">${formatDuration(data.successful_duration_seconds.min_seconds)}</td>
+                            <td style="padding:8px">${formatDuration(data.successful_duration_seconds.avg_seconds)}</td>
+                            <td style="padding:8px">${formatDuration(data.successful_duration_seconds.max_seconds)}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px; color:#ef4444">Неуспешные</td>
+                            <td style="padding:8px">${data.failed_episodes}</td>
+                            <td style="padding:8px">${formatDuration(data.failed_duration_seconds.min_seconds)}</td>
+                            <td style="padding:8px">${formatDuration(data.failed_duration_seconds.avg_seconds)}</td>
+                            <td style="padding:8px">${formatDuration(data.failed_duration_seconds.max_seconds)}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top:10px; color:#666">
+                    Success rate: ${(data.success_rate * 100).toFixed(1)}%
+                </div>
+            `;
+            } catch (e) {
+                console.error("Statistics fetch error:", e);
+            }
+        }
+
+        async function fetchEpisodeStatistics() {
+            try {
+                const res = await fetch(EPISODE_STATISTICS_API_URL);
+                const data = await res.json();
+
+                if (data.error) {
+                    document.getElementById("episode-statistics").innerHTML =
+                        `<span style="color:red">${data.error}</span>`;
+                    return;
+                }
+
+                document.getElementById("episode-statistics").innerHTML = `
+                    <table style="width:100%; border-collapse:collapse; text-align:left;">
+                        <thead>
+                            <tr>
+                                <th style="padding:8px">Тип</th>
+                                <th style="padding:8px">Количество</th>
+                                <th style="padding:8px">Мин. время</th>
+                                <th style="padding:8px">Среднее время</th>
+                                <th style="padding:8px">Макс. время</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:8px">Всего</td>
+                                <td style="padding:8px">${data.total_episodes}</td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.total_duration_seconds.min_seconds
+                                    )}
+                                </td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.total_duration_seconds.avg_seconds
+                                    )}
+                                </td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.total_duration_seconds.max_seconds
+                                    )}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding:8px; color:#10b981">
+                                    Успешные
+                                </td>
+                                <td style="padding:8px">
+                                    ${data.successful_episodes}
+                                </td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.successful_duration_seconds.min_seconds
+                                    )}
+                                </td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.successful_duration_seconds.avg_seconds
+                                    )}
+                                </td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.successful_duration_seconds.max_seconds
+                                    )}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding:8px; color:#ef4444">
+                                    Неуспешные
+                                </td>
+                                <td style="padding:8px">
+                                    ${data.failed_episodes}
+                                </td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.failed_duration_seconds.min_seconds
+                                    )}
+                                </td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.failed_duration_seconds.avg_seconds
+                                    )}
+                                </td>
+                                <td style="padding:8px">
+                                    ${formatDuration(
+                                        data.failed_duration_seconds.max_seconds
+                                    )}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="margin-top:10px; color:#666">
+                        Success rate:
+                        ${(data.success_rate * 100).toFixed(1)}%
+                    </div>
+                `;
+
+            } catch (e) {
+                console.error("Episode statistics fetch error:", e);
+
+                document.getElementById("episode-statistics").innerHTML =
+                    `<span style="color:red">Ошибка загрузки статистики эпизодов</span>`;
+            }
+        }
+        // Запуск
+        fetchBenchmarkData();
+        fetchStatistics();
+        fetchEpisodeStatistics();
+
+        setInterval(fetchBenchmarkData, 2000);
+        setInterval(fetchStatistics, 2000);
+        setInterval(fetchEpisodeStatistics, 2000);
+    </script>
+
+</body>
+
+</html>

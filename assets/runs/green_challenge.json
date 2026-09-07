@@ -1,0 +1,20 @@
+{
+  "run_name" : "green_challenge",
+  "args"     : {
+    "controller"           : "zest",
+    "robot"                : "green",
+    "control_mode"         : "vla",
+    "frame_mode"           : "latest",
+    "env_simdt_denominator": 250,
+    "env_decimation"       : 1,
+    "deactivate_torque"    : true,
+    "record_video"         : false,
+    "video_dir"            : "videos",
+    "video_fps"            : 30
+  },
+  "scenarios": [
+    {"scenario": "dry_kitchen.e3.a2", "num_episodes": 8},
+    {"scenario": "sber_shop.e1.a2", "num_episodes": 8},
+    {"scenario": "darkstore.e1.a2", "num_episodes": 8}
+  ]
+}

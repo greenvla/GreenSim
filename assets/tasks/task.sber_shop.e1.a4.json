@@ -1,0 +1,49 @@
+{
+  "task"       : {
+    "name"       : "sber_shop.e1.a4",
+    "description": "Approach the left cabinet, open the lower drawer of the left cabinet with your right hand"
+  },
+  "objects"    : {
+    "drawer_handle"    : {"drawer_handle_guide": []                                                               },
+    "drawer_open_guide": {                           "drawer_is_opened_guide": []                                 },
+    "cabinet"          : {                                                         "shkaf_0": []                  },
+    "robot_root"       : {                                                                        "robot_root": []}
+  },
+  "relations"  : {
+    "episode_timeout"        : {"type": "timeout", "duration_sec": 40.0, "pattern": "episode timeout"},
+    "exists_cabinet"         : {"type": "spawn", "pattern": "spawn {cabinet}"},
+    "exists_drawer_handle"   : {"type": "spawn", "pattern": "spawn {drawer_handle}"},
+    "exists_robot_root"      : {"type": "spawn", "pattern": "spawn {robot_root}"},
+    "cabinet_reached_by_root": {
+      "type"    : "distance",
+      "pattern" : "{cabinet} is reached by {robot_root}",
+      "distance": 1.4
+    },
+    "drawer_opened"          : {"type": "inside", "pattern": "{drawer_handle} is inside {drawer_open_guide}"}
+  },
+  "goals"      : {
+    "robot_reached_cabinet": {
+      "description": "The robot root is within 1.4 m of the cabinet",
+      "for_each"   : "cabinet",
+      "must_have"  : ["cabinet_reached_by_root"],
+      "required"   : true
+    },
+    "drawer_is_open"       : {
+      "description": "The lower drawer handle is in the open position",
+      "for_each"   : "drawer_handle",
+      "must_have"  : ["drawer_opened"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to a timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": ["robot_reached_cabinet", "drawer_is_open"],
+    "max_violations": {"no_episode_timeout": 0}
+  }
+}

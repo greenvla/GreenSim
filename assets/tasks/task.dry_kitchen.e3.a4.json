@@ -1,0 +1,65 @@
+{
+    "task"       : {
+        "name"       : "dry_kitchen.e3.a4",
+        "description": "Raise your left hand, pick up the plate with your left hand"
+    },
+    "objects"    : {
+        "plate_items"      : {"model_plate_thin": []},
+        "hand_raise_guides": {"hand_raise_guide": []},
+        "item_hold_guides" : {"item_hold_guide": []},
+        "robot_parts"      : {"left_thumb_proximal_base": []}
+    },
+    "relations"  : {
+        "episode_timeout": {"type": "timeout", "duration_sec": 40.0, "pattern": "episode timeout"},
+        "in_hand": {
+            "type"      : "distance",
+            "pattern"   : "pick {plate_items} by {robot_parts}",
+            "distance"  : 0.15,
+            "comparison": "less"
+        },
+        "left_hand_in_raise_area": {"type": "inside", "pattern": "{robot_parts} is inside {hand_raise_guides}"},
+        "left_hand_was_raised": {
+            "type"        : "duration",
+            "relation"    : "left_hand_in_raise_area",
+            "duration_sec": 0.20,
+            "latch"       : true,
+            "pattern"     : "{robot_parts} remains inside {hand_raise_guides}"
+        },
+        "plate_in_item_hold_area": {"type": "inside", "pattern": "{plate_items} is inside {item_hold_guides}"},
+        "plate_was_raised_over_table": {
+            "type"        : "duration",
+            "relation"    : "plate_in_item_hold_area",
+            "duration_sec": 0.30,
+            "latch"       : true,
+            "pattern"     : "{plate_items} remains inside {item_hold_guides}"
+        },
+        "exists_plates": {"type": "spawn", "pattern": "spawn {plate_items}"},
+        "exists_hand_raise_area": {"type": "spawn", "pattern": "spawn {hand_raise_guides}"},
+        "exists_item_hold_area": {"type": "spawn", "pattern": "spawn {item_hold_guides}"}
+    },
+    "goals"      : {
+        "left_hand_raised"        : {
+            "description": "The left hand must enter the hand raise area",
+            "for_each"   : "robot_parts",
+            "must_have"  : ["left_hand_was_raised"],
+            "required"   : true
+        },
+        "plate_held_in_raise_area": {
+            "description": "The plate must be held by the left hand while it is inside the hand raise area",
+            "for_each"   : "plate_items",
+            "must_have"  : ["plate_was_raised_over_table"],
+            "required"   : true
+        }
+    },
+    "constraints": {
+        "no_episode_timeout": {
+            "description" : "The episode must not timeout",
+            "forbid_value": ["episode_timeout", 1],
+            "per_object"  : false
+        }
+    },
+    "success"    : {
+        "required_goals": ["left_hand_raised", "plate_held_in_raise_area"],
+        "max_violations": {"no_episode_timeout": 0}
+    }
+}

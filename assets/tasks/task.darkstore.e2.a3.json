@@ -1,0 +1,139 @@
+{
+  "task"       : {
+    "name": "darkstore.e2.a3",
+    "description": "Approach the basket, pick the basket from the table with your left hand, place the basket onto another table with your left hand, move your left hand out of the basket"
+  },
+  "objects"    : {
+    "target_items"     : {"orange_soda_can__task1_target_goods_01": [], "tea_box__task1_target_goods_02": []},
+    "baskets"          : {"basket": []},
+    "ready_zone"       : {"counter_guide": []},
+    "approach_zone"    : {"approach_guide": []},
+    "robot_parts"      : {"left_thumb_proximal_base": []},
+    "basket_raise_zone": {"basket_over_table": []},
+    "basket_handle"    : {"basket_handle_guide": []}
+  },
+  "relations"  : {
+    "episode_timeout": {"type": "timeout", "duration_sec": 60.0, "pattern": "episode timeout"},
+    "in_hand": {
+      "type"      : "distance",
+      "pattern"   : "pick {basket_handle} by {robot_parts}",
+      "distance"  : 0.20,
+      "comparison": "less"
+    },
+    "left_hand_was_at_basket_handle": {
+      "type"        : "duration",
+      "relation"    : "in_hand",
+      "duration_sec": 1.0,
+      "latch"       : true,
+      "pattern"     : "{basket_handle} was held by {robot_parts}"
+    },
+    "in_basket": {
+      "pattern"   : "place {target_items} to {baskets}",
+      "type"      : "distance",
+      "distance"  : 0.2,
+      "comparison": "less"
+    },
+    "basket_released_by_left_hand": {
+      "type"      : "distance",
+      "pattern"   : "{basket_handle} is released by {robot_parts}",
+      "distance"  : 0.25,
+      "comparison": "greater"
+    },
+    "basket_on_counter": {"pattern": "{baskets} is inside {ready_zone}", "type": "inside"},
+    "basket_was_on_counter": {
+      "type"        : "duration",
+      "relation"    : "basket_on_counter",
+      "duration_sec": 0.3,
+      "latch"       : true,
+      "pattern"     : "{baskets} remains inside {ready_zone}"
+    },
+    "left_hand_in_approach_zone": {"pattern": "{robot_parts} is inside {approach_zone}", "type": "inside"},
+    "left_hand_was_in_approach_zone": {
+      "type"        : "duration",
+      "relation"    : "left_hand_in_approach_zone",
+      "duration_sec": 0.5,
+      "latch"       : true,
+      "pattern"     : "{robot_parts} remains inside {approach_zone}"
+    },
+    "basket_in_raise_zone": {"type": "inside", "pattern": "{baskets} is inside {basket_raise_zone}"},
+    "basket_was_raised_over_table": {
+      "type"        : "duration",
+      "relation"    : "basket_in_raise_zone",
+      "duration_sec": 0.2,
+      "latch"       : true,
+      "pattern"     : "{baskets} remains inside {basket_raise_zone}"
+    },
+    "left_hand_away_from_basket": {
+      "type"      : "distance",
+      "pattern"   : "{basket_handle} is far from {robot_parts}",
+      "distance"  : 0.50,
+      "comparison": "greater"
+    },
+    "exists_approach_zone": {"pattern": "spawn {approach_zone}", "type": "spawn"},
+    "exists_items": {"pattern": "spawn {target_items}", "type": "spawn"},
+    "exists_baskets": {"pattern": "spawn {baskets}", "type": "spawn"},
+    "exists_ready_zone": {"pattern": "spawn {ready_zone}", "type": "spawn"},
+    "exists_basket_raise_zone": {"type": "spawn", "pattern": "spawn {basket_raise_zone}"},
+    "exists_basket_handle": {"type": "spawn", "pattern": "spawn {basket_handle}"}
+  },
+  "goals"      : {
+    "left_hand_approached_basket"    : {
+      "description": "The left hand must remain inside the approach area for at least 0.5 seconds",
+      "for_each"   : "robot_parts",
+      "must_have"  : ["left_hand_was_in_approach_zone"],
+      "required"   : true
+    },
+    "basket_handle_held_by_left_hand": {
+      "description": "The basket handle must be held by the left hand for at least 1.0 seconds",
+      "for_each"   : "basket_handle",
+      "must_have"  : ["left_hand_was_at_basket_handle"],
+      "required"   : true
+    },
+    "basket_raised_over_table"       : {
+      "description": "The basket must remain inside the basket-over-table area for at least 0.2 seconds",
+      "for_each"   : "baskets",
+      "must_have"  : ["basket_was_raised_over_table"],
+      "required"   : true
+    },
+    "all_items_in_basket"            : {
+      "description": "The orange can and the tea box must both stay in the basket",
+      "for_each"   : "target_items",
+      "must_have"  : ["in_basket"],
+      "required"          : true,
+      "include_in_scoring": false
+    },
+    "basket_placed_on_counter"       : {
+      "description": "The basket must remain inside the counter area for at least 0.3 seconds",
+      "for_each"   : "baskets",
+      "must_have"  : ["basket_was_on_counter"],
+      "required"   : true
+    },
+    "basket_released_after_holding"  : {
+      "description": "The basket handle must first be held by the left hand and then released",
+      "for_each"   : "basket_handle",
+      "must_have"  : ["left_hand_was_at_basket_handle", "basket_released_by_left_hand"],
+      "required"   : true
+    },
+    "left_hand_out_of_basket"        : {
+      "description": "The left hand must first hold the basket handle and then end outside the basket",
+      "for_each"   : "basket_handle",
+      "must_have"  : ["left_hand_was_at_basket_handle", "left_hand_away_from_basket"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end by timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : {
+    "required_goals": [
+      "left_hand_approached_basket",     "basket_handle_held_by_left_hand", "basket_raised_over_table",
+      "all_items_in_basket",             "basket_placed_on_counter",        "basket_released_after_holding",
+      "left_hand_out_of_basket"
+    ],
+    "max_violations": {"no_episode_timeout": 0}
+  }
+}

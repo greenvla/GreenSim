@@ -1,0 +1,46 @@
+{
+  "task"       : {"name": "dry_kitchen.e1", "description": "Place the cup and the tea can on the tray"},
+  "objects"    : {
+    "tea_set_items": {"model_cup": [], "model_tea_can_v2": []},
+    "cap"          : {"model_cup": []},
+    "tea_can"      : {"model_tea_can_v2": []},
+    "trays"        : {"model_food_tray": []},
+    "robot_parts"  : {"left_thumb_proximal_base": [], "right_thumb_proximal_base": []}
+  },
+  "relations"  : {
+    "episode_timeout"   : {"type": "timeout", "duration_sec": 300.0, "pattern": "episode timeout"},
+    "in_hand"           : {"pattern": "pick {tea_set_items} by {robot_parts}", "type": "distance", "distance": 0.15},
+    "on_tray"           : {"pattern": "place {tea_set_items} on {trays}", "type": "distance", "distance": 0.2},
+    "exists_items"      : {"pattern": "spawn {tea_set_items}", "type": "spawn"},
+    "exists_trays"      : {"pattern": "spawn {trays}", "type": "spawn"},
+    "cap_is_upright"    : {
+      "type"          : "upright",
+      "pattern"       : "upright {cap}",
+      "max_tilt_deg"  : 15.0,
+      "reference_mode": "spawn"
+    },
+    "tea_can_is_upright": {
+      "type"          : "upright",
+      "pattern"       : "upright {tea_can}",
+      "max_tilt_deg"  : 15.0,
+      "reference_mode": "spawn"
+    },
+    "are_static_items"  : {"type": "static", "pattern": "static {tea_set_items}"}
+  },
+  "goals"      : {
+    "tea_set_items_are_on_tray": {
+      "description": "The cup and the tea can must be on the tray and remain still",
+      "for_each"   : "tea_set_items",
+      "must_have"  : ["on_tray", "are_static_items", "tea_can_is_upright", "cap_is_upright"],
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description" : "The episode must not end due to a timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    }
+  },
+  "success"    : { "required_goals": ["tea_set_items_are_on_tray"], "max_violations": {"no_episode_timeout": 0} }
+}

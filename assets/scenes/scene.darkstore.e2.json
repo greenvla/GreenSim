@@ -1,0 +1,3457 @@
+{
+  
+      "robot"       : {
+        "name"       : "robot",
+        "spawn_areas": [
+            {
+                "name"          : "near_drawer",
+                "center"        : [3.67, -3.1, 1.1],
+                "size_xy"       : [0.001, 0.001],
+                "z_rotation_deg": [30.0, 30.0],
+                "weight"        : 1.0,
+                "visible"       : false
+            }
+        ]
+    },
+
+  "viewer"      : { "origin_type": "world", "lookat": [2.11, -1.89, 2.24], "eye": [4.5, -2.8, 1.2] },
+  "objects"     : [
+    { "name": "counter_waypoint", "position": [3.15, -2.8, 0.98], "color": "cyan", "size": 0.01, "visible": false },
+    {
+      "name"        : "wall_01",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/wall/wall.usda",
+      "position"    : [2.058885, -8.542169, 1.69],
+      "rotation"    : [0.707107, 0.0, 0.0, 0.707107],
+      "scale"       : [1.0, 2.6, 1.8],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "wall_02",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/wall/wall.usda",
+      "position"    : [4.991093, -5.045735, 1.69],
+      "rotation"    : [1.0, 0.0, 0.0, 0.0],
+      "scale"       : [1.1, 2.3, 1.8],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "wall_03",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/wall/wall.usda",
+      "position"    : [-0.649399, -5.049542, 1.69],
+      "rotation"    : [1.0, 0.0, 0.0, 0.0],
+      "scale"       : [1.1, 2.3, 1.8],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "wall_04",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/wall/wall.usda",
+      "position"    : [2.173354, -1.516069, 1.69],
+      "rotation"    : [0.707107, 0.0, 0.0, 0.707107],
+      "scale"       : [1.0, 1.9, 1.8],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "floor",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/floor/floor.usda",
+      "position"    : [1.875, -4.32, 0.0],
+      "rotation"    : [1.0, 0.0, 0.0, 0.0],
+      "scale"       : [3.0, 3.0, 1.0],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "ceiling",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/ceiling/ceiling.usda",
+      "position"    : [1.875, -4.32, 2.95477],
+      "rotation"    : [1.0, 0.0, 0.0, 0.0],
+      "scale"       : [3.0, 3.0, 1.0],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "ceiling_lattice",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/ceiling_lattice/ceiling_lattice.usda",
+      "position"    : [2.067214, -7.254875, 2.332935],
+      "rotation"    : [1.0, 0.0, 0.0, 0.0],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "spotlight_01",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/spotlight/spotlight.usdc",
+      "position"    : [1.047579, -6.65758, 2.900591],
+      "rotation"    : [0.5, 0.5, 0.5, 0.5],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "spotlight_02",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/spotlight/spotlight.usdc",
+      "position"    : [1.047579, -3.342942, 2.900591],
+      "rotation"    : [0.5, 0.5, 0.5, 0.5],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "spotlight_03",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/spotlight/spotlight.usdc",
+      "position"    : [3.57263, -6.65758, 2.900591],
+      "rotation"    : [0.5, 0.5, 0.5, 0.5],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "spotlight_04",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/spotlight/spotlight.usdc",
+      "position"    : [3.568831, -3.342942, 2.900591],
+      "rotation"    : [0.5, 0.5, 0.5, 0.5],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "door",
+      "usd_path"    : "assets/usd_models/darkstore.e1/room/door/door.usdc",
+      "position"    : [0.315335, -1.633646, 0.990745],
+      "rotation"    : [0.0, 0.0, 0.707107, 0.707107],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_01",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_01/scene.usda",
+      "position"    : [4.625, -7.7, 0.124935],
+      "rotation"    : [0.0, 0.0, 0.707107, 0.707107],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_02",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_01/scene.usda",
+      "position"    : [4.625, -6.69, 0.124935],
+      "rotation"    : [0.0, 0.0, 0.707107, 0.707107],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_03",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_01/scene.usda",
+      "position"    : [4.625, -5.68, 0.124935],
+      "rotation"    : [0.0, 0.0, 0.707107, 0.707107],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_04",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_01/scene.usda",
+      "position"    : [4.625, -4.67, 0.124935],
+      "rotation"    : [0.0, 0.0, 0.707107, 0.707107],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_05",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_01/scene.usda",
+      "position"    : [4.625, -3.660902, 0.124935],
+      "rotation"    : [0.0, 0.0, 0.707107, 0.707107],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_06",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_01/scene.usda",
+      "position"    : [4.625, -2.658139, 0.124935],
+      "rotation"    : [0.0, 0.0, 0.707107, 0.707107],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_07",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_02/scene.usda",
+      "position"    : [2.65, -6.281768, 0.497935],
+      "rotation"    : [0.5, 0.5, -0.5, -0.5],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_08",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_02/scene.usda",
+      "position"    : [2.65, -5.281768, 0.497935],
+      "rotation"    : [0.5, 0.5, -0.5, -0.5],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_09",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_02/scene.usda",
+      "position"    : [2.233, -5.281768, 0.497935],
+      "rotation"    : [0.5, 0.5, 0.5, 0.5],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "shelf_10",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/shelf_02/scene.usda",
+      "position"    : [2.233, -6.281768, 0.497935],
+      "rotation"    : [0.5, 0.5, 0.5, 0.5],
+      "mass"        : 100.0,
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"    : "box_01",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_2/medium_box_2.usda",
+      "position": [0.707517, -8.113137, 0.0475],
+      "rotation": [-0.67559, 0.0, 0.0, 0.737277],
+      "scale"   : [3.0, 3.0, 3.0],
+      "mass"    : 5.0,
+      "fixed"   : true
+    },
+    {
+      "name"    : "box_02",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_2/box_2.usda",
+      "position": [1.485059, -8.118897, 0.052853],
+      "rotation": [0.984808, 0.0, 0.0, 0.173648],
+      "scale"   : [3.0, 3.0, 3.0],
+      "mass"    : 10.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_03",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [1.480671, -7.65791, 0.047898],
+      "rotation": [0.515038, 0.0, 0.0, 0.857167],
+      "scale"   : [2.0, 2.0, 2.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_04",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [-0.255504, -5.083069, 0.049216],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [3.0, 3.0, 3.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_05",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [-0.273628, -5.170599, 0.471181],
+      "rotation": [0.97437, 0.0, 0.0, 0.224951],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "table_01",
+      "usd_path": "assets/usd_models/darkstore.e1/table/table.usdc",
+      "position": [4.146, -1.98, 0.473],
+      "rotation": [0.707107, 0.707107, 0.0, 0.0],
+      "scale"   : [0.75, 0.75, 0.75],
+      "mass"    : 10.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "counter",
+      "usd_path": "assets/usd_models/darkstore.e1/counter/counter.usd",
+      "position": [3.15, -2.62, 0.064696],
+      "rotation": [0.707107, 0.0, 0.0, 0.707107],
+      "scale"   : [1.3, 1.0, 0.78],
+      "mass"    : 20.0,
+      "fixed"   : true
+    },
+    {
+      "name"    : "container_1",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [0.572909, -7.95441, 0.734018],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : true
+    },
+    {
+      "name"    : "container_02",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [1.455251, -8.060052, 0.45915],
+      "rotation": [0.85264, 0.0, 0.0, 0.522499],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_01",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [4.63598, -4.121667, 0.537608],
+      "rotation": [0.968148, 0.0, 0.0, -0.25038],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_02",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [4.660492, -5.620375, 0.537608],
+      "rotation": [0.594823, 0.0, 0.0, 0.803857],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_03",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [4.660492, -8.160716, 0.537608],
+      "rotation": [0.920505, 0.0, 0.0, 0.390731],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_2_02",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_2/medium_box_2.usda",
+      "position": [4.679072, -6.23074, 0.177016],
+      "rotation": [0.694658, 0.0, 0.0, 0.71934],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_2_03",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_2/medium_box_2.usda",
+      "position": [4.679072, -7.608069, 0.887979],
+      "rotation": [-0.594823, 0.0, 0.0, 0.803857],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_01",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [4.718668, -3.208396, 0.178591],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_02",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [4.721328, -2.51821, 0.178591],
+      "rotation": [0.71934, 0.0, 0.0, 0.694658],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_03",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [4.661322, -4.23657, 0.178591],
+      "rotation": [0.71934, 0.0, 0.0, 0.694658],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_04",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [4.661322, -4.23657, 0.893596],
+      "rotation": [0.71934, 0.0, 0.0, 0.694658],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_05",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [4.616242, -5.527495, 0.893596],
+      "rotation": [0.608761, 0.0, 0.0, 0.793353],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_06",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [4.675243, -7.264387, 0.893596],
+      "rotation": [0.71934, 0.0, 0.0, 0.694658],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_07",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [4.680641, -7.109806, 0.893596],
+      "rotation": [0.75471, 0.0, 0.0, 0.656059],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_2_01",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_2/box_2.usda",
+      "position": [4.748839, -3.562959, 1.246068],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_2_02",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_2/box_2.usda",
+      "position": [4.602458, -3.523443, 1.246068],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_2_03",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_2/box_2.usda",
+      "position": [4.733098, -5.2517, 1.246068],
+      "rotation": [0.824126, 0.0, 0.0, 0.566406],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_2_04",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_2/box_2.usda",
+      "position": [4.667352, -6.529031, 0.892631],
+      "rotation": [0.649448, 0.0, 0.0, 0.760406],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_2_05",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_2/box_2.usda",
+      "position": [4.780166, -6.699248, 0.892631],
+      "rotation": [0.017452, 0.0, 0.0, 0.999848],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_01",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.751509, -3.202805, 1.598106],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_02",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.675466, -4.554866, 1.598106],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_03",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.675466, -4.554866, 0.178544],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_04",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.606364, -6.581754, 0.178544],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_05",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.606364, -6.581754, 1.248276],
+      "rotation": [0.803857, 0.0, 0.0, 0.594823],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_06",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.638459, -8.146772, 1.248276],
+      "rotation": [0.803857, 0.0, 0.0, 0.594823],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_01",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [4.748827, -7.563526, 0.180593],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_02",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [4.650283, -8.282205, 0.180593],
+      "rotation": [0.594823, 0.0, 0.0, 0.803857],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_03",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [4.650283, -8.282205, 1.595386],
+      "rotation": [0.594823, 0.0, 0.0, 0.803857],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_04",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [4.725384, -6.553352, 1.595386],
+      "rotation": [0.233445, 0.0, 0.0, -0.97237],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_04",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [4.66118, -3.881159, 0.182742],
+      "rotation": [0.649448, 0.0, 0.0, 0.760406],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_07",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.646116, -4.077, 0.178544],
+      "rotation": [0.669131, 0.0, 0.0, 0.743145],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_2_01",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_2/medium_box_2.usda",
+      "position": [4.736354, -3.588622, 0.177016],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.651719, -4.691401, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.775298, -4.596189, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.631108, -4.501548, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.552803, -4.604173, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.552803, -4.776238, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.709293, -4.791226, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.726633, -4.899461, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.725543, -5.023135, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.752348, -5.153742, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.57267, -4.913499, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.576998, -5.036355, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_12",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.580469, -5.202081, 0.528509],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_13",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.580469, -5.202081, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_14",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.713505, -5.202081, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_15",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.713505, -5.089869, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_16",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.580469, -5.089869, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_17",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.713505, -4.982686, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.713505, -4.865204, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_21",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.713505, -4.753005, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_23",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.713505, -4.633679, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_24",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.580469, -4.633679, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_26",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.580469, -4.525855, 0.884953],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.591378, -5.913214, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.695327, -5.841366, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.695327, -6.012557, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.695327, -6.094806, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.695327, -6.187312, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.695327, -6.269561, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.564425, -6.180344, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.564425, -6.262593, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.68505, -5.67397, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.599629, -5.755219, 0.885618],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.68505, -5.756219, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_12",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.68505, -5.684061, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_13",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.762892, -5.51301, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_14",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.605025, -5.553649, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_15",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.759305, -5.626004, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_16",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.585348, -5.647939, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_17",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.747659, -5.819626, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.602874, -5.860058, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.730584, -5.956942, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.615472, -6.040996, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_21",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.710041, -6.1393, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_22",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.608688, -6.229307, 1.242623],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_05",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [4.660492, -5.620375, 0.182815],
+      "rotation": [-0.5373, 0.0, 0.0, 0.843391],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_08",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.800138, -5.984853, 0.178544],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_09",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.614819, -5.915383, 0.178544],
+      "rotation": [0.987688, 0.0, 0.0, -0.156434],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -5.958755, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -5.958755, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -6.124254, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -6.124254, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -6.272272, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -6.272272, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -6.431873, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -6.431873, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -6.596064, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -6.596064, 0.573449],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -5.646422, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_12",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -5.646422, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_14",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -5.484039, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_15",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -5.344124, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_16",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -5.344124, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_17",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -5.193531, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -5.193531, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.189535, -5.049342, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.310355, -5.049342, 0.574647],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_06",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [2.221464, -4.943427, 0.212787],
+      "rotation": [0.694658, 0.0, 0.0, -0.71934],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_07",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [2.224642, -6.576976, 0.212787],
+      "rotation": [0.994522, 0.0, 0.0, -0.104528],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_10",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.297145, -6.318751, 0.211706],
+      "rotation": [0.71934, 0.0, 0.0, 0.694658],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_11",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.302091, -6.122912, 0.211706],
+      "rotation": [0.99863, 0.0, 0.0, 0.052336],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_12",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.132749, -6.115963, 0.211706],
+      "rotation": [0.996917, 0.0, 0.0, -0.078459],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_08",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [2.212178, -5.908585, 0.212336],
+      "rotation": [0.71934, 0.0, 0.0, 0.694658],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_03",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.177319, -5.387783, 0.209704],
+      "rotation": [0.649448, 0.0, 0.0, 0.760406],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "pasta_box_21",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/pasta_box/pasta_box.usda",
+      "position": [2.168429, -5.294059, 0.238205],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [2.155212, -5.426775, 0.236435],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [2.214534, -5.507437, 0.236435],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_04",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.669173, -4.801217, 0.175373],
+      "rotation": [0.017452, 0.0, 0.0, 0.999848],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_05",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.663198, -5.102261, 0.175373],
+      "rotation": [0.996195, 0.0, 0.0, 0.087156],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_13",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.217507, -5.667236, 0.931091],
+      "rotation": [0.707107, 0.0, 0.0, 0.707107],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_2_04",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_2/medium_box_2.usda",
+      "position": [4.641875, -6.549307, 0.53186],
+      "rotation": [0.707107, 0.0, 0.0, 0.707107],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_08",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [4.649085, -4.729235, 1.244756],
+      "rotation": [0.996195, 0.0, 0.0, 0.087155],
+      "scale"   : [1.25, 1.25, 1.25],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_22",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.596251, -5.179864, 0.214761],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_25",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.742668, -5.125113, 0.214761],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_27",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.644634, -5.092467, 0.214761],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_28",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.756056, -4.849734, 0.214761],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_29",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.713531, -4.767896, 0.214761],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_30",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [4.6105, -4.834983, 0.214761],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.154518, -4.948253, 0.952081],
+      "rotation": [0.707107, 0.0, 0.707107, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.211793, -5.298951, 0.961879],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.142984, -5.298951, 0.961879],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.154518, -4.948253, 1.005785],
+      "rotation": [0.707107, 0.0, 0.707107, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.154518, -4.948253, 1.06193],
+      "rotation": [0.707107, 0.0, 0.707107, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.312771, -5.942473, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.230394, -5.942473, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.155679, -5.942473, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.312771, -6.124366, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.230394, -6.124366, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.155679, -6.124366, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_12",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.312771, -6.304104, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_13",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.230394, -6.304104, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_14",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.155679, -6.304104, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_15",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.312771, -6.484114, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_16",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.230394, -6.484114, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_17",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.155679, -6.484114, 0.927296],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_06",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.191461, -5.353797, 0.936118],
+      "rotation": [0.748956, 0.0, 0.0, 0.66262],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_07",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.610194, -6.054617, 0.534983],
+      "rotation": [0.936672, 0.0, 0.0, 0.350207],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_08",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.648762, -2.833211, 0.175373],
+      "rotation": [0.71934, 0.0, 0.0, 0.694658],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_10",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.645205, -2.899994, 1.599405],
+      "rotation": [0.999048, 0.0, 0.0, -0.043619],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_11",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.626522, -3.641477, 1.599405],
+      "rotation": [0.793353, 0.0, 0.0, 0.608761],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_12",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.625653, -6.826638, 0.534983],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_23",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.597358, -5.987562, 0.554033],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_24",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.690873, -6.022554, 0.554033],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_25",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.606751, -6.131383, 0.554033],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_26",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [4.548157, -6.075385, 0.554033],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"          : "tea_box_group_01",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/first_task_goods/second/tea_box/tea_box.usda",
+      "position"      : [4.727833, -3.174991, 0.887683],
+      "rotation"      : [1.0, 0.0, 0.0, 0.0],
+      "mass"          : 0.20000000298023224,
+      "fixed"         : false,
+      "spawn_group"   : "tea_box_group_01",
+      "instance_count": 8
+    },
+    {
+      "name"          : "tea_box_group_02",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/first_task_goods/second/tea_box/tea_box.usda",
+      "position"      : [4.727833, -3.174991, 0.887683],
+      "rotation"      : [1.0, 0.0, 0.0, 0.0],
+      "mass"          : 0.20000000298023224,
+      "fixed"         : false,
+      "spawn_group"   : "tea_box_group_02",
+      "instance_count": 2
+    },
+    {
+      "name"          : "tea_box_group_03",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/first_task_goods/second/tea_box/tea_box.usda",
+      "position"      : [4.727833, -3.174991, 0.887683],
+      "rotation"      : [1.0, 0.0, 0.0, 0.0],
+      "mass"          : 0.20000000298023224,
+      "fixed"         : false,
+      "spawn_group"   : "tea_box_group_03",
+      "instance_count": 2
+    },
+    {
+      "name"          : "tea_box_group_04",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/first_task_goods/second/tea_box/tea_box.usda",
+      "position"      : [4.727833, -3.174991, 0.887683],
+      "rotation"      : [1.0, 0.0, 0.0, 0.0],
+      "mass"          : 0.20000000298023224,
+      "fixed"         : false,
+      "spawn_group"   : "tea_box_group_04",
+      "instance_count": 12
+    },
+    {
+      "name"          : "orange_soda_can_group_01",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/first_task_goods/first/orange_soda_can/source.usdc",
+      "position"      : [4.653051, -3.535211, 1.246204],
+      "rotation"      : [1.0, 0.0, 0.0, 0.0],
+      "mass"          : 0.125,
+      "fixed"         : false,
+      "spawn_group"   : "orange_soda_can_group_01",
+      "instance_count": 14
+    },
+    {
+      "name"          : "orange_soda_can_group_02",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/first_task_goods/first/orange_soda_can/source.usdc",
+      "position"      : [4.653051, -3.535211, 1.246204],
+      "rotation"      : [1.0, 0.0, 0.0, 0.0],
+      "mass"          : 0.125,
+      "fixed"         : false,
+      "spawn_group"   : "orange_soda_can_group_02",
+      "instance_count": 8
+    },
+    {
+      "name"          : "orange_soda_can_group_03",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/first_task_goods/first/orange_soda_can/source.usdc",
+      "position"      : [4.653051, -3.535211, 1.246204],
+      "rotation"      : [1.0, 0.0, 0.0, 0.0],
+      "mass"          : 0.125,
+      "fixed"         : false,
+      "spawn_group"   : "orange_soda_can_group_03",
+      "instance_count": 2
+    },
+    {
+      "name"          : "orange_soda_can_group_04",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/first_task_goods/first/orange_soda_can/source.usdc",
+      "position"      : [4.653051, -3.535211, 1.246204],
+      "rotation"      : [1.0, 0.0, 0.0, 0.0],
+      "mass"          : 0.125,
+      "fixed"         : false,
+      "spawn_group"   : "orange_soda_can_group_04",
+      "instance_count": 2
+    },
+    {
+      "name"          : "blue_soda_bottle_group_01",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position"      : [4.731575, -2.478482, 0.534371],
+      "rotation"      : [0.0, 0.0, 0.0, 1.0],
+      "mass"          : 0.4000000059604645,
+      "fixed"         : false,
+      "spawn_group"   : "blue_soda_bottle_group_01",
+      "instance_count": 4
+    },
+    {
+      "name"          : "blue_soda_bottle_group_02",
+      "usd_path"      : "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position"      : [4.731575, -2.478482, 0.534371],
+      "rotation"      : [0.0, 0.0, 0.0, 1.0],
+      "mass"          : 0.4000000059604645,
+      "fixed"         : false,
+      "spawn_group"   : "blue_soda_bottle_group_02",
+      "instance_count": 12
+    },
+    {
+      "name"    : "white_drink_bottle_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.589294, -7.138036, 0.528759],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.589294, -7.252119, 0.528759],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.589294, -7.028599, 0.528759],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.701562, -7.028599, 0.528759],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.7115, -7.145352, 0.528759],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.7115, -7.251341, 0.528759],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.7115, -6.871157, 0.552597],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.647338, -6.791535, 0.552597],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.58388, -6.856844, 0.552597],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.691943, -6.856844, 0.884881],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.696124, -6.960389, 0.884881],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_12",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.575852, -6.700378, 0.884881],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_13",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.558869, -6.811386, 0.884881],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_14",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.557267, -6.916529, 0.884881],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_15",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.557267, -6.916529, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_16",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.557267, -6.801742, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_17",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.68723, -6.74752, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.691927, -6.869863, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.674971, -6.988835, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.580395, -7.046474, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_21",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.685792, -7.128658, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_22",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.722662, -7.273458, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_23",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [4.57316, -7.167849, 1.240284],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.718351, -7.899274, 0.529546],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.695378, -7.756379, 0.529546],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.71787, -7.587394, 0.529546],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.569879, -7.522046, 0.529546],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_13",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.65494, -7.101228, 0.182226],
+      "rotation": [0.67559, 0.0, 0.0, 0.737277],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_14",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.682935, -6.760749, 0.178544],
+      "rotation": [0.601815, 0.0, 0.0, 0.798635],
+      "scale"   : [1.3, 1.3, 1.3],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.718351, -7.899274, 0.885564],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.59958, -7.821068, 0.885564],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.572975, -7.971221, 0.885564],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.703827, -8.043709, 0.885564],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.583135, -8.128159, 0.885564],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_12",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.72618, -8.238853, 0.885564],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_13",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.585618, -8.296221, 0.885564],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_14",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.572975, -7.971221, 1.241829],
+      "rotation": [0.965926, 0.0, 0.0, -0.258819],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_15",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.735915, -7.924077, 1.241829],
+      "rotation": [0.965926, 0.0, 0.0, -0.258819],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_16",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.735915, -8.051536, 1.241829],
+      "rotation": [0.965926, 0.0, 0.0, -0.258819],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_17",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.73825, -7.810932, 1.241829],
+      "rotation": [0.965926, 0.0, 0.0, -0.258819],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.601821, -7.697022, 1.241829],
+      "rotation": [0.965926, 0.0, 0.0, -0.258819],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.753276, -7.629865, 1.241829],
+      "rotation": [0.965926, 0.0, 0.0, -0.258819],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_bottle_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_soda_bottle/red_soda_bottle.usda",
+      "position": [4.601983, -7.550781, 1.240661],
+      "rotation": [0.965926, 0.0, 0.0, -0.258819],
+      "mass"    : 1.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_05",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [4.647666, -7.942728, 0.180593],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.7, 1.7, 1.7],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.755128, -5.469104, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.752421, -5.607615, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.627009, -5.654496, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.631799, -5.536925, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.632183, -5.412828, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.632183, -5.412828, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.606937, -5.311691, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.619161, -5.1698, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.619685, -5.055237, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.630624, -4.932267, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.750825, -4.91764, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_12",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.766727, -5.041649, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_15",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.663609, -4.919821, 0.211943],
+      "rotation": [0.544639, 0.0, 0.0, -0.838671],
+      "scale"   : [1.5, 1.5, 1.5],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_14",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.679232, -5.019551, 0.56938],
+      "rotation": [0.67559, 0.0, 0.0, 0.737277],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_13",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.721694, -4.920942, 0.615207],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_14",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.649852, -4.972567, 0.615207],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_15",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.648214, -5.086232, 0.615207],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_16",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.71331, -5.040856, 0.615207],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_17",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.717124, -5.151213, 0.615207],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_15",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.685304, -5.513744, 0.56938],
+      "rotation": [0.642788, 0.0, 0.0, -0.766044],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.737711, -5.463458, 0.621868],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.784638, -5.601283, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.702935, -5.567984, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.616397, -5.596358, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.591902, -5.409132, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.586746, -5.234708, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.58319, -5.070327, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.596223, -4.885161, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.689244, -4.884459, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.772699, -4.902894, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.784638, -5.898067, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_06",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [2.685848, -6.59626, 0.210857],
+      "rotation": [0.998135, 0.0, 0.0, 0.061049],
+      "scale"   : [1.7, 1.7, 1.7],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_07",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [2.640486, -6.300639, 0.210857],
+      "rotation": [0.707107, 0.0, 0.0, 0.707107],
+      "scale"   : [1.5, 1.5, 1.5],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_08",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [2.645168, -6.046678, 0.210857],
+      "rotation": [0.743145, 0.0, 0.0, 0.669131],
+      "scale"   : [1.9, 1.9, 1.9],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_16",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.685304, -5.513744, 0.214555],
+      "rotation": [0.760406, 0.0, 0.0, -0.649448],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_13",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.717611, -5.898067, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_14",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.638314, -5.898067, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_15",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.784638, -6.069831, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_16",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.717611, -6.069831, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_17",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.638314, -6.069831, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.784638, -6.237245, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.717611, -6.237245, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.638314, -6.237245, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_22",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.717611, -6.399967, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_23",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.638314, -6.399967, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_25",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.717611, -6.574121, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "cookies_box_26",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/snacks/cookies_box/cookies_box.usda",
+      "position": [2.638314, -6.574121, 1.288192],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.30000001192092896,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.627009, -5.92363, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.723765, -5.886189, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.716605, -6.000782, 0.92777],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_17",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.680602, -6.208662, 0.930204],
+      "rotation": [0.995396, 0.0, 0.0, -0.095846],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_2_05",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_2/medium_box_2.usda",
+      "position": [2.665098, -6.66056, 0.931573],
+      "rotation": [0.782608, 0.0, 0.0, -0.622515],
+      "scale"   : [0.6, 0.6, 0.6],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_2_06",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_2/medium_box_2.usda",
+      "position": [2.628038, -6.469826, 0.931573],
+      "rotation": [0.999657, 0.0, 0.0, -0.026177],
+      "scale"   : [0.6, 0.6, 0.6],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_21",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.723765, -5.886189, 0.567969],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_22",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.597684, -5.958252, 0.567969],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_23",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.705923, -6.036767, 0.567969],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_24",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.6009, -6.083506, 0.567969],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_25",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.719191, -6.218614, 0.567969],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_18",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.692001, -6.505565, 0.569555],
+      "rotation": [0.707107, 0.0, 0.0, 0.707107],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_26",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.716199, -6.379985, 0.59873],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_27",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.695012, -6.484922, 0.59873],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_28",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.653081, -6.620305, 0.59873],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_soda_can_29",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [2.748255, -6.618841, 0.59873],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_19",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.197888, -4.983929, 1.302991],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_24",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [2.269151, -4.977988, 1.324157],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "orange_soda_can_25",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/first_task_goods/first/orange_soda_can/source.usdc",
+      "position": [2.203959, -4.93458, 1.330207],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "tea_box_26",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/first_task_goods/second/tea_box/tea_box.usda",
+      "position": [2.173876, -5.032164, 1.322867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_can_31",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_can/blue_soda_can.usda",
+      "position": [2.113636, -4.950431, 1.318421],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_16",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.244308, -5.239846, 1.291659],
+      "rotation": [0.803857, 0.0, 0.0, 0.594823],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_17",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.20868, -5.510036, 1.291659],
+      "rotation": [0.469472, 0.0, 0.0, 0.882948],
+      "scale"   : [1.5, 1.5, 1.5],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.155679, -5.942473, 1.291231],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.282978, -5.942473, 1.291231],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.282978, -6.150625, 1.291231],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_21",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.155679, -6.150625, 1.291231],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_22",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.282978, -6.331234, 1.291231],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "red_cookies_box_23",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/red_cookies_box/red_cookies_box.usda",
+      "position": [2.155679, -6.331234, 1.291231],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 0.20000000298023224,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_18",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.281271, -6.72171, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_19",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.281271, -6.531665, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_20",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.281271, -6.348331, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_21",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.281271, -6.155527, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_22",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.281271, -5.969567, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_23",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.115277, -6.041098, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_24",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.106696, -6.235152, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_25",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.099709, -6.416724, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "blue_soda_bottle_26",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/blue_soda_bottle/blue_soda_bottle.usda",
+      "position": [-0.189512, -5.824788, 0.608087],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : false
+    },
+    {
+      "name"    : "milk_bottle_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.227305, -8.213173, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.276228, -8.018299, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.111013, -8.034017, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.257751, -7.835583, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.10326, -7.836703, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.283144, -7.656813, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.274938, -7.485054, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.283094, -7.316066, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_09",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.112634, -7.223717, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_10",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.101417, -7.396048, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_bottle_11",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/milk_bottle/milk_bottle.usda",
+      "position": [-0.090007, -7.615058, 0.609867],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.75,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_30",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.175977, -7.120338, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_31",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.253668, -7.214492, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_32",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.174983, -7.337602, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_33",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.255909, -7.417042, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_34",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.178061, -7.533203, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_35",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.274092, -7.6213, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_36",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.17749, -7.723851, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_37",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.267152, -7.829405, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_38",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.174082, -7.933199, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_39",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.280783, -8.059447, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_40",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.294152, -8.254609, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "red_soda_can_41",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "position": [-0.193289, -8.167996, 1.460445],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.125,
+      "fixed"   : true
+    },
+    {
+      "name"    : "milk_box_01",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "position": [-0.308521, -8.26542, 0.944244],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "milk_box_02",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "position": [-0.163379, -8.142682, 0.944244],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "milk_box_03",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "position": [-0.283612, -8.075447, 0.944244],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "milk_box_04",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "position": [-0.179181, -7.97416, 0.944244],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "milk_box_05",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "position": [-0.292756, -7.893716, 0.944244],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "milk_box_06",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "position": [-0.333388, -7.217929, 0.944244],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "milk_box_07",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "position": [-0.348099, -7.080859, 0.944244],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "milk_box_08",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "position": [-0.214419, -7.151405, 0.944244],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "white_drink_bottle_25",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.304393, -6.788766, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_26",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.304393, -6.628768, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_27",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.304393, -6.474844, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_28",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.304393, -6.325451, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_29",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.304393, -6.171857, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_30",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.304393, -6.002336, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_31",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.304393, -5.832306, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_32",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.304393, -5.663053, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_33",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.164498, -5.770295, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_34",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.164498, -6.698536, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_35",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.164498, -6.520209, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "white_drink_bottle_36",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/white_drink_bottle/white_drink_bottle.usda",
+      "position": [-0.164498, -6.368763, 0.943767],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass"    : 0.4000000059604645,
+      "fixed"   : true
+    },
+    {
+      "name"    : "glass_soda_bottle_27",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.306708, -5.8701, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_28",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.306708, -5.719647, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_29",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.306708, -6.024046, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_30",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.306708, -6.166646, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_31",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.306708, -6.344058, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_32",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.306708, -6.491347, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_33",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.306708, -6.655403, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_34",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.205818, -6.765415, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_35",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.188351, -5.778852, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_36",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.188351, -5.628399, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_40",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.188351, -6.400099, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "glass_soda_bottle_41",
+      "usd_path": "assets/usd_models/darkstore.e1/goods/glass_soda_bottle/glass_soda_bottle.usda",
+      "position": [-0.188351, -6.564155, 1.460692],
+      "rotation": [0.999848, 0.0, 0.017452, 0.0],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_2_06",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_2/box_2.usda",
+      "position": [4.676449, -5.169308, 1.601091],
+      "rotation": [0.446198, 0.0, 0.0, 0.894934],
+      "scale"   : [1.3, 1.3, 1.3],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_18",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.675466, -4.857472, 1.598106],
+      "rotation": [0.766044, 0.0, 0.0, 0.642788],
+      "scale"   : [1.5, 1.5, 1.5],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_19",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [4.675466, -5.644098, 1.598106],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [2.0, 2.0, 2.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_20",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [4.625653, -6.083779, 1.599194],
+      "rotation": [0.707107, 0.0, 0.0, 0.707107],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_4_09",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_4/box_4.usda",
+      "position": [4.633765, -6.096135, 1.630742],
+      "rotation": [0.258819, 0.0, 0.0, 0.965926],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "medium_box_1_09",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/medium_box_1/medium_box_1.usda",
+      "position": [4.660492, -7.097293, 1.599089],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [1.2, 1.2, 1.2],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_20",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.645768, -4.973934, 1.652225],
+      "rotation": [0.707107, 0.0, 0.0, 0.707107],
+      "scale"   : [1.8, 1.8, 1.8],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_3_21",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_3/box_3.usda",
+      "position": [2.250914, -6.53219, 1.652225],
+      "rotation": [0.996917, 0.0, 0.0, -0.078459],
+      "scale"   : [2.0, 2.0, 2.0],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_09",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [2.160331, -5.631501, 1.649724],
+      "rotation": [0.92388, 0.0, 0.0, 0.382684],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_1_10",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_1/box_1.usda",
+      "position": [2.229796, -5.395459, 1.649724],
+      "rotation": [0.130526, 0.0, 0.0, -0.991445],
+      "scale"   : [1.4, 1.4, 1.4],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_21",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.197888, -4.983929, 1.649313],
+      "rotation": [0.968148, 0.0, 0.0, 0.25038],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_22",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.653913, -6.504103, 1.649313],
+      "rotation": [0.707107, 0.0, 0.0, 0.707107],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "container_23",
+      "usd_path": "assets/usd_models/darkstore.e1/plastic_container/scene.usda",
+      "position": [2.653913, -6.504103, 1.776831],
+      "rotation": [0.544639, 0.0, 0.0, 0.838671],
+      "mass"    : 5.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "box_06",
+      "usd_path": "assets/usd_models/darkstore.e1/boxes/small_box_2/box_2.usda",
+      "position": [2.626385, -5.44159, 1.647111],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [2.1, 2.1, 2.1],
+      "mass"    : 10.0,
+      "fixed"   : false
+    },
+    {
+      "name"    : "basket",
+      "usd_path": "assets/usd_models/darkstore.e1/baskets/basket/basket.usda",
+      "position": [4.23, -2.1, 0.903096],
+      "rotation": [0.92388, 0.0, 0.0, 0.382683],
+      "mass"    : 0.5,
+      "fixed"   : false
+    },
+    {
+      "name"       : "basket_guide",
+      "spawn_group": "basket_guide_area",
+      "color"      : "orange",
+      "size"       : [0.20, 0.20, 0.16],
+      "visible"    : false
+    },
+    {
+      "name"    : "waypoint",
+      "usd_path": "assets/usd_models/darkstore.e1/waypoint.usda",
+      "position": [3.15, -2.8, 0.91],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [0.01, 0.01, 0.01],
+      "fixed"   : true
+    },
+    {
+      "name"    : "task3_waypoint_1",
+      "usd_path": "assets/usd_models/darkstore.e1/waypoint.usda",
+      "position": [-0.237805, -7.745526, 0.93],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [0.01, 0.01, 0.01],
+      "fixed"   : true
+    },
+    {
+      "name"    : "task3_waypoint_2",
+      "usd_path": "assets/usd_models/darkstore.e1/waypoint.usda",
+      "position": [-0.218485, -7.506537, 0.93],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale"   : [0.01, 0.01, 0.01],
+      "fixed"   : true
+    },
+    {
+      "name"        : "freezer_01",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/freezer/source.usdc",
+      "position"    : [-0.224333, -7.692802, 0.972189],
+      "rotation"    : [1.0, 0.0, 0.0, 0.0],
+      "scale"       : [0.55, 1.0, 1.0],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"        : "freezer_02",
+      "usd_path"    : "assets/usd_models/darkstore.e1/shelves/freezer/source.usdc",
+      "position"    : [-0.224333, -6.21078, 0.972189],
+      "rotation"    : [1.0, 0.0, 0.0, 0.0],
+      "scale"       : [0.55, 1.0, 1.0],
+      "fixed"       : true,
+      "scene_static": true
+    },
+    {
+      "name"       : "orange_soda_can__task1_target_goods_01",
+      "usd_path"   : "assets/usd_models/darkstore.e1/goods/first_task_goods/first/orange_soda_can/source.usdc",
+      "fixed"      : false,
+      "spawn_group": "task1_target_goods_01",
+      "rotation"   : [1.0, 0.0, 0.0, 0.0],
+      "mass"       : 0.125
+    },
+    {
+      "name"       : "tea_box__task1_target_goods_02",
+      "usd_path"   : "assets/usd_models/darkstore.e1/goods/first_task_goods/second/tea_box/tea_box.usda",
+      "fixed"      : false,
+      "spawn_group": "task1_target_goods_02",
+      "rotation"   : [1.0, 0.0, 0.0, 0.0],
+      "mass"       : 0.20000000298023224
+    },
+    {
+      "name"       : "red_soda_can__task2_target_drink",
+      "usd_path"   : "assets/usd_models/darkstore.e1/goods/second_task_goods/drinks/red_soda_can/source.usdc",
+      "fixed"      : false,
+      "spawn_group": "task2_target_drink",
+      "rotation"   : [1.0, 0.0, 0.0, 0.0],
+      "mass"       : 0.125
+    },
+    {
+      "name"       : "milk_box__task3_target_goods_01",
+      "usd_path"   : "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "fixed"      : false,
+      "spawn_group": "task3_target_goods_01",
+      "rotation"   : [1.0, 0.0, 0.0, 0.0],
+      "mass"       : 0.5
+    },
+    {
+      "name"       : "milk_box__task3_target_goods_02",
+      "usd_path"   : "assets/usd_models/darkstore.e1/goods/third_task_goods/milk_box/milk_box.usda",
+      "fixed"      : false,
+      "spawn_group": "task3_target_goods_02",
+      "rotation"   : [0.0, 0.0, 0.0, 0.0],
+      "mass"       : 0.5
+    }
+  ],
+  "spawn_groups": {
+    "task1_target_goods_02"    : {
+      "layout"       : "grid",
+      "base_position": [4.558463, -2.792926, 0.890435],
+      "size"         : [0.05, 0.1],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "random",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.0091,
+      "spawn_count"  : [1, 1]
+    },
+    "task1_target_goods_01"    : {
+      "layout"       : "grid",
+      "base_position": [4.558463, -2.77352, 1.246935],
+      "size"         : [0.05, 0.1],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "random",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.0091,
+      "spawn_count"  : [1, 1]
+    },
+    "task2_target_drink"       : {
+      "layout"       : "grid",
+      "base_position": [2.753573, -5.277745, 1.293137],
+      "size"         : [0.1, 0.2],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "random",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.0091,
+      "spawn_count"  : [1, 1]
+    },
+    "task3_target_goods_01"    : {
+      "layout"       : "grid",
+      "base_position": [0.681721, -7.958392, 0.755898],
+      "size"         : [0.1, 0.1],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "random",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.0091,
+      "spawn_count"  : [1, 1]
+    },
+    "task3_target_goods_02"    : {
+      "layout"       : "grid",
+      "base_position": [0.462552, -7.951804, 0.755898],
+      "size"         : [0.1, 0.1],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "random",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.0161,
+      "spawn_count"  : [1, 1]
+    },
+    "tea_box_group_01"         : {
+      "layout"       : "grid",
+      "base_position": [4.789031, -2.886024, 0.890281],
+      "size"         : [0.05, 0.8],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.02,
+      "spawn_count"  : [0, 8],
+      "visible"      : false
+    },
+    "tea_box_group_02"         : {
+      "layout"       : "grid",
+      "base_position": [4.62217, -2.518146, 0.89154],
+      "size"         : [0.12, 0.15],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.02,
+      "spawn_count"  : [0, 2],
+      "visible"      : false
+    },
+    "tea_box_group_03"         : {
+      "layout"       : "grid",
+      "base_position": [4.62217, -3.209624, 0.89154],
+      "size"         : [0.12, 0.15],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.02,
+      "spawn_count"  : [0, 2],
+      "visible"      : false
+    },
+    "tea_box_group_04"         : {
+      "layout"       : "grid",
+      "base_position": [4.694938, -3.798123, 0.890281],
+      "size"         : [0.2, 0.6],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.02,
+      "spawn_count"  : [0, 12],
+      "visible"      : false
+    },
+    "orange_soda_can_group_01" : {
+      "layout"       : "grid",
+      "base_position": [4.663094, -4.000178, 1.246204],
+      "size"         : [0.20, 0.60],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.02,
+      "spawn_count"  : [0, 14],
+      "visible"      : false
+    },
+    "orange_soda_can_group_02" : {
+      "layout"       : "grid",
+      "base_position": [4.789031, -2.96024, 1.256204],
+      "size"         : [0.05, 0.80],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.02,
+      "spawn_count"  : [0, 8],
+      "visible"      : false
+    },
+    "orange_soda_can_group_03" : {
+      "layout"       : "grid",
+      "base_position": [4.62217, -3.183271, 1.246204],
+      "size"         : [0.12, 0.15],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.02,
+      "spawn_count"  : [0, 2],
+      "visible"      : false
+    },
+    "orange_soda_can_group_04" : {
+      "layout"       : "grid",
+      "base_position": [4.62217, -2.518146, 1.246204],
+      "size"         : [0.12, 0.15],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.02,
+      "spawn_count"  : [0, 2],
+      "visible"      : false
+    },
+    "blue_soda_bottle_group_01": {
+      "layout"       : "grid",
+      "base_position": [4.694938, -3.669047, 0.534371],
+      "size"         : [0.25, 0.3],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.05,
+      "spawn_count"  : [0, 4],
+      "visible"      : false
+    },
+    "blue_soda_bottle_group_02": {
+      "layout"       : "grid",
+      "base_position": [4.694938, -2.870345, 0.534371],
+      "size"         : [0.25, 0.8],
+      "rotation"     : [1.0, 0.0, 0.0, 0.0],
+      "packing_mode" : "grid",
+      "z_offset"     : 0.0,
+      "min_spacing"  : 0.05,
+      "spawn_count"  : [0, 12],
+      "visible"      : false
+    },
+    "basket_guide_area"        : {
+      "layout"       : "stack",
+      "anchor_prim"  : "basket/basket",
+      "base_position": [0.0, 0.0, 0.08],
+      "stack_axis"   : "z",
+      "spacing"      : 0.0,
+      "spawn_count"  : [1, 1],
+      "visible"      : false
+    }
+  }
+}

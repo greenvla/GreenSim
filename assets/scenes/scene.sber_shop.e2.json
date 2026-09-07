@@ -1,0 +1,1023 @@
+{
+  "robot": {
+    "name": "robot",
+    "center": [3.5, -0.6, 0.88],
+    "size_xy": [0.001, 0.001],
+    "z_rotation_deg": [-90.0, -90.0]
+  },
+  "viewer": { "origin_type": "world", "eye": [3.05, 1.3, 2.19], "lookat": [3.5, 0.2, 1.28] },
+  "objects": [
+    {
+      "name": "room",
+      "usd_path": "assets/usd_models/sber_shop.e1/base_scene.usd",
+      "position": [0.0, 0.0, 0.0],
+      "rotation": [1, 0.0, 0.0, 0.0],
+      "mass": 10000.0,
+      "fixed": true,
+      "physics_material": {"static_friction": 1.2, "dynamic_friction": 1.0, "restitution": 0.0}
+    },
+    {
+      "name": "task_success_box",
+      "position": [4.4, -1.2, 0.7],
+      "size": [0.4, 0.4, 0.4],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "color": "green",
+      "visible": false
+    },
+    { "name": "ring_table_guide", "position": [3.6, 0.04, 1.37], "color": "purple", "size": 0.05, "visible": false },
+    {
+      "name": "ring_box_base",
+      "usd_path": "assets/usd_models/sber_shop.e1/ring/model.wy_567iz.usdc",
+      "spawn_group": "ring_box_base_on_table",
+      "position": [3.5, 0.08, 1.14],
+      "rotation": [1, 0, 0.0, 0.0],
+      "scale": [1, 1, 1],
+      "mass": 0.5,
+      "fixed": false
+    },
+    {
+      "name": "ring_box_lid",
+      "usd_path": "assets/usd_models/sber_shop.e1/lid/model.00166dhh.usdc",
+      "parent_object": "ring_box_base",
+      "position": [0, 0, 0.03],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale": [1, 1, 1],
+      "mass": 0.05,
+      "fixed": false
+    },
+    {
+      "name": "customer_area_guide",
+      "position": [3.48, 0.37, 1.25],
+      "size": [0.60, 0.15, 0.05],
+      "color": "purple",
+      "visible": false
+    },
+    {
+      "name": "ring_base_home_area_guide",
+      "position": [3.48, 0.06, 1.25],
+      "size": [0.60, 0.15, 0.05],
+      "color": "orange",
+      "visible": false
+    },
+    {
+      "name": "ring_showing_guide",
+      "position": [3.4, 0.33, 1.26],
+      "rotation": [1, 0, 0, 0],
+      "color": "orange",
+      "size": 0.05,
+      "visible": false
+    },
+    {
+      "name": "drawer_handle_guide",
+      "spawn_group": "drawer_handle_area",
+      "color": "green",
+      "size": 0.05,
+      "visible": false
+    },
+    {
+      "name": "drawer_pull_guide",
+      "spawn_group": "drawer_pull_area",
+      "color": "red",
+      "position": [3.24, -1.31, 0.855],
+      "size": 0.01,
+      "visible": false
+    },
+    {
+      "name": "drawer_is_opened_guide",
+      "position": [3.24, -1.13, 0.855],
+      "rotation": [1, 0, 0, 0],
+      "color": "orange",
+      "size": [0.40, 0.15, 0.20],
+      "visible": false
+    },
+    {
+      "name": "drawer_is_closed_guide",
+      "position": [3.34, -1.39, 0.855],
+      "rotation": [1, 0, 0, 0],
+      "color": "blue",
+      "size": [0.40, 0.15, 0.20],
+      "visible": false
+    },
+    {
+      "name": "basket_guide",
+      "position": [3.9, -1.0, 0.8],
+      "rotation": [1, 0, 0, 0],
+      "color": "orange",
+      "size": [0.40, 0.40, 0.25],
+      "visible": false
+    },
+    {
+      "name": "cat_toy",
+      "usd_path": "assets/usd_models/sber_shop.e1/cat_toy/cat_toy.usd",
+      "position": [3.6, -1.68, 0.70],
+      "rotation": [0.3536, 0.3536, -0.6124, -0.6124],
+      "scale": [1, 1, 1],
+      "mass": 0.30,
+      "fixed": false
+    },
+    {
+      "name": "pocket",
+      "usd_path": "assets/usd_models/sber_shop.e1/pocket.usd",
+      "spawn_group": "pockets_on_table",
+      "position": [2.8, 0.2, 1.3],
+      "random_rotation": { "z": [-90, 90] },
+      "scale": [1, 1, 1],
+      "mass": 0.3,
+      "fixed": false,
+      "instance_count": 2
+    },
+    {
+      "name": "back_blue_bottles",
+      "usd_path": "assets/usd_models/sber_shop.e1/blue_bottle/blue_bottle.usd",
+      "spawn_group": "back_blue_bottles",
+      "scale": [1, 1, 1],
+      "position": [3.654, -1.89, 1.4],
+      "rotation": [1, 0, 0.0, 0.0],
+      "mass": 1.0,
+      "fixed": false,
+      "instance_count": 6
+    },
+    {
+      "name": "front_blue_bottle",
+      "usd_path": "assets/usd_models/sber_shop.e1/blue_bottle/blue_bottle.usd",
+      "spawn_group": "front_blue_bottles",
+      "scale": [1, 1, 1],
+      "position": [3.2, -1.6, 1.4],
+      "rotation": [1, 0, 0.0, 0.0],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "back_orange_bottles",
+      "usd_path": "assets/usd_models/sber_shop.e1/orange_bottle/orange_bottle.usd",
+      "spawn_group": "back_orange_bottles",
+      "scale": [1, 1, 1],
+      "position": [3.349, -1.89, 1.4],
+      "rotation": [1, 0, 0.0, 0.0],
+      "mass": 1.0,
+      "fixed": false,
+      "instance_count": 10
+    },
+    {
+      "name": "red_bottles",
+      "usd_path": "assets/usd_models/sber_shop.e1/red_bottle/red_bottle.usd",
+      "spawn_group": "back_red_bottles",
+      "position": [3.01, -1.89, 1.4],
+      "scale": [1, 1, 1],
+      "rotation": [1, 0, 0.0, 0.0],
+      "mass": 1.0,
+      "fixed": false,
+      "instance_count": 6
+    },
+    {
+      "name": "back_cups",
+      "usd_path": "assets/usd_models/sber_shop.e1/cup/cup.usd",
+      "spawn_group": "back_cups",
+      "position": [3.96, -1.89, 1.4],
+      "rotation": [1, 0, 0.0, 0.0],
+      "scale": [1, 1, 1],
+      "mass": 1.0,
+      "fixed": false,
+      "instance_count": 10
+    },
+    {
+      "name": "speaker_box",
+      "usd_path": "assets/usd_models/sber_shop.e1/speaker_box.usd",
+      "position": [3.4, -1.6, 2.15],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_speaker_box_back_00",
+      "usd_path": "assets/usd_models/sber_shop.e1/speaker_box.usd",
+      "position": [3.0, -1.9, 2.15],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_speaker_box_back_01",
+      "usd_path": "assets/usd_models/sber_shop.e1/speaker_box.usd",
+      "position": [3.25, -1.9, 2.15],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_speaker_box_back_02",
+      "usd_path": "assets/usd_models/sber_shop.e1/speaker_box.usd",
+      "position": [3.5, -1.9, 2.15],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_speaker_box_back_03",
+      "usd_path": "assets/usd_models/sber_shop.e1/speaker_box.usd",
+      "position": [3.75, -1.9, 2.15],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_speaker_box_back_04",
+      "usd_path": "assets/usd_models/sber_shop.e1/speaker_box.usd",
+      "position": [4.0, -1.9, 2.15],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "cat_toy_back",
+      "usd_path": "assets/usd_models/sber_shop.e1/cat_toy/cat_toy.usd",
+      "spawn_group": "cat_toys",
+      "position": [2.16, -1.4, 0.93],
+      "rotation": [0.0, 0.0, 0.0, 1.0],
+      "scale": [1, 1, 1],
+      "mass": 1.0,
+      "fixed": false,
+      "instance_count": 6
+    },
+    {
+      "name": "Slate_Gray_Roll_0",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Slate_Gray_Roll_Top_B_0805080559_texture/Meshy_AI_Slate_Gray_Roll_Top_B_0805080559_texture.usd",
+      "position": [3.1, -1.6, 2.7],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "Slate_Gray_Roll_1",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Slate_Gray_Roll_Top_B_0805080559_texture/Meshy_AI_Slate_Gray_Roll_Top_B_0805080559_texture.usd",
+      "position": [2.5, -1.6, 2.7],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "Slate_Gray_Roll_3",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Slate_Gray_Roll_Top_B_0805080559_texture/Meshy_AI_Slate_Gray_Roll_Top_B_0805080559_texture.usd",
+      "position": [1.9, -1.6, 2.7],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "Slate_Gray_Roll_6",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Slate_Gray_Roll_Top_B_0805080559_texture/Meshy_AI_Slate_Gray_Roll_Top_B_0805080559_texture.usd",
+      "position": [3.7, -1.6, 2.7],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "Stacked_Hoodies",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Stacked_Hoodies_0805080637_texture/Meshy_AI_Stacked_Hoodies_0805080637_texture.usd",
+      "position": [1.1, -1.8, 1.5],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "Stack_of_Jeans",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Stack_of_Jeans_0805080610_texture/Meshy_AI_Stack_of_Jeans_0805080610_texture.usd",
+      "position": [1.1, -1.8, 1.1],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "Stack_of_Folded_Hoodi",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Stack_of_Folded_Hoodi_0805080624_texture/Meshy_AI_Stack_of_Folded_Hoodi_0805080624_texture.usd",
+      "position": [0.55, -1.8, 1.5],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "Meshy_AI_Stacked_Polo_Shirts_0805135406_texture",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Stacked_Polo_Shirts_0805135406_texture/Meshy_AI_Stacked_Polo_Shirts_0805135406_texture.usd",
+      "position": [0.55, -1.8, 1.9],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "Meshy_AI_Stack_of_folded_trous_0805135423_texture",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Stack_of_folded_trous_0805135423_texture/Meshy_AI_Stack_of_folded_trous_0805135423_texture.usd",
+      "position": [0.55, -1.8, 1.1],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "Meshy_AI_Stacked_T_Shirts_in_N_0805135339_texture",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Stacked_T_Shirts_in_N_0805135339_texture/Meshy_AI_Stacked_T_Shirts_in_N_0805135339_texture.usd",
+      "position": [1.1, -1.8, 1.9],
+      "rotation": [0.5, 0.5, 0.5, 0.5],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "Meshy_AI_Stack_of_spiral_bound_0805135445_texture",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_Stack_of_spiral_bound_0805135445_texture/Meshy_AI_Stack_of_spiral_bound_0805135445_texture.usd",
+      "position": [0.3, 0, 1.0],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.001, 0.001, 0.001],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "pink_bottle",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [2.16, -1.6, 1.9],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_00",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [1.66, -1.6, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_02",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [2.66, -1.6, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_005",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [1.91, -1.6, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_025",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [2.41, -1.6, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_10",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [1.66, -1.9, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_11",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [2.16, -1.9, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_12",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [2.66, -1.9, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_105",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [1.91, -1.9, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_pink_bottle_125",
+      "usd_path": "assets/usd_models/sber_shop.e1/pink_bottle/pink_bottle.usd",
+      "position": [2.41, -1.9, 1.8],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.015, 0.015, 0.015],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "black_bottle",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [0.82, -1.6, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_front_00",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [0.32, -1.6, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_front_01",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [0.57, -1.6, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_front_03",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [1.07, -1.6, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_front_04",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [1.32, -1.6, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_back_00",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [0.32, -1.9, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_back_01",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [0.57, -1.9, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_back_02",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [0.82, -1.9, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_back_03",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [1.07, -1.9, 2.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "staff_black_bottle_back_04",
+      "usd_path": "assets/usd_models/sber_shop.e1/black_bottle/black_bottle.usd",
+      "position": [1.32, -1.9, 1.2],
+      "rotation": [0.0, 0.0, 0.70710678, 0.70710678],
+      "scale": [0.003, 0.003, 0.0025],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "podstavka",
+      "usd_path": "assets/usd_models/sber_shop.e1/podstavka.usd",
+      "position": [3.47, -1.60267949, 0.95],
+      "rotation": [0.25881905, 0.0, 0.0, 0.96592583],
+      "scale": [1.0, 1.0, 1.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "bloknot",
+      "usd_path": "assets/usd_models/sber_shop.e1/bloknot.usd",
+      "position": [3.48, -1.59732051, 1.0],
+      "rotation": [0.25783417, -0.02255757, -0.08418598, 0.96225019],
+      "scale": [0.0008, 0.0013, 0.0008],
+      "mass": 0.1,
+      "fixed": false
+    },
+    {
+      "name": "podstavka_right",
+      "usd_path": "assets/usd_models/sber_shop.e1/podstavka.usd",
+      "position": [3.17, -1.60267949, 0.95],
+      "rotation": [0.25881905, 0.0, 0.0, 0.96592583],
+      "scale": [1.0, 1.0, 1.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "bloknot_right",
+      "usd_path": "assets/usd_models/sber_shop.e1/bloknot.usd",
+      "position": [3.18, -1.59732051, 1.0],
+      "rotation": [0.25783417, -0.02255757, -0.08418598, 0.96225019],
+      "scale": [0.0008, 0.0013, 0.0008],
+      "mass": 0.1,
+      "fixed": false
+    },
+    {
+      "name": "podstavka_left",
+      "usd_path": "assets/usd_models/sber_shop.e1/podstavka.usd",
+      "position": [3.77, -1.60267949, 0.95],
+      "rotation": [0.25881905, 0.0, 0.0, 0.96592583],
+      "scale": [1.0, 1.0, 1.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "bloknot_left",
+      "usd_path": "assets/usd_models/sber_shop.e1/bloknot.usd",
+      "position": [3.78, -1.59732051, 1.0],
+      "rotation": [0.25783417, -0.02255757, -0.08418598, 0.96225019],
+      "scale": [0.0008, 0.0013, 0.0008],
+      "mass": 0.1,
+      "fixed": false
+    },
+    {
+      "name": "podstavka_back_00",
+      "usd_path": "assets/usd_models/sber_shop.e1/podstavka.usd",
+      "position": [3.07, -1.90267949, 0.95],
+      "rotation": [0.25881905, 0.0, 0.0, 0.96592583],
+      "scale": [1.0, 1.0, 1.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "bloknot_back_00",
+      "usd_path": "assets/usd_models/sber_shop.e1/bloknot.usd",
+      "position": [3.08, -1.89732051, 1.0],
+      "rotation": [0.25783417, -0.02255757, -0.08418598, 0.96225019],
+      "scale": [0.001, 0.001, 0.001],
+      "mass": 0.1,
+      "fixed": false
+    },
+    {
+      "name": "podstavka_back_01",
+      "usd_path": "assets/usd_models/sber_shop.e1/podstavka.usd",
+      "position": [3.27, -1.90267949, 0.95],
+      "rotation": [0.25881905, 0.0, 0.0, 0.96592583],
+      "scale": [1.0, 1.0, 1.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "bloknot_back_01",
+      "usd_path": "assets/usd_models/sber_shop.e1/bloknot.usd",
+      "position": [3.28, -1.89732051, 1.0],
+      "rotation": [0.25783417, -0.02255757, -0.08418598, 0.96225019],
+      "scale": [0.001, 0.001, 0.001],
+      "mass": 0.1,
+      "fixed": false
+    },
+    {
+      "name": "podstavka_back_02",
+      "usd_path": "assets/usd_models/sber_shop.e1/podstavka.usd",
+      "position": [3.47, -1.90267949, 0.95],
+      "rotation": [0.25881905, 0.0, 0.0, 0.96592583],
+      "scale": [1.0, 1.0, 1.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "bloknot_back_02",
+      "usd_path": "assets/usd_models/sber_shop.e1/bloknot.usd",
+      "position": [3.48, -1.89732051, 1.0],
+      "rotation": [0.25783417, -0.02255757, -0.08418598, 0.96225019],
+      "scale": [0.001, 0.001, 0.001],
+      "mass": 0.1,
+      "fixed": false
+    },
+    {
+      "name": "podstavka_back_03",
+      "usd_path": "assets/usd_models/sber_shop.e1/podstavka.usd",
+      "position": [3.67, -1.90267949, 0.95],
+      "rotation": [0.25881905, 0.0, 0.0, 0.96592583],
+      "scale": [1.0, 1.0, 1.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "bloknot_back_03",
+      "usd_path": "assets/usd_models/sber_shop.e1/bloknot.usd",
+      "position": [3.68, -1.89732051, 1.0],
+      "rotation": [0.25783417, -0.02255757, -0.08418598, 0.96225019],
+      "scale": [0.001, 0.001, 0.001],
+      "mass": 0.1,
+      "fixed": false
+    },
+    {
+      "name": "podstavka_back_04",
+      "usd_path": "assets/usd_models/sber_shop.e1/podstavka.usd",
+      "position": [3.87, -1.90267949, 0.95],
+      "rotation": [0.25881905, 0.0, 0.0, 0.96592583],
+      "scale": [1.0, 1.0, 1.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "bloknot_back_04",
+      "usd_path": "assets/usd_models/sber_shop.e1/bloknot.usd",
+      "position": [3.88, -1.89732051, 1.0],
+      "rotation": [0.25783417, -0.02255757, -0.08418598, 0.96225019],
+      "scale": [0.001, 0.001, 0.001],
+      "mass": 0.1,
+      "fixed": false
+    },
+    {
+      "name": "cap_stock",
+      "usd_path": "assets/usd_models/sber_shop.e1/cap/cap.usd",
+      "position": [2.16, -1.6, 2.15],
+      "rotation": [-0.5, -0.5, 0.5, 0.5],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "cap_stock_front_00",
+      "usd_path": "assets/usd_models/sber_shop.e1/cap/cap.usd",
+      "position": [1.785, -1.6, 2.15],
+      "rotation": [-0.5, -0.5, 0.5, 0.5],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "cap_stock_front_02",
+      "usd_path": "assets/usd_models/sber_shop.e1/cap/cap.usd",
+      "position": [2.535, -1.6, 2.15],
+      "rotation": [-0.5, -0.5, 0.5, 0.5],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "cap_stock_back_00",
+      "usd_path": "assets/usd_models/sber_shop.e1/cap/cap.usd",
+      "position": [1.66, -1.9, 2.15],
+      "rotation": [-0.5, -0.5, 0.5, 0.5],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "cap_stock_back_01",
+      "usd_path": "assets/usd_models/sber_shop.e1/cap/cap.usd",
+      "position": [1.91, -1.9, 2.15],
+      "rotation": [-0.5, -0.5, 0.5, 0.5],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "cap_stock_back_02",
+      "usd_path": "assets/usd_models/sber_shop.e1/cap/cap.usd",
+      "position": [2.16, -1.9, 2.15],
+      "rotation": [-0.5, -0.5, 0.5, 0.5],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "cap_stock_back_03",
+      "usd_path": "assets/usd_models/sber_shop.e1/cap/cap.usd",
+      "position": [2.41, -1.9, 2.15],
+      "rotation": [-0.5, -0.5, 0.5, 0.5],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "cap_stock_back_04",
+      "usd_path": "assets/usd_models/sber_shop.e1/cap/cap.usd",
+      "position": [2.66, -1.9, 2.15],
+      "rotation": [-0.5, -0.5, 0.5, 0.5],
+      "scale": [0.01, 0.01, 0.01],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "basket",
+      "usd_path": "assets/usd_models/sber_shop.e1/korzina_sbn.usd",
+      "position": [4.4, -1.2, 1.0],
+      "rotation": [0.5, 0.5, 0.5, 0.5],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "shkaf_0",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_shkaf.usd",
+      "position": [3.5, -1.8, 0.0],
+      "scale": [1.2, 1.2, 1.2],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "shkaf_1",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_shkaf.usd",
+      "position": [2.16, -1.8, 0.0],
+      "scale": [1.2, 1.2, 1.2],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "shkaf_2",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_shkaf.usd",
+      "position": [0.82, -1.8, 0.0],
+      "scale": [1.2, 1.2, 1.2],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass": 1.0,
+      "fixed": false
+    },
+    {
+      "name": "vitrina_ostrovok",
+      "usd_path": "assets/usd_models/sber_shop.e1/vitrina_ostrovok.usd",
+      "position": [0, 0, -0.0],
+      "scale": [0.968, 0.968, 0.968],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "vitrina_ostrovok_2",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_vitrina_ostrovok_2.usd",
+      "position": [1.5, 3, -0.0],
+      "scale": [8.0, 0.4, 1.0],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "White_T_Shirt_on_a_Ma",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_White_T_Shirt_on_a_Ma_0805081103_texture/Meshy_AI_White_T_Shirt_on_a_Ma_0805081103_texture.usd",
+      "position": [0.7, -1.6, 2.7],
+      "rotation": [0.1830127, 0.1830127, 0.6830127, 0.6830127],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "White_T_Shirt_on_a_Ma_2",
+      "usd_path": "assets/usd_models/sber_shop.e1/Meshy_AI_White_T_Shirt_on_a_Ma_0805183728_texture/Meshy_AI_White_T_Shirt_on_a_Ma_0805183728_texture.usd",
+      "position": [1.3, -1.6, 2.7],
+      "rotation": [0.1830127, 0.1830127, 0.6830127, 0.6830127],
+      "scale": [0.003, 0.003, 0.003],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "pos_tablet",
+      "usd_path": "assets/usd_models/sber_shop.e1/pos_tablet/pos_tablet.usd",
+      "position": [4.05, 0.2, 1.2],
+      "rotation": [1, 0, 0.0, 0.0],
+      "scale": [0.2, 0.2, 0.2],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "prilavok",
+      "usd_path": "assets/usd_models/sber_shop.e1/prilavok.usd",
+      "position": [3.4, 0.2, 0.0],
+      "scale": [1.1, 1.1, 1.1],
+      "rotation": [1.0, 0.0, 0.0, 0.0],
+      "mass": 5.0,
+      "fixed": true
+    },
+    {
+      "name": "prilavok_2",
+      "usd_path": "assets/usd_models/sber_shop.e1/prilavok.usd",
+      "position": [4.4, -1.2, 0.0],
+      "scale": [0.5, 1.0, 0.6],
+      "rotation": [0.70710678, 0.0, 0.0, -0.70710678],
+      "mass": 5.0,
+      "fixed": true
+    },
+    {
+      "name": "hanger",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_hanger.usd",
+      "position": [-1, -0.5, 0.0],
+      "scale": [0.2, 0.2, 0.2],
+      "rotation": [0.70710678, 0.0, 0.0, 0.70710678],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "green_Tshort",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_green_Tshort.usd",
+      "position": [-1, -0.5, 1.2],
+      "scale": [0.007, 0.007, 0.007],
+      "rotation": [0.70710678, 0.70710678, 0.0, 0.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "green_Tshort_1",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_green_Tshort.usd",
+      "position": [-1, -0.0, 1.2],
+      "scale": [0.007, 0.007, 0.007],
+      "rotation": [0.70710678, 0.70710678, 0.0, 0.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "green_Tshort_2",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_green_Tshort.usd",
+      "position": [-1, -0.2, 1.2],
+      "scale": [0.007, 0.007, 0.007],
+      "rotation": [0.70710678, 0.70710678, 0.0, 0.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "red_Tshort",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_red_Tshort.usd",
+      "position": [-1, -0.7, 1.2],
+      "scale": [0.007, 0.007, 0.007],
+      "rotation": [0.70710678, 0.70710678, 0.0, 0.0],
+      "mass": 5.0,
+      "fixed": false
+    },
+    {
+      "name": "red_Tshort_2",
+      "usd_path": "assets/usd_models/sber_shop.e1/0_red_Tshort.usd",
+      "position": [-1, -0.9, 1.2],
+      "scale": [0.007, 0.007, 0.007],
+      "rotation": [0.70710678, 0.70710678, 0.0, 0.0],
+      "mass": 5.0,
+      "fixed": false
+    }
+  ],
+  "light_definitions": {
+    "disk_cold_main": {
+      "type": "disk",
+      "intensity": 4000.0,
+      "color": [1.0, 1.0, 1.0],
+      "exposure": 2.0,
+      "radius": 0.4,
+      "enable_color_temperature": true,
+      "color_temperature": 6500.0,
+      "normalize": true
+    },
+    "disk_cold_fill": {
+      "type": "disk",
+      "intensity": 6000.0,
+      "color": [1.0, 1.0, 1.0],
+      "exposure": 2.0,
+      "radius": 1.2,
+      "enable_color_temperature": true,
+      "color_temperature": 6500.0,
+      "normalize": true
+    }
+  },
+  "spawn_groups": {
+    "front_blue_bottles": {
+      "layout": "grid",
+      "base_position": [3.8, -1.6, 1.4],
+      "size": [0.3, 0.05],
+      "z_offset": 0.0,
+      "min_spacing": 0.01,
+      "packing_mode": "random",
+      "spawn_count": 1,
+      "visible": false
+    },
+    "back_orange_bottles": {
+      "layout": "grid",
+      "base_position": [3.349, -1.93, 1.4],
+      "size": [0.4, 0.4],
+      "z_offset": 0.0,
+      "min_spacing": 0.02,
+      "packing_mode": "grid",
+      "spawn_count": [2, 10],
+      "visible": false
+    },
+    "back_cups": {
+      "layout": "grid",
+      "base_position": [3.96, -1.93, 1.4],
+      "size": [0.2, 0.4],
+      "z_offset": 0.0,
+      "min_spacing": 0.02,
+      "packing_mode": "grid",
+      "spawn_count": [2, 6],
+      "visible": false
+    },
+    "back_blue_bottles": {
+      "layout": "grid",
+      "base_position": [3.654, -1.93, 1.4],
+      "size": [0.3, 0.4],
+      "z_offset": 0.0,
+      "min_spacing": 0.02,
+      "packing_mode": "grid",
+      "spawn_count": [2, 6],
+      "visible": false
+    },
+    "back_red_bottles": {
+      "layout": "grid",
+      "base_position": [3.01, -1.93, 1.4],
+      "size": [0.3, 0.4],
+      "z_offset": 0.0,
+      "min_spacing": 0.02,
+      "packing_mode": "grid",
+      "spawn_count": [2, 6],
+      "visible": false
+    },
+    "cat_toys": {
+      "layout": "grid",
+      "base_position": [2.58, -1.89, 1.4],
+      "size": [0.3, 0.4],
+      "z_offset": 0.0,
+      "min_spacing": 0.02,
+      "packing_mode": "grid",
+      "spawn_count": [2, 6],
+      "visible": false
+    },
+    "drawer_handle_area": {
+      "layout": "grid",
+      "anchor_prim": "shkaf_0/shkaf/shkaf/vidvizhanya_polka/vnutr",
+      "base_position": [-0.42, 0.59, 0.53],
+      "size": [0.20, 0.002],
+      "z_offset": 0.03,
+      "min_spacing": 0.02,
+      "packing_mode": "random",
+      "spawn_count": [1, 1],
+      "visible": false
+    },
+    "drawer_pull_area": {
+      "layout": "grid",
+      "anchor_prim": "shkaf_0/shkaf/shkaf/vidvizhanya_polka/vnutr",
+      "base_position": [-0.33, 0.89, 0.53],
+      "size": [0.05, 0.001],
+      "z_offset": 0.03,
+      "min_spacing": 0.02,
+      "packing_mode": "random",
+      "spawn_count": [1, 1],
+      "visible": false
+    },
+    "ring_box_base_on_table": {
+      "layout": "grid",
+      "base_position": [3.49, 0.15, 1.25],
+      "size": [0.25, 0.12],
+      "z_offset": 0.0,
+      "min_spacing": 0.02,
+      "packing_mode": "random",
+      "spawn_count": [1, 1],
+      "visible": false
+    },
+    "pockets_on_table": {
+      "layout": "grid",
+      "base_position": [2.9, 0.15, 1.25],
+      "size": [0.5, 0.15],
+      "z_offset": 0.0,
+      "min_spacing": 0.02,
+      "packing_mode": "random",
+      "spawn_count": [2, 2],
+      "visible": false
+    }
+  }
+}

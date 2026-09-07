@@ -1,0 +1,74 @@
+{
+  "task"       : {
+    "name": "darkstore.e1.a1",
+    "description": "Approach the red soda can on the snacks shelf, pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans"
+  },
+  "objects"    : {
+    "target_item"      : {"red_soda_can__task2_target_drink": []},
+    "neighbour_items"  : {
+      "back_red_soda_can_1": [0, 1, 2, 3, 4, 5],
+      "back_red_soda_can_2": [0, 1, 2, 3      ],
+      "back_red_soda_can_3": [0, 1, 2, 3, 4, 5]
+    },
+    "drinks_shelf_zone": {"task_success_box": []},
+    "right_hand"       : {"right_thumb_proximal_base": []},
+    "robot_parts"      : {"left_thumb_proximal_base": [], "right_thumb_proximal_base": []}
+  },
+  "relations"  : {
+    "episode_timeout"         : {"type": "timeout", "duration_sec": 55.0, "pattern": "episode timeout"},
+    "target_exists"           : {"type": "spawn", "pattern": "spawn {target_item}"},
+    "neighbours_exist"        : {"type": "spawn", "pattern": "spawn {neighbour_items}"},
+    "drinks_shelf_zone_exists": {"type": "spawn", "pattern": "spawn {drinks_shelf_zone}"},
+    "target_on_drinks_shelf"  : {"type": "inside", "pattern": "{target_item} is inside {drinks_shelf_zone}"},
+    "target_upright"          : {"type": "upright", "pattern": "{target_item} is upright", "max_tilt_deg": 30.0},
+    "target_static"           : {
+      "type"       : "static",
+      "pattern"    : "{target_item} is static",
+      "lin_vel_eps": 0.02,
+      "ang_vel_eps": 0.05
+    },
+    "neighbour_upright"       : {"type": "upright", "pattern": "{neighbour_items} is upright", "max_tilt_deg": 30.0},
+    "target_in_hand"          : {
+      "type"      : "distance",
+      "pattern"   : "{target_item} is too close to {robot_parts}",
+      "distance"  : 0.17,
+      "comparison": "less"
+    }
+  },
+  "goals"      : {
+    "target_placed_on_drinks_shelf": {
+      "description": "The target can must be inside the Drinks-shelf placement area, upright, and stationary",
+      "for_each"   : "target_item",
+      "must_have"  : ["target_on_drinks_shelf", "target_upright", "target_static"],
+      "required"   : true
+    },
+    "neighbours_upright_at_finish" : {
+      "description": "Every active neighbouring can must be upright at the end of the episode",
+      "for_each"   : "neighbour_items",
+      "must_have"  : "neighbour_upright",
+      "required"   : true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout"      : {
+      "description" : "The episode must not end due to timeout",
+      "forbid_value": ["episode_timeout", 1],
+      "per_object"  : false
+    },
+    "target_released"         : {
+      "description" : "The robot must not remain close to the target can at the end",
+      "forbid_value": ["target_in_hand", 1],
+      "per_object"  : false
+    },
+    "neighbours_must_not_fall": {
+      "description"      : "No active neighbouring can may transition from upright to fallen",
+      "forbid_transition": [ "neighbour_upright", [1, 0] ],
+      "if_object_type"   : "neighbour_items",
+      "per_object"       : true
+    }
+  },
+  "success"    : {
+    "required_goals": ["target_placed_on_drinks_shelf", "neighbours_upright_at_finish"],
+    "max_violations": {"no_episode_timeout": 0, "target_released": 0, "neighbours_must_not_fall": 0}
+  }
+}
