@@ -173,6 +173,13 @@ in `assets/runs/green_challenge.json`. The time shown is the episode timeout.
   - Pick the red soda can up with your right hand.
   - Place the red soda can in the empty space next to the matching red soda cans.
 
+### Scenario previews
+
+- **BenchMart store tasks** — Shampoo, Energy Drink, Juice and Sauce. An additional scenario,
+  outside the competition run. Scene, tasks and run config live on
+  [`feat/benchmart-scenario`](https://github.com/greenvla/GreenSim/tree/feat/benchmart-scenario);
+  demonstrations are published in `SberRoboticsCenter/GreenChallengeData/benchmart`.
+
 ### Run
 
 Start the VLA policy server, then
