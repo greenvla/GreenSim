@@ -1,0 +1,234 @@
+{
+  "task": {
+    "name": "benchmart.e1.a1",
+    "description": "Pick a Shampoo and place it on the table."
+  },
+  "objects": {
+    "target_items": {
+      "haircare_bottle_02": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "robot_base": {
+      "robot_root": []
+    },
+    "robot_parts": {
+      "left_thumb_proximal_base": [],
+      "right_thumb_proximal_base": []
+    },
+    "approach_zone": {
+      "approach_shampoo_south": [],
+      "approach_shampoo_aisle": []
+    },
+    "shelf_zone": {
+      "shelf_zone_shampoo": []
+    },
+    "table_zone": {
+      "table_waypoint": []
+    },
+    "container_zone": {
+      "container_drop_zone": []
+    }
+  },
+  "relations": {
+    "episode_timeout": {
+      "type": "timeout",
+      "duration_sec": 120.0,
+      "pattern": "episode timeout"
+    },
+    "exists_targets": {
+      "type": "spawn",
+      "pattern": "spawn {target_items}"
+    },
+    "exists_robot_base": {
+      "type": "spawn",
+      "pattern": "spawn {robot_base}"
+    },
+    "exists_approach_zone": {
+      "type": "spawn",
+      "pattern": "spawn {approach_zone}"
+    },
+    "exists_shelf_zone": {
+      "type": "spawn",
+      "pattern": "spawn {shelf_zone}"
+    },
+    "exists_table_zone": {
+      "type": "spawn",
+      "pattern": "spawn {table_zone}"
+    },
+    "exists_container_zone": {
+      "type": "spawn",
+      "pattern": "spawn {container_zone}"
+    },
+    "robot_at_shelf": {
+      "type": "distance",
+      "pattern": "{approach_zone} is reached by {robot_base}",
+      "distance": 0.9,
+      "comparison": "less"
+    },
+    "robot_reached_shelf": {
+      "type": "duration",
+      "relation": "robot_at_shelf",
+      "duration_sec": 0.2,
+      "latch": true,
+      "pattern": "{approach_zone} was reached by {robot_base}"
+    },
+    "item_in_hand": {
+      "type": "distance",
+      "pattern": "pick {target_items} by {robot_parts}",
+      "distance": 0.15,
+      "comparison": "less"
+    },
+    "item_was_in_hand": {
+      "type": "duration",
+      "relation": "item_in_hand",
+      "duration_sec": 0.3,
+      "latch": true,
+      "pattern": "{target_items} was picked by {robot_parts}"
+    },
+    "item_off_shelf": {
+      "type": "not_inside",
+      "pattern": "{target_items} is off {shelf_zone}"
+    },
+    "item_was_lifted": {
+      "type": "duration",
+      "relation": "item_off_shelf",
+      "duration_sec": 0.2,
+      "latch": true,
+      "pattern": "{target_items} remains off {shelf_zone}"
+    },
+    "robot_at_table": {
+      "type": "distance",
+      "pattern": "{table_zone} is approached by {robot_base}",
+      "distance": 1.0,
+      "comparison": "less"
+    },
+    "robot_reached_table": {
+      "type": "duration",
+      "relation": "robot_at_table",
+      "duration_sec": 0.2,
+      "latch": true,
+      "pattern": "{table_zone} was approached by {robot_base}"
+    },
+    "item_in_container": {
+      "type": "inside",
+      "pattern": "{target_items} is inside {container_zone}"
+    },
+    "item_was_in_container": {
+      "type": "duration",
+      "relation": "item_in_container",
+      "duration_sec": 0.3,
+      "latch": true,
+      "pattern": "{target_items} remains inside {container_zone}"
+    },
+    "hand_at_container": {
+      "type": "distance",
+      "pattern": "{container_zone} is entered by {robot_parts}",
+      "distance": 0.3,
+      "comparison": "less"
+    },
+    "hand_was_at_container": {
+      "type": "duration",
+      "relation": "hand_at_container",
+      "duration_sec": 0.2,
+      "latch": true,
+      "pattern": "{container_zone} was entered by {robot_parts}"
+    },
+    "hand_away_from_container": {
+      "type": "distance",
+      "pattern": "{container_zone} is left by {robot_parts}",
+      "distance": 0.5,
+      "comparison": "greater"
+    }
+  },
+  "goals": {
+    "robot_approached_shelf": {
+      "description": "The robot base reached the shelf holding the Shampoo",
+      "for_each": "approach_zone",
+      "must_have": [
+        "robot_reached_shelf"
+      ],
+      "match_mode": "any",
+      "min_satisfied": 1,
+      "required": true
+    },
+    "item_picked_from_shelf": {
+      "description": "At least one Shampoo was grasped and lifted off the shelf",
+      "for_each": "target_items",
+      "must_have": [
+        "item_was_in_hand",
+        "item_was_lifted"
+      ],
+      "match_mode": "any",
+      "min_satisfied": 1,
+      "required": true
+    },
+    "item_carried_to_table": {
+      "description": "The robot carried the Shampoo to the packing table",
+      "for_each": "table_zone",
+      "must_have": [
+        "robot_reached_table"
+      ],
+      "match_mode": "any",
+      "min_satisfied": 1,
+      "required": true,
+      "global_must_have": [
+        "item_was_in_hand"
+      ]
+    },
+    "item_placed_in_container": {
+      "description": "At least one Shampoo stayed inside the container",
+      "for_each": "target_items",
+      "must_have": [
+        "item_was_in_container"
+      ],
+      "match_mode": "any",
+      "min_satisfied": 1,
+      "required": true
+    },
+    "hand_returned_from_container": {
+      "description": "The hand entered the container and then moved back out",
+      "for_each": "container_zone",
+      "must_have": [
+        "hand_was_at_container",
+        "hand_away_from_container"
+      ],
+      "match_mode": "any",
+      "min_satisfied": 1,
+      "required": true
+    }
+  },
+  "constraints": {
+    "no_episode_timeout": {
+      "description": "The episode must not end by timeout",
+      "forbid_value": [
+        "episode_timeout",
+        1
+      ],
+      "per_object": false
+    }
+  },
+  "success": {
+    "required_goals": [
+      "robot_approached_shelf",
+      "item_picked_from_shelf",
+      "item_carried_to_table",
+      "item_placed_in_container",
+      "hand_returned_from_container"
+    ],
+    "max_violations": {
+      "no_episode_timeout": 0
+    }
+  }
+}

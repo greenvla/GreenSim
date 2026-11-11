@@ -1658,5 +1658,405 @@
         ]
       }
     }
+  },
+  "benchmart.e1.a1": {
+    "scene": "scene.benchmart.e1",
+    "benchmark": "task.benchmart.e1.a1",
+    "policy": null,
+    "task": {
+      "name": "benchmart.e1.a1",
+      "description": "Pick a Shampoo and place it on the table."
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick a Shampoo and place it on the table.",
+        "subtask": "Go to the shelf with the Shampoo.",
+        "relations": [
+          {
+            "name": "robot_at_shelf",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "1": {
+        "task": "Pick a Shampoo and place it on the table.",
+        "subtask": "Pick a Shampoo from the shelf.",
+        "relations": [
+          {
+            "name": "item_was_lifted",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          },
+          {
+            "name": "item_in_hand",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "2": {
+        "task": "Pick a Shampoo and place it on the table.",
+        "subtask": "Carry the Shampoo to the table.",
+        "relations": [
+          {
+            "name": "robot_at_table",
+            "object_a": "table_waypoint",
+            "object_b": "robot_root"
+          },
+          {
+            "name": "item_in_hand",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "3": {
+        "task": "Pick a Shampoo and place it on the table.",
+        "subtask": "Put the Shampoo into the container.",
+        "relations": [
+          {
+            "name": "item_in_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "4": {
+        "task": "Pick a Shampoo and place it on the table.",
+        "subtask": "Move the hand out of the container and return it to the default position.",
+        "relations": [
+          {
+            "name": "hand_was_at_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          },
+          {
+            "name": "hand_away_from_container",
+            "object_a": null,
+            "object_b": null
+          },
+          {
+            "name": "item_in_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      }
+    }
+  },
+  "benchmart.e1.a2": {
+    "scene": "scene.benchmart.e1",
+    "benchmark": "task.benchmart.e1.a2",
+    "policy": null,
+    "task": {
+      "name": "benchmart.e1.a2",
+      "description": "Pick an Energy Drink and place it on the table."
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick an Energy Drink and place it on the table.",
+        "subtask": "Go to the shelf with the Energy Drink.",
+        "relations": [
+          {
+            "name": "robot_at_shelf",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "1": {
+        "task": "Pick an Energy Drink and place it on the table.",
+        "subtask": "Pick an Energy Drink from the shelf.",
+        "relations": [
+          {
+            "name": "item_was_lifted",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          },
+          {
+            "name": "item_in_hand",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "2": {
+        "task": "Pick an Energy Drink and place it on the table.",
+        "subtask": "Carry the Energy Drink to the table.",
+        "relations": [
+          {
+            "name": "robot_at_table",
+            "object_a": "table_waypoint",
+            "object_b": "robot_root"
+          },
+          {
+            "name": "item_in_hand",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "3": {
+        "task": "Pick an Energy Drink and place it on the table.",
+        "subtask": "Put the Energy Drink into the container.",
+        "relations": [
+          {
+            "name": "item_in_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "4": {
+        "task": "Pick an Energy Drink and place it on the table.",
+        "subtask": "Move the hand out of the container and return it to the default position.",
+        "relations": [
+          {
+            "name": "hand_was_at_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          },
+          {
+            "name": "hand_away_from_container",
+            "object_a": null,
+            "object_b": null
+          },
+          {
+            "name": "item_in_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      }
+    }
+  },
+  "benchmart.e1.a3": {
+    "scene": "scene.benchmart.e1",
+    "benchmark": "task.benchmart.e1.a3",
+    "policy": null,
+    "task": {
+      "name": "benchmart.e1.a3",
+      "description": "Pick a Juice and place it on the table."
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick a Juice and place it on the table.",
+        "subtask": "Go to the shelf with the Juice.",
+        "relations": [
+          {
+            "name": "robot_at_shelf",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "1": {
+        "task": "Pick a Juice and place it on the table.",
+        "subtask": "Pick a Juice from the shelf.",
+        "relations": [
+          {
+            "name": "item_was_lifted",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          },
+          {
+            "name": "item_in_hand",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "2": {
+        "task": "Pick a Juice and place it on the table.",
+        "subtask": "Carry the Juice to the table.",
+        "relations": [
+          {
+            "name": "robot_at_table",
+            "object_a": "table_waypoint",
+            "object_b": "robot_root"
+          },
+          {
+            "name": "item_in_hand",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "3": {
+        "task": "Pick a Juice and place it on the table.",
+        "subtask": "Put the Juice into the container.",
+        "relations": [
+          {
+            "name": "item_in_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "4": {
+        "task": "Pick a Juice and place it on the table.",
+        "subtask": "Move the hand out of the container and return it to the default position.",
+        "relations": [
+          {
+            "name": "hand_was_at_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          },
+          {
+            "name": "hand_away_from_container",
+            "object_a": null,
+            "object_b": null
+          },
+          {
+            "name": "item_in_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      }
+    }
+  },
+  "benchmart.e1.a4": {
+    "scene": "scene.benchmart.e1",
+    "benchmark": "task.benchmart.e1.a4",
+    "policy": null,
+    "task": {
+      "name": "benchmart.e1.a4",
+      "description": "Pick a Sauce and place it on the table."
+    },
+    "annotations": {
+      "0": {
+        "task": "Pick a Sauce and place it on the table.",
+        "subtask": "Go to the shelf with the Sauce.",
+        "relations": [
+          {
+            "name": "robot_at_shelf",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "1": {
+        "task": "Pick a Sauce and place it on the table.",
+        "subtask": "Pick a Sauce from the shelf.",
+        "relations": [
+          {
+            "name": "item_was_lifted",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          },
+          {
+            "name": "item_in_hand",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "2": {
+        "task": "Pick a Sauce and place it on the table.",
+        "subtask": "Carry the Sauce to the table.",
+        "relations": [
+          {
+            "name": "robot_at_table",
+            "object_a": "table_waypoint",
+            "object_b": "robot_root"
+          },
+          {
+            "name": "item_in_hand",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "3": {
+        "task": "Pick a Sauce and place it on the table.",
+        "subtask": "Put the Sauce into the container.",
+        "relations": [
+          {
+            "name": "item_in_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      },
+      "4": {
+        "task": "Pick a Sauce and place it on the table.",
+        "subtask": "Move the hand out of the container and return it to the default position.",
+        "relations": [
+          {
+            "name": "hand_was_at_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          },
+          {
+            "name": "hand_away_from_container",
+            "object_a": null,
+            "object_b": null
+          },
+          {
+            "name": "item_in_container",
+            "object_a": null,
+            "object_b": null,
+            "match_mode": "any",
+            "min_satisfied": 1
+          }
+        ]
+      }
+    }
   }
 }

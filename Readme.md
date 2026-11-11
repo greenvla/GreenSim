@@ -35,17 +35,23 @@ cd green_challenge
 make build
 ```
 
-### Download assets (one-time)
+### Download assets and data (one-time)
 
 The large USD models and the benchmark dataset are not in the repo — download them once from
 HuggingFace into the repo root:
 
 ```bash
-# Assets (USD models: baskets, tables, fruit, …)
-huggingface-cli download SberRoboticsCenter/GreenChallengeAssets --repo-type dataset --local-dir assets/usd_models
+# Assets (USD models: baskets, tables, fruit, …); the repo keeps them under usd_models/
+huggingface-cli download SberRoboticsCenter/GreenChallengeAssets --repo-type dataset \
+  --include "usd_models/**" --local-dir assets
 
-# Benchmark dataset
-huggingface-cli download SberRoboticsCenter/GreenChallengeData --repo-type dataset --local-dir data
+# Benchmark dataset (download only the collections you need)
+huggingface-cli download SberRoboticsCenter/GreenChallengeData --repo-type dataset \
+  --include "scripted/**" "teleop_*/**" --local-dir data
+
+# BenchMart demonstrations
+huggingface-cli download SberRoboticsCenter/GreenChallengeData --repo-type dataset \
+  --include "benchmart/**" --local-dir data
 ```
 
 `docker/docker-compose.yaml` bind-mounts the whole repo to `/workspace/green_challenge`, so
@@ -153,6 +159,11 @@ A run is described by a JSON file in `assets/runs/`, e.g. `assets/runs/test.json
   `num_episodes` may be omitted, in which case the scenario's own value is used, defaulting
   to 10. An unknown scenario name aborts the run before any Isaac Sim app starts.
 
+Object placement is randomized on every episode. `SIM_SEED` (default `42` in `vla_env.sh`)
+seeds the reset as `SIM_SEED + episode_count`, so a fixed `SIM_SEED` makes the sequence of
+layouts reproducible. Only objects listed in a scene's `spawn_groups` are repositioned;
+ungrouped objects keep the pose from the scene JSON.
+
 ### Tasks
 
 The competition tasks of the [Green Challenge 2026](https://dsworks.ru/en/champ/aij26-green), defined
@@ -172,6 +183,30 @@ in `assets/runs/green_challenge.json`. The time shown is the episode timeout.
 - **`darkstore.e1.a2`** *(35 s)* — Pick the red soda can up with your right hand, place the red soda can in the empty space next to the matching red soda cans.
   - Pick the red soda can up with your right hand.
   - Place the red soda can in the empty space next to the matching red soda cans.
+
+### BenchMart scenarios
+
+A separate store scenario set is defined in `assets/runs/benchmart.json` — four tasks,
+8 episodes each, 120 s timeout. It is **not** part of the competition run in
+`green_challenge.json`; run it with its own config:
+
+```bash
+RUN_PATH=assets/runs/benchmart.json make up
+```
+
+- **`benchmart.e1.a1`** *(120 s)* — Pick a Shampoo and place it on the table.
+- **`benchmart.e1.a2`** *(120 s)* — Pick an Energy Drink and place it on the table.
+- **`benchmart.e1.a3`** *(120 s)* — Pick a Juice and place it on the table.
+- **`benchmart.e1.a4`** *(120 s)* — Pick a Sauce and place it on the table.
+
+All four share `scene.benchmart.e1`; its models live under
+`assets/usd_models/benchmart/` and are served from the same HuggingFace asset repo. The
+models are prepared on the `add-benchmart-assets` branch of
+`SberRoboticsCenter/GreenChallengeAssets`; merge it into `main` so `hf download` can fetch
+`usd_models/benchmart/`. The demonstrations are published as
+`SberRoboticsCenter/GreenChallengeData/benchmart/dex_merged_lerobot`; fetch them with
+`--include "benchmart/**"` as shown above. The scene is dense (~1800 dynamic objects), so the
+first episode is slow while collision meshes cook.
 
 ### Run
 
@@ -215,6 +250,15 @@ The run `score` is subtask-level, from `subtask_history` in `episodes/episode_<N
 - `subtask_completed` / `subtask_total`, where `subtask_total = episodes × len(annotations)`
   from `assets/structure.json` (falling back to the number of started subtasks if the scenario
   is missing there).
+
+Each relation inside an annotation may set `match_mode`:
+
+- `"all"` (default) — every resolved relation instance must hold. This is the behaviour of
+  the existing scenarios, so omitting the field changes nothing.
+- `"any"` — at least `min_satisfied` instances must hold (default `1`). With `object_a` /
+  `object_b` left `null`, a relation expands to every copy in the group (for example all 12
+  shampoos), and `"all"` would require picking all of them; `"any"` lets a subtask key off
+  "any one copy of the product". `min_satisfied` is ignored when `match_mode` is `"all"`.
 
 Also reported: `scoring` — per-goal `achieved` / `runs` / `success_rate` — and `goals_score`,
 the total number of achieved goals. Every metric appears per scenario under the `subtasks` key

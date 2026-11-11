@@ -10,6 +10,12 @@ class SubtaskTransition:
     object_a: Optional[str] = None
     object_b: Optional[str] = None
     rids: tuple[int, ...] = ()
+    # "all" (default) requires every resolved instance; "any" requires at least
+    # min_satisfied of them, which is what lets a subtask key off "any instance of
+    # this product" when object_a/object_b are left null. min_satisfied is ignored
+    # when match_mode is "all".
+    match_mode: str = "all"
+    min_satisfied: int = 1
 
 
 @dataclass(frozen=True)
@@ -240,10 +246,16 @@ class SubtaskRuntime:
 
         states = self._relation_states[env_id]
 
-        return all(
-            all(states.get(rid, False) for rid in relation.rids)
-            for relation in subtask.relations
-        )
+        for relation in subtask.relations:
+            satisfied = sum(1 for rid in relation.rids if states.get(rid, False))
+
+            if relation.match_mode == "any":
+                if satisfied < relation.min_satisfied:
+                    return False
+            elif satisfied != len(relation.rids):
+                return False
+
+        return True
 
     def _parse_annotations(
         self,
@@ -317,6 +329,29 @@ class SubtaskRuntime:
                         f"[{relation_index}].object_b must be a string or null"
                     )
 
+                match_mode = relation_cfg.get("match_mode", "all")
+
+                if match_mode not in {"all", "any"}:
+                    raise ValueError(
+                        f"annotations[{annotation_index!r}].relations"
+                        f"[{relation_index}].match_mode must be 'all' or 'any', "
+                        f"got {match_mode!r}"
+                    )
+
+                try:
+                    min_satisfied = int(relation_cfg.get("min_satisfied", 1))
+                except (TypeError, ValueError) as exc:
+                    raise ValueError(
+                        f"annotations[{annotation_index!r}].relations"
+                        f"[{relation_index}].min_satisfied must be an integer"
+                    ) from exc
+
+                if min_satisfied < 1:
+                    raise ValueError(
+                        f"annotations[{annotation_index!r}].relations"
+                        f"[{relation_index}].min_satisfied must be >= 1"
+                    )
+
                 try:
                     rids = tuple(
                         self._relation_monitor.resolve_relation_rids(
@@ -347,12 +382,21 @@ class SubtaskRuntime:
                         f"[{relation_index}] resolved to no relation instances"
                     )
 
+                if match_mode == "any" and min_satisfied > len(rids):
+                    raise ValueError(
+                        f"annotations[{annotation_index!r}].relations"
+                        f"[{relation_index}]: min_satisfied={min_satisfied} exceeds "
+                        f"the {len(rids)} resolved relation instances for {name!r}"
+                    )
+
                 relations.append(
                     SubtaskTransition(
                         name=name,
                         object_a=object_a,
                         object_b=object_b,
                         rids=rids,
+                        match_mode=match_mode,
+                        min_satisfied=min_satisfied,
                     )
                 )
 

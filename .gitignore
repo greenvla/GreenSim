@@ -19,3 +19,6 @@ tmp/
 IsaacLab-2.3.2/
 .venv
 /results.json
+
+# local clone of the HuggingFace assets repo, used to prepare asset pushes
+/hf/

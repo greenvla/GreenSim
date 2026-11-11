@@ -184,5 +184,42 @@
     "benchmark"   : ["task.darkstore.e2.a3", true],
     "policy"      : ["policy.darkstore.e2.a3", true],
     "num_episodes": 990
+  },
+
+  "benchmart.e1.a1": {
+    "scene": "scene.benchmart.e1",
+    "benchmark": [
+      "task.benchmart.e1.a1",
+      true
+    ],
+    "policy": null,
+    "num_episodes": 900
+  },
+  "benchmart.e1.a2": {
+    "scene": "scene.benchmart.e1",
+    "benchmark": [
+      "task.benchmart.e1.a2",
+      true
+    ],
+    "policy": null,
+    "num_episodes": 900
+  },
+  "benchmart.e1.a3": {
+    "scene": "scene.benchmart.e1",
+    "benchmark": [
+      "task.benchmart.e1.a3",
+      true
+    ],
+    "policy": null,
+    "num_episodes": 900
+  },
+  "benchmart.e1.a4": {
+    "scene": "scene.benchmart.e1",
+    "benchmark": [
+      "task.benchmart.e1.a4",
+      true
+    ],
+    "policy": null,
+    "num_episodes": 900
   }
 }

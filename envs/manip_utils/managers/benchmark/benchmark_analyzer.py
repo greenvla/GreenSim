@@ -54,6 +54,10 @@ class GoalSpec:
     description: str
     for_each: str
     must_have: Tuple[str, ...]
+    # Relations checked once for the whole goal, independent of ``for_each``. Needed
+    # when a goal combines a condition on the iterated object (for example the robot
+    # reached the table) with a condition on another group (the item is in hand).
+    global_must_have: Tuple[str, ...] = ()
     required: bool = False
     match_mode: str = "all"
     min_satisfied: int = 1
@@ -199,6 +203,18 @@ class TaskModel:
                 raise ValueError(
                     f"goals.{goal_name}.must_have must be a string or a list of strings"
                 )
+            raw_global = goal_cfg.get("global_must_have")
+            if isinstance(raw_global, str):
+                global_must_have = (raw_global,)
+            elif isinstance(raw_global, (list, tuple)):
+                global_must_have = tuple(raw_global)
+            elif raw_global is None:
+                global_must_have = ()
+            else:
+                raise ValueError(
+                    f"goals.{goal_name}.global_must_have must be a string or a list of strings"
+                )
+
             match_mode = goal_cfg.get("match_mode", "all")
             if match_mode not in {"all", "any"}:
                 raise ValueError(
@@ -215,6 +231,7 @@ class TaskModel:
                 description=goal_cfg.get("description", ""),
                 for_each=goal_cfg.get("for_each"),
                 must_have=must_have,
+                global_must_have=global_must_have,
                 required=bool(goal_cfg.get("required", False)),
                 match_mode=match_mode,
                 min_satisfied=min_satisfied,
@@ -347,6 +364,11 @@ class TaskModel:
                 if rel_name not in self.relations:
                     raise ValueError(
                         f"goals.{goal_name}.must_have references unknown relation '{rel_name}'"
+                    )
+            for rel_name in goal.global_must_have:
+                if rel_name not in self.relations:
+                    raise ValueError(
+                        f"goals.{goal_name}.global_must_have references unknown relation '{rel_name}'"
                     )
 
         for const_name, const in self.constraints.items():
@@ -654,6 +676,18 @@ class GoalEvaluator:
     def evaluate_one(self, goal: GoalSpec) -> GoalEvaluation:
         objects_to_check = self.tracker.get_active_objects(goal.for_each)
 
+        # Relations that do not involve the iterated object are checked once, for the
+        # whole goal, instead of being filtered against every object's name.
+        global_values = [
+            self.tracker.aggregated_relation_value(
+                relation_name=rel_name,
+                object_1=None,
+                active_only=True,
+            )
+            for rel_name in goal.global_must_have
+        ]
+        global_ok = all(v == 1 for v in global_values)
+
         satisfied_objects = []
         unsatisfied_objects = []
 
@@ -666,7 +700,7 @@ class GoalEvaluator:
                 )
                 for rel_name in goal.must_have
             ]
-            if all(v == 1 for v in values):
+            if global_ok and all(v == 1 for v in values):
                 satisfied_objects.append(obj_name)
             else:
                 unsatisfied_objects.append(obj_name)
@@ -686,6 +720,7 @@ class GoalEvaluator:
         details = {
             "group": goal.for_each,
             "relation": list(goal.must_have),  # now a list, not a string
+            "global_relation": list(goal.global_must_have),
             "total_objects": len(objects_to_check),
             "satisfied_objects_count": len(satisfied_objects),
             "unsatisfied_objects_count": len(unsatisfied_objects),
