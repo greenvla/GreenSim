@@ -175,10 +175,10 @@ in `assets/runs/green_challenge.json`. The time shown is the episode timeout.
 
 ### Scenario previews
 
-- **BenchMart store tasks** — Shampoo, Energy Drink, Juice and Sauce. Scene, tasks and run
-  config live on [`feat/benchmart-scenario`](https://github.com/greenvla/GreenSim/tree/feat/benchmart-scenario);
-  the scenario is not part of the competition run yet. Demonstrations are published in
-  `SberRoboticsCenter/GreenChallengeData/benchmart`.
+- **BenchMart store tasks** — Shampoo, Energy Drink, Juice and Sauce. An additional scenario,
+  outside the competition run. Scene, tasks and run config live on
+  [`feat/benchmart-scenario`](https://github.com/greenvla/GreenSim/tree/feat/benchmart-scenario);
+  demonstrations are published in `SberRoboticsCenter/GreenChallengeData/benchmart`.
 
 ### Run
 
